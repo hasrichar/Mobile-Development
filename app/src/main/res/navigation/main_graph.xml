@@ -3,18 +3,18 @@
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:id="@+id/main_graph"
-    app:startDestination="@id/analysisFragment">
+    app:startDestination="@id/homeFragment">
 
-    <fragment
-        android:id="@+id/analysisFragment"
-        android:name="com.development.gocipes.view.analysis.AnalysisFragment"
-        android:label="fragment_analysis"
-        tools:layout="@layout/fragment_analysis" />
     <fragment
         android:id="@+id/homeFragment"
         android:name="com.development.gocipes.view.home.HomeFragment"
         android:label="fragment_home"
         tools:layout="@layout/fragment_home" />
+    <fragment
+        android:id="@+id/analysisFragment"
+        android:name="com.development.gocipes.view.analysis.AnalysisFragment"
+        android:label="fragment_analysis"
+        tools:layout="@layout/fragment_analysis" />
     <fragment
         android:id="@+id/profileFragment"
         android:name="com.development.gocipes.view.profile.ProfileFragment"
