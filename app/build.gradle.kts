@@ -61,6 +61,9 @@ dependencies {
     implementation ("androidx.navigation:navigation-fragment-ktx:2.5.3")
     implementation ("androidx.navigation:navigation-ui-ktx:2.5.3")
 
+    //Circle-image-view
+    implementation ("de.hdodenhof:circleimageview:3.1.0")
+
     //glide
     implementation ("com.github.bumptech.glide:glide:4.16.0")
 }

@@ -10,4 +10,18 @@
     <string name="superior_food">Makanan Paling Unggul</string>
     <string name="guide">Panduan Gizi untuk Gaya Hidup Sehat</string>
     <string name="technique">Menguasai Teknik Memasak dengan hebat</string>
+    <string name="akun_saya">Akun Saya</string>
+    <string name="ubah_foto">Ubah Foto</string>
+    <string name="tentang_anda">Tentang Anda</string>
+    <string name="email">Email</string>
+    <string name="username">Username</string>
+    <string name="password">Password</string>
+    <string name="qna">QnA</string>
+    <string name="info_aplikasi">Info Aplikasi</string>
+    <string name="keluar">Keluar</string>
+    <string name="edit">Ubah</string>
+    <string name="save">Simpan</string>
+    <string name="dummy_email">example@gmail.com</string>
+    <string name="dummy_username">example</string>
+    <string name="dummy_password">******</string>
 </resources>
