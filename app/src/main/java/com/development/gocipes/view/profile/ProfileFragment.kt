@@ -18,10 +18,63 @@ class ProfileFragment : Fragment() {
     ): View? {
         _binding = FragmentProfileBinding.inflate(layoutInflater, container, false)
         return binding?.root
+
+    }
+
+    override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
+        super.onViewCreated(view, savedInstanceState)
+
+        binding?.btnProfileEdit?.setOnClickListener {
+            onClickEdit()
+        }
+        binding?.btnProfileSimpan?.setOnClickListener {
+            onClickSave()
+        }
     }
 
     override fun onDestroy() {
         super.onDestroy()
         _binding = null
     }
+
+    private fun onClickEdit() {
+        binding?.apply {
+            btnProfileEdit.visibility = View.GONE
+            btnProfileSimpan.visibility = View.VISIBLE
+
+            edtProfileEmailUser.isEnabled = true
+            edtProfilePasswordUser.isEnabled = true
+            edtProfileUsernameUser.isEnabled = true
+        }
+    }
+
+    private fun onClickSave() {
+        binding?.apply {
+            btnProfileEdit.visibility = View.VISIBLE
+            btnProfileSimpan.visibility = View.GONE
+
+            edtProfileEmailUser.isEnabled = false
+            edtProfilePasswordUser.isEnabled = false
+            edtProfileUsernameUser.isEnabled = false
+        }
+    }
+
+    /*private fun logout() {
+        val logoutDialog = AlertDialog.Builder(this)
+        with(logoutDialog) {
+            setTitle(resources.getString(R.string.keluar))
+            setMessage(resources.getString(R.string.log_desc))
+            setPositiveButton(resources.getString(R.string.yes)) { _, _ ->
+                viewModel.logout()
+                viewModel.rmvSession()
+                intent = Intent(this@ProfileFragment, LoginActivity::class.java)
+                intent.flags = Intent.FLAG_ACTIVITY_NEW_TASK or Intent.FLAG_ACTIVITY_CLEAR_TASK
+                startActivity(intent)
+                finish()
+            }
+            setNegativeButton(resources.getString(R.string.no)) { dialog, _ -> dialog.cancel() }
+        }
+        val alertDialog = logoutDialog.create()
+        alertDialog.show()
+    }*/
 }
