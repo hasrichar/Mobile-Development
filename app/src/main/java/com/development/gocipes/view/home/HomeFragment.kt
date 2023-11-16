@@ -5,12 +5,26 @@ import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import androidx.fragment.app.Fragment
+import androidx.recyclerview.widget.LinearLayoutManager
+import com.development.gocipes.data.DummyCategory
+import com.development.gocipes.data.DummyFood
+import com.development.gocipes.data.DummyInformation
 import com.development.gocipes.databinding.FragmentHomeBinding
+import com.development.gocipes.model.Category
+import com.development.gocipes.model.Food
+import com.development.gocipes.model.Information
+import com.development.gocipes.utils.Extensions.showImage
+import com.development.gocipes.view.home.adapter.CategoryAdapter
+import com.development.gocipes.view.home.adapter.FoodAdapter
+import com.development.gocipes.view.home.adapter.InformationAdapter
 
 class HomeFragment : Fragment() {
 
     private var _binding: FragmentHomeBinding? = null
     private val binding get() = _binding
+    private lateinit var categoryAdapter: CategoryAdapter
+    private lateinit var foodAdapter: FoodAdapter
+    private lateinit var informationAdapter: InformationAdapter
 
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
@@ -18,6 +32,71 @@ class HomeFragment : Fragment() {
     ): View? {
         _binding = FragmentHomeBinding.inflate(layoutInflater, container, false)
         return binding?.root
+    }
+
+    override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
+        super.onViewCreated(view, savedInstanceState)
+        val listCategory = DummyCategory.dummyCategory
+        val listFood = DummyFood.dummyFood
+        val listGuide = DummyInformation.dummyArticle
+        val listTechnique = DummyInformation.dummyTechnique
+
+        val name = "Mutiara Sabrina!"
+        val url = "https://www.betterup.com/hubfs/Blog%20Images/authentic-self-person-smiling-at-camera.jpg"
+
+        binding?.contentHome?.apply {
+            sivProfile.showImage(requireActivity(), url)
+            tvName.text = name
+        }
+
+        setupRecyclerCategory(listCategory)
+        setupRecyclerViewFood(listFood)
+        setupRecyclerViewGuide(listGuide)
+        setupRecyclerViewTechnique(listTechnique)
+    }
+
+    private fun setupRecyclerCategory(category: List<Category>) {
+        categoryAdapter = CategoryAdapter()
+
+        binding?.contentHome?.rvCategory?.apply {
+            adapter = categoryAdapter
+            layoutManager = LinearLayoutManager(requireActivity(), LinearLayoutManager.HORIZONTAL, false)
+        }
+
+        categoryAdapter.submitList(category)
+    }
+
+    private fun setupRecyclerViewFood(food: List<Food>) {
+        foodAdapter = FoodAdapter()
+
+        binding?.contentHome?.rvFood?.apply {
+            adapter = foodAdapter
+            layoutManager = LinearLayoutManager(requireActivity(), LinearLayoutManager.HORIZONTAL, false)
+        }
+
+        foodAdapter.submitList(food)
+    }
+
+    private fun setupRecyclerViewGuide(information: List<Information>) {
+        informationAdapter = InformationAdapter()
+
+        binding?.contentHome?.rvGuide?.apply {
+            adapter = informationAdapter
+            layoutManager = LinearLayoutManager(requireActivity(), LinearLayoutManager.HORIZONTAL, false)
+        }
+
+        informationAdapter.submitList(information)
+    }
+
+    private fun setupRecyclerViewTechnique(listTechnique: List<Information>) {
+        informationAdapter = InformationAdapter()
+
+        binding?.contentHome?.rvTechnique?.apply {
+            adapter = informationAdapter
+            layoutManager = LinearLayoutManager(requireActivity(), LinearLayoutManager.HORIZONTAL, false)
+        }
+
+        informationAdapter.submitList(listTechnique)
     }
 
     override fun onDestroy() {

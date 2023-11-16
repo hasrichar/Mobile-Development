@@ -4,4 +4,10 @@
     <string name="favorite">Favorite</string>
     <string name="home">Home</string>
     <string name="profile">Profile</string>
+    <string name="category">Kategori</string>
+    <string name="search_menu">Cari Menu Masakan</string>
+    <string name="health_cook">Masak makanan sehat lebih menyenangkan!!</string>
+    <string name="superior_food">Makanan Paling Unggul</string>
+    <string name="guide">Panduan Gizi untuk Gaya Hidup Sehat</string>
+    <string name="technique">Menguasai Teknik Memasak dengan hebat</string>
 </resources>
