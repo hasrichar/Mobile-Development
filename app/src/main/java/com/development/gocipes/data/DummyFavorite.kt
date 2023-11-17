@@ -58,5 +58,56 @@ object DummyFavorite {
                 )
             )
         ),
+        Favorite(
+            id = 5,
+            name = "Soto ayam",
+            imageUrl = "https://img.freepik.com/premium-photo/soto-ayam-is-typical-indonesian-food-form-kind-chicken-soup-with-yellowish-sauce_431906-2771.jpg?size=626&ext=jpg&ga=GA1.1.386372595.1698364800&semt=ais",
+            category = listOf(
+                Category(
+                    id = 1,
+                    name = "Populer",
+                    imageUrl = "https://img.freepik.com/free-vector/vector-cartoon-illustration-traditional-set-fast-food-meal_1441-331.jpg"
+                ),
+                Category(
+                    id = 2,
+                    name = "Sayuran",
+                    imageUrl = "https://img.freepik.com/premium-vector/bowl-with-fresh-healthy-vegetables-vector-illustration_508931-17.jpg"
+                ),
+            )
+        ),
+        Favorite(
+            id = 6,
+            name = "Sate ayam",
+            imageUrl = "https://asset-2.tstatic.net/jambi/foto/bank/images/resep-sate-ayam-manis.jpg",
+            category = listOf(
+                Category(
+                    id = 1,
+                    name = "Populer",
+                    imageUrl = "https://img.freepik.com/free-vector/vector-cartoon-illustration-traditional-set-fast-food-meal_1441-331.jpg"
+                ),
+                Category(
+                    id = 2,
+                    name = "Daging",
+                    imageUrl = "https://img.freepik.com/premium-vector/bowl-with-fresh-healthy-vegetables-vector-illustration_508931-17.jpg"
+                ),
+            )
+        ),
+        Favorite(
+            id = 7,
+            name = "Sate kambing",
+            imageUrl = "https://cdn1-production-images-kly.akamaized.net/bLDquq0oaVBpG2NE_Lq0QTthaDo=/800x450/smart/filters:quality(75):strip_icc():format(webp)/kly-media-production/medias/4485302/original/008851000_1687970322-aa.jpg",
+            category = listOf(
+                Category(
+                    id = 1,
+                    name = "Populer",
+                    imageUrl = "https://img.freepik.com/free-vector/vector-cartoon-illustration-traditional-set-fast-food-meal_1441-331.jpg"
+                ),
+                Category(
+                    id = 2,
+                    name = "Daging",
+                    imageUrl = "https://img.freepik.com/premium-vector/bowl-with-fresh-healthy-vegetables-vector-illustration_508931-17.jpg"
+                ),
+            )
+        ),
     )
 }

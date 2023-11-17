@@ -31,7 +31,6 @@ class FavoriteFragment : Fragment() {
         super.onViewCreated(view, savedInstanceState)
 
         val listFavorite = DummyFavorite.dummyFavorite
-
         setupRecyclerFavorite(listFavorite)
     }
 
