@@ -4,12 +4,8 @@ import android.os.Parcelable
 import kotlinx.parcelize.Parcelize
 
 @Parcelize
-data class Food(
+data class Cook(
     val id: Int,
-    val name: String,
-    val description: String,
-    val minutes: String,
     val imageUrl: String,
-    val ingredients: List<Ingredient>,
-    val step: List<Cook>
+    val description: String,
 ): Parcelable

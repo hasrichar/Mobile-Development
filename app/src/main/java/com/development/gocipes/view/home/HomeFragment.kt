@@ -5,6 +5,7 @@ import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import androidx.fragment.app.Fragment
+import androidx.navigation.fragment.findNavController
 import androidx.recyclerview.widget.LinearLayoutManager
 import com.development.gocipes.data.DummyCategory
 import com.development.gocipes.data.DummyFood
@@ -41,7 +42,7 @@ class HomeFragment : Fragment() {
         val listGuide = DummyInformation.dummyArticle
         val listTechnique = DummyInformation.dummyTechnique
 
-        val name = "Mutiara Sabrina!"
+        val name = "Mutiara!"
         val url = "https://www.betterup.com/hubfs/Blog%20Images/authentic-self-person-smiling-at-camera.jpg"
 
         binding?.contentHome?.apply {
@@ -66,15 +67,17 @@ class HomeFragment : Fragment() {
         categoryAdapter.submitList(category)
     }
 
-    private fun setupRecyclerViewFood(food: List<Food>) {
-        foodAdapter = FoodAdapter()
+    private fun setupRecyclerViewFood(listFood: List<Food>) {
+        foodAdapter = FoodAdapter { food ->
+            navigateDetailFood(food)
+        }
 
         binding?.contentHome?.rvFood?.apply {
             adapter = foodAdapter
             layoutManager = LinearLayoutManager(requireActivity(), LinearLayoutManager.HORIZONTAL, false)
         }
 
-        foodAdapter.submitList(food)
+        foodAdapter.submitList(listFood)
     }
 
     private fun setupRecyclerViewGuide(information: List<Information>) {
@@ -97,6 +100,11 @@ class HomeFragment : Fragment() {
         }
 
         informationAdapter.submitList(listTechnique)
+    }
+
+    private fun navigateDetailFood(food: Food) {
+        val action = HomeFragmentDirections.actionHomeFragmentToDetailFoodFragment(food)
+        findNavController().navigate(action)
     }
 
     override fun onDestroy() {
