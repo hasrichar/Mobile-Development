@@ -31,7 +31,7 @@ class FavoriteAdapter : ListAdapter<Favorite, FavoriteAdapter.FavoriteViewHolder
                 sivFavorite.showImage(itemView.context, favorite.imageUrl)
                 tvTitle.text = favorite.name
                 tvCategory.text = categoryNames.joinToString(", ")
-                tvTimerContainer.tvTime.text = "5 menit"
+                tvTimerContainer.tvTime.text = "20 menit"
             }
         }
     }
