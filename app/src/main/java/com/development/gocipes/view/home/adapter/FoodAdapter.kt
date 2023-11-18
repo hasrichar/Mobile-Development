@@ -9,7 +9,7 @@ import com.development.gocipes.databinding.ItemFoodBinding
 import com.development.gocipes.model.Food
 import com.development.gocipes.utils.Extensions.showImage
 
-class FoodAdapter : ListAdapter<Food, FoodAdapter.FoodViewHolder>(DIFF_CALLBACK) {
+class FoodAdapter(val data: (Food) -> Unit) : ListAdapter<Food, FoodAdapter.FoodViewHolder>(DIFF_CALLBACK) {
 
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): FoodViewHolder {
         val binding = ItemFoodBinding.inflate(LayoutInflater.from(parent.context), parent, false)
@@ -27,6 +27,8 @@ class FoodAdapter : ListAdapter<Food, FoodAdapter.FoodViewHolder>(DIFF_CALLBACK)
                 tvName.text = food.name
                 tvMinutes.text = food.minutes
             }
+
+            itemView.setOnClickListener { data.invoke(food) }
         }
     }
 

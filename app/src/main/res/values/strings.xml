@@ -24,4 +24,11 @@
     <string name="dummy_email">example@gmail.com</string>
     <string name="dummy_username">example</string>
     <string name="dummy_password">******</string>
+    <string name="are_you_ready">Siapkah Anda memasak hari ini?</string>
+    <string name="ingredients">Bahan-bahan</string>
+    <string name="item_ingredients">• %1$s</string>
+    <string name="time">Waktu</string>
+    <string name="start_cook">Mulai Memasak</string>
+    <string name="set_time">Atur Waktu</string>
+    <string name="by_step">Step %1$s</string>
 </resources>
