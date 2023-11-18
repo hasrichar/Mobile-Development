@@ -9,7 +9,11 @@
         android:id="@+id/homeFragment"
         android:name="com.development.gocipes.view.home.HomeFragment"
         android:label="fragment_home"
-        tools:layout="@layout/fragment_home" />
+        tools:layout="@layout/fragment_home" >
+        <action
+            android:id="@+id/action_homeFragment_to_detailFoodFragment"
+            app:destination="@id/detailFoodFragment" />
+    </fragment>
     <fragment
         android:id="@+id/analysisFragment"
         android:name="com.development.gocipes.view.analysis.AnalysisFragment"
@@ -25,4 +29,25 @@
         android:name="com.development.gocipes.view.favorite.FavoriteFragment"
         android:label="fragment_favorite"
         tools:layout="@layout/fragment_favorite" />
+    <fragment
+        android:id="@+id/detailFoodFragment"
+        android:name="com.development.gocipes.view.home.food.DetailFoodFragment"
+        android:label="fragment_detail_food"
+        tools:layout="@layout/fragment_detail_food" >
+        <argument
+            android:name="food"
+            app:argType="com.development.gocipes.model.Food" />
+        <action
+            android:id="@+id/action_detailFoodFragment_to_cookFragment"
+            app:destination="@id/cookFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/cookFragment"
+        android:name="com.development.gocipes.view.home.cook.CookFragment"
+        android:label="fragment_cook"
+        tools:layout="@layout/fragment_cook" >
+        <argument
+            android:name="food"
+            app:argType="com.development.gocipes.model.Food" />
+    </fragment>
 </navigation>

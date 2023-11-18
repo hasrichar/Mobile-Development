@@ -11,4 +11,25 @@
     <string name="guide">Panduan Gizi untuk Gaya Hidup Sehat</string>
     <string name="technique">Menguasai Teknik Memasak dengan hebat</string>
     <string name="favorite_title">Olahan Favorite</string>
+    <string name="akun_saya">Akun Saya</string>
+    <string name="ubah_foto">Ubah Foto</string>
+    <string name="tentang_anda">Tentang Anda</string>
+    <string name="email">Email</string>
+    <string name="username">Username</string>
+    <string name="password">Password</string>
+    <string name="qna">QnA</string>
+    <string name="info_aplikasi">Info Aplikasi</string>
+    <string name="keluar">Keluar</string>
+    <string name="edit">Ubah</string>
+    <string name="save">Simpan</string>
+    <string name="dummy_email">example@gmail.com</string>
+    <string name="dummy_username">example</string>
+    <string name="dummy_password">******</string>
+    <string name="are_you_ready">Siapkah Anda memasak hari ini?</string>
+    <string name="ingredients">Bahan-bahan</string>
+    <string name="item_ingredients">• %1$s</string>
+    <string name="time">Waktu</string>
+    <string name="start_cook">Mulai Memasak</string>
+    <string name="set_time">Atur Waktu</string>
+    <string name="by_step">Step %1$s</string>
 </resources>
