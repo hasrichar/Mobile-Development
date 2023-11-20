@@ -25,7 +25,7 @@ class CookAdapter : ListAdapter<Cook, CookAdapter.CookViewHolder>(DIFF_CALLBACK)
         fun bind(cook: Cook) {
             binding.apply {
                 sivCook.showImage(itemView.context, cook.imageUrl)
-                tvStep.text = itemView.context.getString(R.string.by_step, cook.id)
+                tvStep.text = itemView.context.getString(R.string.by_step, cook.id.toString())
                 tvDescription.text = cook.description
             }
         }

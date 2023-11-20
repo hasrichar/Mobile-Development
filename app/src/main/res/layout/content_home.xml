@@ -92,27 +92,29 @@
 
     <TextView
         android:id="@+id/tv_food"
-        android:layout_width="match_parent"
+        android:layout_width="0dp"
         android:layout_height="wrap_content"
         android:layout_marginHorizontal="16dp"
         android:layout_marginTop="32dp"
         android:fontFamily="@font/poppins_semi_bold"
         android:text="@string/superior_food"
         android:textSize="20sp"
-        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintEnd_toStartOf="@id/tv_all_food"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@id/rv_category" />
 
     <TextView
-        android:id="@+id/tv_desc_food"
-        android:layout_width="0dp"
+        android:id="@+id/tv_all_food"
+        android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:fontFamily="@font/poppins_regular"
-        android:text="@string/health_cook"
+        android:text="@string/show_all"
         android:textSize="12sp"
-        app:layout_constraintEnd_toEndOf="@id/tv_food"
-        app:layout_constraintStart_toStartOf="@id/tv_food"
-        app:layout_constraintTop_toBottomOf="@id/tv_food" />
+        android:fontFamily="@font/poppins_medium"
+        android:textColor="@color/primary"
+        android:layout_marginEnd="16dp"
+        android:layout_marginBottom="4dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintBottom_toBottomOf="@id/tv_food" />
 
     <androidx.recyclerview.widget.RecyclerView
         android:id="@+id/rv_food"
@@ -124,7 +126,7 @@
         android:paddingEnd="16dp"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@id/tv_desc_food" />
+        app:layout_constraintTop_toBottomOf="@id/tv_food" />
 
     <TextView
         android:id="@+id/tv_guide"

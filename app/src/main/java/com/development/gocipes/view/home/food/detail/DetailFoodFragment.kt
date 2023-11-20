@@ -1,4 +1,4 @@
-package com.development.gocipes.view.home.food
+package com.development.gocipes.view.home.food.detail
 
 import android.os.Bundle
 import android.view.LayoutInflater
