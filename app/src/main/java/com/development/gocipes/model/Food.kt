@@ -10,6 +10,7 @@ data class Food(
     val description: String,
     val minutes: String,
     val imageUrl: String,
+    val category: String,
     val ingredients: List<Ingredient>,
-    val step: List<Cook>
+    val step: List<Cook>,
 ): Parcelable

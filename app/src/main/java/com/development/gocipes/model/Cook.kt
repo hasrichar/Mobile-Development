@@ -8,4 +8,5 @@ data class Cook(
     val id: Int,
     val imageUrl: String,
     val description: String,
+    val minutes: Int,
 ): Parcelable
