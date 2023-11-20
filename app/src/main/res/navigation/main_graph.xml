@@ -31,7 +31,7 @@
         tools:layout="@layout/fragment_favorite" />
     <fragment
         android:id="@+id/detailFoodFragment"
-        android:name="com.development.gocipes.view.home.food.DetailFoodFragment"
+        android:name="com.development.gocipes.view.home.food.detail.DetailFoodFragment"
         android:label="fragment_detail_food"
         tools:layout="@layout/fragment_detail_food" >
         <argument

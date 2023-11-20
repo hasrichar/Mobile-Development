@@ -20,6 +20,5 @@
     <style name="TextAppearanceToolbar" parent="android:TextAppearance">
         <item name="android:fontFamily">@font/poppins_semi_bold</item>
         <item name="android:textSize">20sp</item>
-        <item name="android:textColor">@android:color/secondary_text_light</item>
     </style>
 </resources>

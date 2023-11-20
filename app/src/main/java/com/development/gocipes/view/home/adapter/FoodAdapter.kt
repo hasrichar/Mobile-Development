@@ -26,6 +26,7 @@ class FoodAdapter(val data: (Food) -> Unit) : ListAdapter<Food, FoodAdapter.Food
                 sivFood.showImage(itemView.context, food.imageUrl)
                 tvName.text = food.name
                 tvMinutes.text = food.minutes
+                tvCategory.text = food.category
             }
 
             itemView.setOnClickListener { data.invoke(food) }
