@@ -32,5 +32,9 @@
     <string name="start_cook">Mulai Memasak</string>
     <string name="set_time">Atur Waktu</string>
     <string name="by_step">Step %1$s</string>
+    <string name="kata_sandi">Kata Sandi</string>
+    <string name="nama_pengguna">Nama Pengguna</string>
+    <string name="lupa_password">Lupa Password?</string>
+    <string name="forgot_password_desc">Masukkan Email atau Nama Pengguna yang terhubung dengan akun Anda.</string>
     <string name="show_all"><u>Lihat Semua</u></string>
 </resources>
