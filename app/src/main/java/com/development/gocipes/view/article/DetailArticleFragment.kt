@@ -1,6 +1,5 @@
-package com.development.gocipes.view.home.article
+package com.development.gocipes.view.article
 
-import android.content.res.Configuration
 import android.os.Bundle
 import android.view.LayoutInflater
 import android.view.Menu
@@ -14,31 +13,43 @@ import androidx.core.view.MenuProvider
 import androidx.fragment.app.Fragment
 import androidx.lifecycle.Lifecycle
 import androidx.navigation.fragment.findNavController
-import androidx.recyclerview.widget.GridLayoutManager
-import com.development.gocipes.data.DummyInformation
-import com.development.gocipes.databinding.FragmentArticleBinding
+import androidx.navigation.fragment.navArgs
+import com.development.gocipes.databinding.FragmentDetailArticleBinding
 import com.development.gocipes.model.Information
-import com.development.gocipes.view.home.adapter.InformationGridAdapter
+import com.development.gocipes.utils.Extensions.showImage
 
-class ArticleFragment : Fragment() {
 
-    private var _binding: FragmentArticleBinding? = null
+class DetailArticleFragment : Fragment() {
+    private var _binding: FragmentDetailArticleBinding? = null
     private val binding get() = _binding
-    private lateinit var informationGridAdapter: InformationGridAdapter
+    private val navArgs by navArgs<DetailArticleFragmentArgs>()
 
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
-        savedInstanceState: Bundle?
+        savedInstanceState: Bundle?,
     ): View? {
-        _binding = FragmentArticleBinding.inflate(layoutInflater, container, false)
+        _binding = FragmentDetailArticleBinding.inflate(layoutInflater, container, false)
         return binding?.root
     }
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
 
+        val articleArgs = navArgs.information
+
+        setupView(articleArgs)
         setupToolbar()
-        setupView()
+
+    }
+
+    private fun setupView(information: Information) {
+        binding?.apply {
+            contentDetailArticle.apply {
+                ivArticlePhoto.showImage(requireActivity(), information.imageUrl)
+                tvArticleHeader.text = information.name
+                tvArticleContent.text = information.description
+            }
+        }
     }
 
     private fun setupToolbar() {
@@ -46,7 +57,7 @@ class ArticleFragment : Fragment() {
             setSupportActionBar(binding?.toolbar)
             supportActionBar?.apply {
                 setDisplayHomeAsUpEnabled(true)
-                title = "Artikel"
+                setDisplayShowTitleEnabled(false)
             }
         }
 
@@ -61,30 +72,9 @@ class ArticleFragment : Fragment() {
         }, viewLifecycleOwner, Lifecycle.State.CREATED)
     }
 
-    private fun setupView() {
-        informationGridAdapter = InformationGridAdapter { information ->
-            navigateDetailArticle(information)
-        }
-        val listArticle = DummyInformation.dummyArticle
-        val gridCount = if (requireActivity().resources.configuration.orientation == Configuration.ORIENTATION_PORTRAIT) 2 else 4
-
-        binding?.apply {
-            rvArticle.apply {
-                adapter = informationGridAdapter
-                layoutManager = GridLayoutManager(requireActivity(), gridCount)
-            }
-        }
-
-        informationGridAdapter.submitList(listArticle)
-    }
-
-    private fun navigateDetailArticle(information: Information) {
-        val action = ArticleFragmentDirections.actionArticleFragmentToDetailArticleFragment(information)
-        findNavController().navigate(action)
-    }
-
     override fun onDestroy() {
         super.onDestroy()
         _binding = null
     }
+
 }

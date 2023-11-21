@@ -7,7 +7,8 @@ object DummyInformation {
         Information(
             id = 1,
             name = "Pentingnya Gizi Seimbang bagi tubuh",
-            description = "",
+            description = "Gizi seimbang merupakan susunan pangan sehari-hari yang mengandung zat gizi dalam jenis dan jumlah yang sesuai dengan kebutuhan tubuh, dengan memperhatikan prinsip keanekaragaman pangan, aktifitas fisik, perilaku hidup bersih dan mempertahankan berat badan normal secara teratur.\n" +
+                    "Gizi seimbang yaitu apabila asupan makan cukup secara kuantitas, kualitas dan mengandung berbagai zat gizi yang dibutuhkan tubuh. Tujuannya agar kesehatan tubuh terjaga, pertumbuhan sempurna (pada anak-anak), zat gizi tersimpan, dan aktifitas dan fungsi sehari-hari berjalan optimal",
             imageUrl = "https://diskes.badungkab.go.id/storage/diskes/image/GIZI%20SEIMBANG.png"
         ),
         Information(

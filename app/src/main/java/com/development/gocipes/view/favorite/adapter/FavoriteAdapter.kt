@@ -5,12 +5,9 @@ import android.view.ViewGroup
 import androidx.recyclerview.widget.DiffUtil
 import androidx.recyclerview.widget.ListAdapter
 import androidx.recyclerview.widget.RecyclerView
-import com.development.gocipes.databinding.ItemCategoryBinding
 import com.development.gocipes.databinding.ItemFavoriteBinding
-import com.development.gocipes.model.Category
 import com.development.gocipes.model.Favorite
 import com.development.gocipes.utils.Extensions.showImage
-import com.development.gocipes.view.home.adapter.CategoryAdapter
 
 class FavoriteAdapter : ListAdapter<Favorite, FavoriteAdapter.FavoriteViewHolder>(DIFF_UTIL) {
 
