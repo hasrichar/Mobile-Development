@@ -123,6 +123,7 @@
         android:layout_marginTop="16dp"
         android:clipToPadding="false"
         android:paddingStart="8dp"
+        android:paddingBottom="1dp"
         android:paddingEnd="16dp"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
@@ -137,9 +138,22 @@
         android:fontFamily="@font/poppins_semi_bold"
         android:text="@string/guide"
         android:textSize="20sp"
-        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintEnd_toStartOf="@id/tv_all_article"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@id/rv_food" />
+
+    <TextView
+        android:id="@+id/tv_all_article"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/show_all"
+        android:textSize="12sp"
+        android:fontFamily="@font/poppins_medium"
+        android:textColor="@color/primary"
+        android:layout_marginEnd="16dp"
+        android:layout_marginBottom="4dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintBottom_toBottomOf="@id/tv_guide" />
 
     <androidx.recyclerview.widget.RecyclerView
         android:id="@+id/rv_guide"
@@ -147,6 +161,7 @@
         android:layout_height="wrap_content"
         android:layout_marginTop="16dp"
         android:clipToPadding="false"
+        android:paddingBottom="1dp"
         android:paddingStart="8dp"
         android:paddingEnd="16dp"
         app:layout_constraintEnd_toEndOf="parent"
@@ -174,6 +189,7 @@
         android:clipToPadding="false"
         android:paddingStart="8dp"
         android:paddingEnd="16dp"
+        android:paddingBottom="1dp"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@id/tv_technique" />
