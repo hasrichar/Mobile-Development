@@ -84,7 +84,9 @@ class HomeFragment : Fragment() {
     }
 
     private fun setupRecyclerViewGuide(information: List<Information>) {
-        informationAdapter = InformationAdapter()
+        informationAdapter = InformationAdapter { information ->
+            navigateDetailArticle(information)
+        }
 
         binding?.contentHome?.rvGuide?.apply {
             adapter = informationAdapter
@@ -95,7 +97,9 @@ class HomeFragment : Fragment() {
     }
 
     private fun setupRecyclerViewTechnique(listTechnique: List<Information>) {
-        informationAdapter = InformationAdapter()
+        informationAdapter = InformationAdapter { information ->
+            navigateDetailArticle(information)
+        }
 
         binding?.contentHome?.rvTechnique?.apply {
             adapter = informationAdapter
@@ -117,6 +121,11 @@ class HomeFragment : Fragment() {
 
     private fun navigateToArticle() {
         val action = HomeFragmentDirections.actionHomeFragmentToArticleFragment()
+        findNavController().navigate(action)
+    }
+
+    private fun navigateDetailArticle(information: Information) {
+        val action = HomeFragmentDirections.actionHomeFragmentToDetailArticleFragment(information)
         findNavController().navigate(action)
     }
 

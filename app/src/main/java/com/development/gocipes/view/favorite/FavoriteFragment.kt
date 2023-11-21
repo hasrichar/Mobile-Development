@@ -6,12 +6,10 @@ import android.view.View
 import android.view.ViewGroup
 import androidx.fragment.app.Fragment
 import androidx.recyclerview.widget.LinearLayoutManager
-import com.development.gocipes.data.DummyCategory
 import com.development.gocipes.data.DummyFavorite
 import com.development.gocipes.databinding.FragmentFavoriteBinding
 import com.development.gocipes.model.Favorite
 import com.development.gocipes.view.favorite.adapter.FavoriteAdapter
-import com.development.gocipes.view.home.adapter.CategoryAdapter
 
 class FavoriteFragment : Fragment() {
 

@@ -9,7 +9,7 @@ import com.development.gocipes.model.Information
 import com.development.gocipes.utils.Extensions.showImage
 import com.development.gocipes.view.home.adapter.InformationAdapter.Companion.DIFF_CALLBACK
 
-class InformationGridAdapter : ListAdapter<Information, InformationGridAdapter.InformationGridViewHolder>(DIFF_CALLBACK) {
+class InformationGridAdapter(val data: (Information) -> Unit) : ListAdapter<Information, InformationGridAdapter.InformationGridViewHolder>(DIFF_CALLBACK) {
 
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): InformationGridViewHolder {
         val binding = ItemInformationGridBinding.inflate(LayoutInflater.from(parent.context), parent, false)
@@ -26,6 +26,7 @@ class InformationGridAdapter : ListAdapter<Information, InformationGridAdapter.I
                 sivGuide.showImage(itemView.context, information.imageUrl)
                 tvName.text = information.name
             }
+            itemView.setOnClickListener { data.invoke(information) }
         }
     }
 }

@@ -9,7 +9,7 @@ import com.development.gocipes.databinding.ItemGuideBinding
 import com.development.gocipes.model.Information
 import com.development.gocipes.utils.Extensions.showImage
 
-class InformationAdapter : ListAdapter<Information, InformationAdapter.GuideViewHolder>(DIFF_CALLBACK) {
+class InformationAdapter(val data: (Information) -> Unit) : ListAdapter<Information, InformationAdapter.GuideViewHolder>(DIFF_CALLBACK) {
 
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): GuideViewHolder {
         val binding = ItemGuideBinding.inflate(LayoutInflater.from(parent.context), parent, false)
@@ -26,7 +26,9 @@ class InformationAdapter : ListAdapter<Information, InformationAdapter.GuideView
                 sivGuide.showImage(itemView.context, information.imageUrl)
                 tvName.text = information.name
             }
+            itemView.setOnClickListener { data.invoke(information) }
         }
+
     }
 
     companion object {
