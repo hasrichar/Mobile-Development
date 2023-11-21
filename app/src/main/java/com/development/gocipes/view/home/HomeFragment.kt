@@ -48,6 +48,8 @@ class HomeFragment : Fragment() {
         binding?.contentHome?.apply {
             sivProfile.showImage(requireActivity(), url)
             tvName.text = name
+            tvAllFood.setOnClickListener { navigateToFood() }
+            tvAllArticle.setOnClickListener { navigateToArticle() }
         }
 
         setupRecyclerCategory(listCategory)
@@ -69,12 +71,13 @@ class HomeFragment : Fragment() {
 
     private fun setupRecyclerViewFood(listFood: List<Food>) {
         foodAdapter = FoodAdapter { food ->
-            navigateDetailFood(food)
+            navigateToDetailFood(food)
         }
 
         binding?.contentHome?.rvFood?.apply {
             adapter = foodAdapter
             layoutManager = LinearLayoutManager(requireActivity(), LinearLayoutManager.HORIZONTAL, false)
+            setHasFixedSize(true)
         }
 
         foodAdapter.submitList(listFood)
@@ -102,8 +105,18 @@ class HomeFragment : Fragment() {
         informationAdapter.submitList(listTechnique)
     }
 
-    private fun navigateDetailFood(food: Food) {
+    private fun navigateToDetailFood(food: Food) {
         val action = HomeFragmentDirections.actionHomeFragmentToDetailFoodFragment(food)
+        findNavController().navigate(action)
+    }
+
+    private fun navigateToFood() {
+        val action = HomeFragmentDirections.actionHomeFragmentToFoodFragment()
+        findNavController().navigate(action)
+    }
+
+    private fun navigateToArticle() {
+        val action = HomeFragmentDirections.actionHomeFragmentToArticleFragment()
         findNavController().navigate(action)
     }
 

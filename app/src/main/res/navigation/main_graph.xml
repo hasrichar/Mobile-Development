@@ -13,6 +13,12 @@
         <action
             android:id="@+id/action_homeFragment_to_detailFoodFragment"
             app:destination="@id/detailFoodFragment" />
+        <action
+            android:id="@+id/action_homeFragment_to_foodFragment"
+            app:destination="@id/foodFragment" />
+        <action
+            android:id="@+id/action_homeFragment_to_articleFragment"
+            app:destination="@id/articleFragment" />
     </fragment>
     <fragment
         android:id="@+id/analysisFragment"
@@ -50,4 +56,18 @@
             android:name="food"
             app:argType="com.development.gocipes.model.Food" />
     </fragment>
+    <fragment
+        android:id="@+id/foodFragment"
+        android:name="com.development.gocipes.view.home.food.FoodFragment"
+        android:label="fragment_food"
+        tools:layout="@layout/fragment_food" >
+        <action
+            android:id="@+id/action_foodFragment_to_detailFoodFragment"
+            app:destination="@id/detailFoodFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/articleFragment"
+        android:name="com.development.gocipes.view.home.article.ArticleFragment"
+        android:label="fragment_article"
+        tools:layout="@layout/fragment_article" />
 </navigation>
