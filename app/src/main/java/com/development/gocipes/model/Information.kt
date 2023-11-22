@@ -9,4 +9,6 @@ data class Information(
     val name: String,
     val description: String,
     val imageUrl: String,
+    val videoUrl: String? = null,
+    val listPractice: List<String?>? = null
 ): Parcelable

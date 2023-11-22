@@ -4,7 +4,7 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     xmlns:app="http://schemas.android.com/apk/res-auto"
-    tools:context=".view.analysis.AnalysisFragment">
+    tools:context=".view.main.analysis.AnalysisFragment">
 
     <TextView
         android:layout_width="match_parent"
