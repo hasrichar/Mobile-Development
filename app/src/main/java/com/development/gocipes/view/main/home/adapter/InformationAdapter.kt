@@ -9,7 +9,8 @@ import com.development.gocipes.databinding.ItemGuideBinding
 import com.development.gocipes.model.Information
 import com.development.gocipes.utils.Extensions.showImage
 
-class InformationAdapter(val data: (Information) -> Unit) : ListAdapter<Information, InformationAdapter.GuideViewHolder>(
+class InformationAdapter(val data: (Information) -> Unit)
+    : ListAdapter<Information, InformationAdapter.GuideViewHolder>(
     DIFF_CALLBACK
 ) {
 
