@@ -123,9 +123,10 @@
         android:layout_marginTop="16dp"
         android:clipToPadding="false"
         android:paddingStart="8dp"
-        android:paddingBottom="1dp"
         android:paddingEnd="16dp"
+        android:paddingBottom="1dp"
         app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="1.0"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@id/tv_food" />
 
