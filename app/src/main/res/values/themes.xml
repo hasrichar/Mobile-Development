@@ -4,6 +4,7 @@
         <item name="colorPrimary">@color/primary</item>
         <item name="android:includeFontPadding">false</item>
         <item name="android:colorBackground">@color/white</item>
+        <item name="cardBackgroundColor">@color/white</item>
     </style>
 
     <style name="BottomNavigationView" parent="@style/TextAppearance.AppCompat.Caption">
