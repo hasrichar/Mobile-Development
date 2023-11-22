@@ -16,77 +16,83 @@ object DummyFood {
             ingredients = listOf(
                 Ingredient(
                     id = 1,
-                    description = "250 gram bayam segar, cuci dan potong-potong"
+                    description = "2 Slice Roti Tawar/Gandum"
                 ),
                 Ingredient(
                     id = 2,
-                    description = "2 siung bawang putih, cincang halus"
+                    description = "1 Slice Beef"
                 ),
                 Ingredient(
                     id = 3,
-                    description = "1 sdm minyak sayur"
+                    description = "1 slice keju mozzarella"
                 ),
                 Ingredient(
                     id = 4,
-                    description = "1/2 sdt garam (sesuai selera)"
+                    description = "1/4 bawang bombang"
                 ),
                 Ingredient(
                     id = 5,
-                    description = "1/4 sdt merica (sesuai selera)"
+                    description = "selada"
                 ),
                 Ingredient(
                     id = 6,
-                    description = "Air secukupnya"
+                    description = "tomat"
+                ),
+                Ingredient(
+                    id = 7,
+                    description = "Margarin"
+                ),
+                Ingredient(
+                    id = 8,
+                    description = "Saus Sambal(tomat)"
+                ),
+                Ingredient(
+                    id = 9,
+                    description = "Mayonnaise"
                 )
             ),
             step = listOf(
                 Cook(
                     id = 1,
-                    description = "Cuci bayam dengan baik dalam air mengalir dan buang batang yang keras.",
-                    imageUrl = "https://raw.githubusercontent.com/GoCipes/Resources/main/assets/cuci-bayam.png",
+                    description = "Panaskan pan / teflon yang telah dilumuri margarin",
+                    imageUrl = "https://raw.githubusercontent.com/GoCipes/Resources/main/assets/sd%201.jpeg",
                     minutes = 1
                 ),
                 Cook(
                     id = 2,
-                    description = "Potong bayam menjadi bagian-bagian yang lebih kecil.",
-                    imageUrl = "https://raw.githubusercontent.com/GoCipes/Resources/main/assets/potong-bayam.png",
-                    minutes = 3
+                    description = "Panggang roti dengan api kecil ",
+                    imageUrl = "https://raw.githubusercontent.com/GoCipes/Resources/main/assets/sd%202.jpeg",
+                    minutes = 2
                 ),
                 Cook(
                     id = 3,
-                    description = "Cincang halus bawang putih.",
-                    imageUrl = "https://raw.githubusercontent.com/GoCipes/Resources/main/assets/cincang-bawah.png",
-                    minutes = 4
+                    description = "Tambahkan selada,tomat dan keju",
+                    imageUrl = "https://raw.githubusercontent.com/GoCipes/Resources/main/assets/sd%204.jpeg",
+                    minutes = 1
                 ),
                 Cook(
                     id = 4,
-                    description = "Panaskan satu sendok makan minyak sayur dalam wajan besar di atas api sedang (2 menit).",
-                    imageUrl = "https://raw.githubusercontent.com/GoCipes/Resources/main/assets/panaskan-minyak.png",
-                    minutes = 15
+                    description = "Tambahkan beef ",
+                    imageUrl = "https://raw.githubusercontent.com/GoCipes/Resources/main/assets/sd%205.jpeg",
+                    minutes = 1
                 ),
                 Cook(
                     id = 5,
-                    description = "Tambahkan bawang putih cincang halus ke dalam minyak panas.",
-                    imageUrl = "https://raw.githubusercontent.com/GoCipes/Resources/main/assets/tiris.png",
-                    minutes = 10
+                    description = "Tambahkan saus dan mayonaise sesuai selera",
+                    imageUrl = "https://raw.githubusercontent.com/GoCipes/Resources/main/assets/sd%206.jpeg",
+                    minutes = 1
                 ),
                 Cook(
                     id = 6,
-                    description = "Setelah bawang putih telah berubah warna, tambahkan potongan bayam ke dalam wajan.... (6-8 menit).",
-                    imageUrl = "https://raw.githubusercontent.com/GoCipes/Resources/main/assets/rebus-bayam.png",
+                    description = "Tutup dan panggang kembali sebentar hingga keju meleleh",
+                    imageUrl = "https://raw.githubusercontent.com/GoCipes/Resources/main/assets/sd%207.jpeg",
                     minutes = 8
                 ),
                 Cook(
                     id = 7,
-                    description = "Taburkan garam sesuai selera dan merica di atas bayam. Aduk rata (1-2 menit).",
-                    imageUrl = "https://raw.githubusercontent.com/GoCipes/Resources/main/assets/tabur-bawang.png",
-                    minutes = 18
-                ),
-                Cook(
-                    id = 8,
-                    description = "Tuangkan sedikit air ke dalam wajan (sekitar 2-3 sendok makan) untuk membantu proses masak dan menciptakan...(3-4 menit).",
-                    imageUrl = "https://raw.githubusercontent.com/GoCipes/Resources/main/assets/tuang-air.png",
-                    minutes = 5
+                    description = "Sandwich siap disajikan",
+                    imageUrl = "https://raw.githubusercontent.com/GoCipes/Resources/main/assets/sd%209.jpeg",
+                    minutes = 0
                 )
             )
         ),
@@ -128,13 +134,13 @@ object DummyFood {
                     id = 1,
                     description = "Cuci bayam dengan baik dalam air mengalir dan buang batang yang keras.",
                     imageUrl = "https://raw.githubusercontent.com/GoCipes/Resources/main/assets/cuci-bayam.png",
-                    minutes = 4
+                    minutes = 2
                 ),
                 Cook(
                     id = 2,
                     description = "Potong bayam menjadi bagian-bagian yang lebih kecil.",
                     imageUrl = "https://raw.githubusercontent.com/GoCipes/Resources/main/assets/potong-bayam.png",
-                    minutes = 9
+                    minutes = 5
                 ),
                 Cook(
                     id = 3,
@@ -184,77 +190,67 @@ object DummyFood {
             ingredients = listOf(
                 Ingredient(
                     id = 1,
-                    description = "250 gram bayam segar, cuci dan potong-potong"
+                    description = "1.3 ikat kangkung,potong dan cuci "
                 ),
                 Ingredient(
                     id = 2,
-                    description = "2 siung bawang putih, cincang halus"
+                    description = "4 butir Bawang merah"
                 ),
                 Ingredient(
                     id = 3,
-                    description = "1 sdm minyak sayur"
+                    description = "2 siung bawang putih"
                 ),
                 Ingredient(
                     id = 4,
-                    description = "1/2 sdt garam (sesuai selera)"
+                    description = "2 Cabai keriting"
                 ),
                 Ingredient(
                     id = 5,
-                    description = "1/4 sdt merica (sesuai selera)"
+                    description = "2 Cabang rawit (sesuai selera)"
                 ),
                 Ingredient(
                     id = 6,
-                    description = "Air secukupnya"
+                    description = "Garam 1sdt"
+                ),
+                Ingredient(
+                    id = 7,
+                    description = "Gula pasir 1/2 sdt"
+                ),
+                Ingredient(
+                    id = 8,
+                    description = "Saus tiram 1sdm"
                 )
             ),
             step = listOf(
                 Cook(
                     id = 1,
-                    description = "Cuci bayam dengan baik dalam air mengalir dan buang batang yang keras.",
-                    imageUrl = "https://raw.githubusercontent.com/GoCipes/Resources/main/assets/cuci-bayam.png",
-                    minutes = 5
+                    description = "Iris tipis bawang merah,bawang putih,cabai rawit dan cabai keriting",
+                    imageUrl = "https://raw.githubusercontent.com/GoCipes/Resources/main/assets/kk%201.jpeg",
+                    minutes = 2
                 ),
                 Cook(
                     id = 2,
-                    description = "Potong bayam menjadi bagian-bagian yang lebih kecil.",
-                    imageUrl = "https://raw.githubusercontent.com/GoCipes/Resources/main/assets/potong-bayam.png",
+                    description = "Tumis hingga harum",
+                    imageUrl = "https://raw.githubusercontent.com/GoCipes/Resources/main/assets/kk%202.jpeg",
                     minutes = 3
                 ),
                 Cook(
                     id = 3,
-                    description = "Cincang halus bawang putih.",
-                    imageUrl = "https://raw.githubusercontent.com/GoCipes/Resources/main/assets/cincang-bawah.png",
-                    minutes = 5
-                ),
-                Cook(
-                    id = 4,
-                    description = "Panaskan satu sendok makan minyak sayur dalam wajan besar di atas api sedang (2 menit).",
-                    imageUrl = "https://raw.githubusercontent.com/GoCipes/Resources/main/assets/panaskan-minyak.png",
-                    minutes = 2
-                ),
-                Cook(
-                    id = 5,
-                    description = "Tambahkan bawang putih cincang halus ke dalam minyak panas.",
-                    imageUrl = "https://raw.githubusercontent.com/GoCipes/Resources/main/assets/tiris.png",
+                    description = "Masukkan saus tiram 1sendok makan.",
+                    imageUrl = "https://raw.githubusercontent.com/GoCipes/Resources/main/assets/kk%203.jpeg",
                     minutes = 1
                 ),
                 Cook(
-                    id = 6,
-                    description = "Setelah bawang putih telah berubah warna, tambahkan potongan bayam ke dalam wajan.... (6-8 menit).",
-                    imageUrl = "https://raw.githubusercontent.com/GoCipes/Resources/main/assets/rebus-bayam.png",
-                    minutes = 8
+                    id = 4,
+                    description = "Masukkan kangkung yang telah dicuci bersih dan dipotong memanjang (tunggu hingga layu dan lunak)",
+                    imageUrl = "https://raw.githubusercontent.com/GoCipes/Resources/main/assets/kk%204.jpeg",
+                    minutes = 5
                 ),
                 Cook(
-                    id = 7,
-                    description = "Taburkan garam sesuai selera dan merica di atas bayam. Aduk rata (1-2 menit).",
-                    imageUrl = "https://raw.githubusercontent.com/GoCipes/Resources/main/assets/tabur-bawang.png",
-                    minutes = 4
-                ),
-                Cook(
-                    id = 8,
-                    description = "Tuangkan sedikit air ke dalam wajan (sekitar 2-3 sendok makan) untuk membantu proses masak dan menciptakan...(3-4 menit).",
-                    imageUrl = "https://raw.githubusercontent.com/GoCipes/Resources/main/assets/tuang-air.png",
-                    minutes = 3
+                    id = 5,
+                    description = "Cah kangkung siap disajikan",
+                    imageUrl = "https://raw.githubusercontent.com/GoCipes/Resources/main/assets/kk%205.jpeg",
+                    minutes = 1
                 )
             )
         )
