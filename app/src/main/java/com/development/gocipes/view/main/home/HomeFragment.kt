@@ -49,6 +49,7 @@ class HomeFragment : Fragment() {
         binding?.contentHome?.apply {
             sivProfile.showImage(requireActivity(), url)
             tvName.text = name
+            searchBar.setOnClickListener { navigateToSearch() }
             tvAllFood.setOnClickListener { navigateToFood() }
             tvAllArticle.setOnClickListener { navigateToArticle() }
             tvAllTechnique.setOnClickListener { navigateToTechnique() }
@@ -154,6 +155,11 @@ class HomeFragment : Fragment() {
             HomeFragmentDirections.actionHomeFragmentToDetailTechniqueFragment(
                 information
             )
+        findNavController().navigate(action)
+    }
+
+    private fun navigateToSearch() {
+        val action = HomeFragmentDirections.actionHomeFragmentToSearchFragment()
         findNavController().navigate(action)
     }
 

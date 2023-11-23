@@ -255,4 +255,167 @@ object DummyFood {
             )
         )
     )
+
+    val dummyAllFood = listOf(
+        Food(
+            id = 1,
+            name = "Sandwich",
+            imageUrl = "https://raw.githubusercontent.com/GoCipes/Resources/main/assets/sandwitch%203.jpeg",
+            description = "",
+            minutes = "",
+            category = "",
+            ingredients = listOf(),
+            step = listOf()
+        ),
+        Food(
+            id = 2,
+            name = "Sayur Bayam",
+            imageUrl = "https://raw.githubusercontent.com/GoCipes/Resources/main/assets/Sayur%20Bening%20Bayam.jpeg",
+            description = "",
+            minutes = "",
+            category = "",
+            ingredients = listOf(),
+            step = listOf()
+        ),
+        Food(
+            id = 3,
+            name = "Salad Buah",
+            imageUrl = "https://www.frisianflag.com/storage/app/media/uploaded-files/salad-buah-yoghurt.jpg",
+            description = "",
+            minutes = "",
+            category = "",
+            ingredients = listOf(),
+            step = listOf()
+        ),
+        Food(
+            id = 4,
+            name = "Oatmeal",
+            imageUrl = "https://i.ndtvimg.com/i/2016-10/oats-620_620x350_81477570522.jpg",
+            description = "",
+            minutes = "",
+            category = "",
+            ingredients = listOf(),
+            step = listOf()
+        ),
+        Food(
+            id = 5,
+            name = "Salmon",
+            imageUrl = "https://asset.kompas.com/crops/vYkHwPjb4vTgIA5P07jR6JUsAok=/0x0:1000x667/750x500/data/photo/2020/06/25/5ef406be7464f.jpg",
+            description = "",
+            minutes = "",
+            category = "",
+            ingredients = listOf(),
+            step = listOf()
+        ),
+        Food(
+            id = 6,
+            name = "Bubur Kacang Hijau",
+            imageUrl = "https://cdn1-production-images-kly.akamaized.net/s9PhuSwJmRlohGmLO9pv24IuYMU=/469x260/smart/filters:quality(75):strip_icc():format(webp)/kly-media-production/medias/2558292/original/062688300_1546055941-shutterstock_426965845.jpg",
+            description = "",
+            minutes = "",
+            category = "",
+            ingredients = listOf(),
+            step = listOf()
+        ),
+        Food(
+            id = 7,
+            name = "Tempe Orek",
+            imageUrl = "https://asset.kompas.com/crops/yVU4FOVQhlwB5tGAvNUtMqU_dg8=/0x0:1000x667/750x500/data/photo/2023/01/04/63b4c955ae458.jpeg",
+            description = "",
+            minutes = "",
+            category = "",
+            ingredients = listOf(),
+            step = listOf()
+        ),
+        Food(
+            id = 8,
+            name = "Sup Ayam",
+            imageUrl = "https://www.frisianflag.com/storage/app/media/uploaded-files/sop-ayam-sederhana.jpg",
+            description = "",
+            minutes = "",
+            category = "",
+            ingredients = listOf(),
+            step = listOf()
+        ),
+        Food(
+            id = 9,
+            name = "Sup Sayur",
+            imageUrl = "https://www.frisianflag.com/storage/app/media/uploaded-files/sop-baso.jpg",
+            description = "",
+            minutes = "",
+            category = "",
+            ingredients = listOf(),
+            step = listOf()
+        ),
+        Food(
+            id = 10,
+            name = "Tempe Bacem",
+            imageUrl = "https://paxelmarket.co/wp-content/uploads/2021/08/tempe-bacem-keluarga-isi-10-pcs.jpg",
+            description = "",
+            minutes = "",
+            category = "",
+            ingredients = listOf(),
+            step = listOf()
+        ),
+        Food(
+            id = 11,
+            name = "Cap Cay",
+            imageUrl = "https://www.frisianflag.com/storage/app/media/uploaded-files/sayur-capcay-kuah.jpg",
+            description = "",
+            minutes = "",
+            category = "",
+            ingredients = listOf(),
+            step = listOf()
+        ),
+        Food(
+            id = 12,
+            name = "Telur Balado",
+            imageUrl = "https://kurio-img.kurioapps.com/21/03/03/e8954a8a-c63d-4a80-a1ad-154473c6f4c4.jpe",
+            description = "",
+            minutes = "",
+            category = "",
+            ingredients = listOf(),
+            step = listOf()
+        ),
+        Food(
+            id = 13,
+            name = "Telur Dadar",
+            imageUrl = "https://cdn0-production-images-kly.akamaized.net/96cejMLvediHcW0OKb8XJFV2174=/0x0:1920x1082/800x450/filters:quality(75):strip_icc():format(webp)/kly-media-production/medias/2559225/original/035309500_1546271126-kitchen-775746_1920.jpg",
+            description = "",
+            minutes = "",
+            category = "",
+            ingredients = listOf(),
+            step = listOf()
+        ),
+        Food(
+            id = 14,
+            name = "Bihun Goreng",
+            imageUrl = "https://asset.kompas.com/crops/rfAN2frid2RjzIKUrsfPiYnuG8w=/539x0:5603x3376/750x500/data/photo/2022/03/07/62254d46a6be1.jpg",
+            description = "",
+            minutes = "",
+            category = "",
+            ingredients = listOf(),
+            step = listOf()
+        ),
+        Food(
+            id = 15,
+            name = "Tongseng Daging",
+            imageUrl = "https://asset.kompas.com/crops/-UPU2g2EDTsWjuHthk_WNUUGkns=/0x9:680x462/750x500/data/photo/2020/06/23/5ef1e941f232b.jpg",
+            description = "",
+            minutes = "",
+            category = "",
+            ingredients = listOf(),
+            step = listOf()
+        ),
+        Food(
+            id = 16,
+            name = "Rendang",
+            imageUrl = "https://asset.kompas.com/crops/YKSBLbCigyp8uVtrfdqq57cS4Is=/0x3:977x654/750x500/data/photo/2020/06/30/5efaf91e0ec2c.jpg",
+            description = "",
+            minutes = "",
+            category = "",
+            ingredients = listOf(),
+            step = listOf()
+        ),
+    )
 }
