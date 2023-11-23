@@ -9,7 +9,7 @@ import com.development.gocipes.databinding.ItemCategoryBinding
 import com.development.gocipes.model.Category
 import com.development.gocipes.utils.Extensions.showImage
 
-class CategoryAdapter : ListAdapter<Category, CategoryAdapter.CategoryViewHolder>(DIFF_UTIL) {
+class CategoryAdapter(val data: (Category) -> Unit) : ListAdapter<Category, CategoryAdapter.CategoryViewHolder>(DIFF_UTIL) {
 
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): CategoryViewHolder {
         val binding = ItemCategoryBinding.inflate(LayoutInflater.from(parent.context), parent, false)
@@ -26,6 +26,8 @@ class CategoryAdapter : ListAdapter<Category, CategoryAdapter.CategoryViewHolder
                 sivCategory.showImage(itemView.context, category.imageUrl)
                 tvName.text = category.name
             }
+
+            itemView.setOnClickListener { data.invoke(category) }
         }
     }
 
