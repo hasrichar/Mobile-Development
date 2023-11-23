@@ -61,8 +61,10 @@ class HomeFragment : Fragment() {
         setupRecyclerViewTechnique(listTechnique)
     }
 
-    private fun setupRecyclerCategory(category: List<Category>) {
-        categoryAdapter = CategoryAdapter()
+    private fun setupRecyclerCategory(categories: List<Category>) {
+        categoryAdapter = CategoryAdapter { category ->
+            navigateToCategory(category)
+        }
 
         binding?.contentHome?.rvCategory?.apply {
             adapter = categoryAdapter
@@ -70,7 +72,7 @@ class HomeFragment : Fragment() {
                 LinearLayoutManager(requireActivity(), LinearLayoutManager.HORIZONTAL, false)
         }
 
-        categoryAdapter.submitList(category)
+        categoryAdapter.submitList(categories)
     }
 
     private fun setupRecyclerViewFood(listFood: List<Food>) {
@@ -160,6 +162,11 @@ class HomeFragment : Fragment() {
 
     private fun navigateToSearch() {
         val action = HomeFragmentDirections.actionHomeFragmentToSearchFragment()
+        findNavController().navigate(action)
+    }
+
+    private fun navigateToCategory(category: Category) {
+        val action = HomeFragmentDirections.actionHomeFragmentToCategoryFragment(category)
         findNavController().navigate(action)
     }
 
