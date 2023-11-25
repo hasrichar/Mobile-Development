@@ -1,5 +1,6 @@
 package com.development.gocipes.view.main.home.cook.timer
 
+import android.annotation.SuppressLint
 import android.os.Bundle
 import android.os.CountDownTimer
 import android.view.LayoutInflater
@@ -17,10 +18,12 @@ import androidx.fragment.app.Fragment
 import androidx.lifecycle.Lifecycle
 import androidx.navigation.fragment.findNavController
 import androidx.navigation.fragment.navArgs
+import androidx.viewpager.widget.ViewPager
 import com.development.gocipes.R
 import com.development.gocipes.databinding.FragmentTimerBinding
+import com.development.gocipes.model.Cook
 import com.development.gocipes.model.Food
-import com.development.gocipes.utils.Extensions.showImage
+import com.development.gocipes.view.main.home.cook.timer.adapter.TimerAdapter
 import java.text.DecimalFormat
 import kotlin.math.roundToInt
 
@@ -29,6 +32,7 @@ class TimerFragment : Fragment() {
     private var _binding: FragmentTimerBinding? = null
     private val binding get() = _binding
     private lateinit var countDownTimer: CountDownTimer
+    private lateinit var timerAdapter: TimerAdapter
     private val navArgs by navArgs<TimerFragmentArgs>()
 
     override fun onCreateView(
@@ -50,20 +54,33 @@ class TimerFragment : Fragment() {
         val step = foodArgs.step
 
         binding?.apply {
-            sivStep.showImage(requireActivity(), step[0].imageUrl)
-            tvStep.text = step[0].description
+            btnNext.setOnClickListener { next() }
+            btnPrevious.setOnClickListener { previous() }
         }
 
-        setupToolbar(foodArgs)
-        setupTimer(step[0].minutes)
+        setupTimer(foodArgs.step[0].minutes)
+        setupToolbar(foodArgs.step[0].id)
+        setupViewPager(step)
+        pageChange(foodArgs)
     }
 
-    private fun setupToolbar(food: Food) {
+    @SuppressLint("ClickableViewAccessibility")
+    private fun setupViewPager(steps: List<Cook>) {
+        timerAdapter = TimerAdapter(requireActivity(), steps)
+
+        binding?.viewPager?.apply {
+            adapter = timerAdapter
+        }
+
+        binding?.viewPager?.setOnTouchListener { _, _ -> true }
+    }
+
+    private fun setupToolbar(id: Int) {
         (activity as AppCompatActivity).apply {
             setSupportActionBar(binding?.toolbar)
             supportActionBar?.apply {
                 setDisplayHomeAsUpEnabled(true)
-                title = "Step ${food.step[0].id}"
+                title = "Step $id"
             }
         }
 
@@ -78,6 +95,24 @@ class TimerFragment : Fragment() {
         }, viewLifecycleOwner, Lifecycle.State.CREATED)
     }
 
+    private fun pageChange(food: Food) {
+        binding?.viewPager?.addOnPageChangeListener(object : ViewPager.OnPageChangeListener {
+            override fun onPageScrolled(
+                position: Int,
+                positionOffset: Float,
+                positionOffsetPixels: Int
+            ) {
+            }
+
+            override fun onPageSelected(position: Int) {
+                setupTimer(food.step[position].minutes)
+                setupToolbar(food.step[position].id)
+            }
+
+            override fun onPageScrollStateChanged(state: Int) {}
+        })
+    }
+
     private fun setupTimer(timer: Int) {
         val clockTime = (timer * 60 * 1000).toLong()
         val progressTime = (clockTime / 1000).toFloat()
@@ -86,22 +121,40 @@ class TimerFragment : Fragment() {
         var secondLeft = 0
         countDownTimer = object : CountDownTimer(clockTime, 1000) {
             override fun onTick(millisUntilFinished: Long) {
-                val second = (millisUntilFinished / 1000.0f).roundToInt()
-                if (second != secondLeft) {
-                    secondLeft = second
+                val seconds = (millisUntilFinished / 1000.0f).roundToInt()
+                if (seconds != secondLeft) {
+                    secondLeft = seconds
 
                     binding?.apply {
                         timerFormat(secondLeft, tvTimer)
                         btnPause.setOnClickListener {
                             countDownTimer.cancel()
-                            btnPause.icon = ContextCompat.getDrawable(requireActivity(), R.drawable.ic_play)
+                            btnPause.icon =
+                                ContextCompat.getDrawable(requireActivity(), R.drawable.ic_play)
+                        }
+                        btnNext.setOnClickListener {
+                            countDownTimer.cancel()
+                            btnPause.icon =
+                                ContextCompat.getDrawable(requireActivity(), R.drawable.ic_play)
+                            next()
+                        }
+                        btnPrevious.setOnClickListener {
+                            countDownTimer.cancel()
+                            btnPause.icon =
+                                ContextCompat.getDrawable(requireActivity(), R.drawable.ic_play)
+                            previous()
                         }
                     }
                 }
             }
 
             override fun onFinish() {
-                binding?.tvTimer?.let { timerFormat(0, it) }
+                binding?.apply {
+                    binding?.apply {
+                        viewPager.setCurrentItem(viewPager.currentItem + 1, true)
+                        countDownTimer.start()
+                    }
+                }
             }
         }
 
@@ -127,8 +180,21 @@ class TimerFragment : Fragment() {
         timeTxt.text = timeFormat
     }
 
+    private fun previous() {
+        binding?.apply {
+            viewPager.setCurrentItem(viewPager.currentItem - 1, true)
+        }
+    }
+
+    private fun next() {
+        binding?.apply {
+            viewPager.setCurrentItem(viewPager.currentItem + 1, true)
+        }
+    }
+
     override fun onDestroy() {
         super.onDestroy()
         _binding = null
+        countDownTimer.cancel()
     }
 }

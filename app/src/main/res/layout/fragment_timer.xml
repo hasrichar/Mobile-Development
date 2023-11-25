@@ -15,31 +15,13 @@
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
 
-    <com.google.android.material.imageview.ShapeableImageView
-        android:id="@+id/siv_step"
+    <androidx.viewpager.widget.ViewPager
+        android:id="@+id/view_pager"
         android:layout_width="match_parent"
-        android:layout_height="180dp"
-        android:layout_marginHorizontal="16dp"
-        android:layout_marginTop="16dp"
-        android:scaleType="centerCrop"
-        app:shapeAppearance="@style/ShapeAppearance.Material3.Corner.Medium"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
+        android:layout_height="280dp"
         app:layout_constraintTop_toBottomOf="@id/toolbar"
-        tools:src="@tools:sample/avatars" />
-
-    <com.google.android.material.textview.MaterialTextView
-        android:id="@+id/tv_step"
-        android:layout_width="0dp"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="16dp"
-        android:fontFamily="@font/poppins_semi_bold"
-        android:textAlignment="center"
-        android:textSize="16sp"
-        app:layout_constraintEnd_toEndOf="@id/siv_step"
-        app:layout_constraintStart_toStartOf="@id/siv_step"
-        app:layout_constraintTop_toBottomOf="@id/siv_step"
-        tools:text="Cuci bayam dengan baik dalam air mengalir dan buang batang yang keras." />
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent" />
 
     <ProgressBar
         android:id="@+id/progress_circular"
@@ -49,7 +31,7 @@
         android:progressDrawable="@drawable/circular_progress_bar"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@id/tv_step"
+        app:layout_constraintTop_toBottomOf="@id/view_pager"
         app:layout_constraintBottom_toTopOf="@id/btn_pause"/>
 
     <TextView
