@@ -70,4 +70,7 @@ dependencies {
 
     //Youtube API
     implementation ("com.pierfrancescosoffritti.androidyoutubeplayer:core:12.1.0")
+
+    //sonic-countdown
+    implementation ("com.github.orbitalsonic:SonicCountDownTimer:1.0.4")
 }

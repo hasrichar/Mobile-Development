@@ -2,7 +2,6 @@ package com.development.gocipes.view.main.home.cook.timer
 
 import android.annotation.SuppressLint
 import android.os.Bundle
-import android.os.CountDownTimer
 import android.view.LayoutInflater
 import android.view.Menu
 import android.view.MenuInflater
@@ -24,6 +23,7 @@ import com.development.gocipes.databinding.FragmentTimerBinding
 import com.development.gocipes.model.Cook
 import com.development.gocipes.model.Food
 import com.development.gocipes.view.main.home.cook.timer.adapter.TimerAdapter
+import com.orbitalsonic.sonictimer.SonicCountDownTimer
 import java.text.DecimalFormat
 import kotlin.math.roundToInt
 
@@ -31,7 +31,7 @@ class TimerFragment : Fragment() {
 
     private var _binding: FragmentTimerBinding? = null
     private val binding get() = _binding
-    private lateinit var countDownTimer: CountDownTimer
+    private lateinit var countDownTimer: SonicCountDownTimer
     private lateinit var timerAdapter: TimerAdapter
     private val navArgs by navArgs<TimerFragmentArgs>()
 
@@ -119,40 +119,22 @@ class TimerFragment : Fragment() {
         val second = (clockTime / 1000.0f).roundToInt()
 
         var secondLeft = 0
-        countDownTimer = object : CountDownTimer(clockTime, 1000) {
-            override fun onTick(millisUntilFinished: Long) {
-                val seconds = (millisUntilFinished / 1000.0f).roundToInt()
+        countDownTimer = object : SonicCountDownTimer(clockTime, 1000) {
+            override fun onTimerTick(timeRemaining: Long) {
+                val seconds = (timeRemaining / 1000.0f).roundToInt()
                 if (seconds != secondLeft) {
                     secondLeft = seconds
-
                     binding?.apply {
                         timerFormat(secondLeft, tvTimer)
-                        btnPause.setOnClickListener {
-                            countDownTimer.cancel()
-                            btnPause.icon =
-                                ContextCompat.getDrawable(requireActivity(), R.drawable.ic_play)
-                        }
-                        btnNext.setOnClickListener {
-                            countDownTimer.cancel()
-                            btnPause.icon =
-                                ContextCompat.getDrawable(requireActivity(), R.drawable.ic_play)
-                            next()
-                        }
-                        btnPrevious.setOnClickListener {
-                            countDownTimer.cancel()
-                            btnPause.icon =
-                                ContextCompat.getDrawable(requireActivity(), R.drawable.ic_play)
-                            previous()
-                        }
                     }
                 }
             }
 
-            override fun onFinish() {
+            override fun onTimerFinish() {
                 binding?.apply {
                     binding?.apply {
                         viewPager.setCurrentItem(viewPager.currentItem + 1, true)
-                        countDownTimer.start()
+                        countDownTimer.startCountDownTimer()
                     }
                 }
             }
@@ -160,8 +142,33 @@ class TimerFragment : Fragment() {
 
         binding?.apply {
             btnPause.setOnClickListener {
-                countDownTimer.start()
-                btnPause.icon = ContextCompat.getDrawable(requireActivity(), R.drawable.ic_pause)
+                if (countDownTimer.isTimerRunning()) {
+                    if (countDownTimer.isTimerPaused()) {
+                        countDownTimer.resumeCountDownTimer()
+                        btnPause.icon =
+                            ContextCompat.getDrawable(requireActivity(), R.drawable.ic_pause)
+                    } else {
+                        countDownTimer.pauseCountDownTimer()
+                        btnPause.icon =
+                            ContextCompat.getDrawable(requireActivity(), R.drawable.ic_play)
+                    }
+                } else {
+                    countDownTimer.startCountDownTimer()
+                    btnPause.icon =
+                        ContextCompat.getDrawable(requireActivity(), R.drawable.ic_pause)
+                }
+            }
+            btnNext.setOnClickListener {
+                countDownTimer.cancelCountDownTimer()
+                btnPause.icon =
+                    ContextCompat.getDrawable(requireActivity(), R.drawable.ic_play)
+                next()
+            }
+            btnPrevious.setOnClickListener {
+                countDownTimer.cancelCountDownTimer()
+                btnPause.icon =
+                    ContextCompat.getDrawable(requireActivity(), R.drawable.ic_play)
+                previous()
             }
             timerFormat(second, tvTimer)
             progressCircular.max = progressTime.toInt()
@@ -195,6 +202,6 @@ class TimerFragment : Fragment() {
     override fun onDestroy() {
         super.onDestroy()
         _binding = null
-        countDownTimer.cancel()
+        countDownTimer.cancelCountDownTimer()
     }
 }
