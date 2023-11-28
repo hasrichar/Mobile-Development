@@ -146,7 +146,7 @@ class TimerFragment : Fragment() {
                         btnPause.icon =
                             ContextCompat.getDrawable(
                                 requireActivity(),
-                                com.development.gocipes.core.R.drawable.ic_pause
+                                R.drawable.ic_pause
                             )
                     } else {
                         countDownTimer.pauseCountDownTimer()

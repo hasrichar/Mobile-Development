@@ -7,7 +7,9 @@ import android.view.ViewGroup
 import androidx.fragment.app.Fragment
 import androidx.navigation.fragment.findNavController
 import androidx.recyclerview.widget.LinearLayoutManager
+import com.development.gocipes.core.model.Category
 import com.development.gocipes.core.model.Food
+import com.development.gocipes.core.model.Information
 import com.development.gocipes.core.presentation.adapter.CategoryAdapter
 import com.development.gocipes.core.presentation.adapter.FoodAdapter
 import com.development.gocipes.core.presentation.adapter.InformationAdapter
@@ -56,7 +58,7 @@ class HomeFragment : Fragment() {
         setupRecyclerViewTechnique(listTechnique)
     }
 
-    private fun setupRecyclerCategory(categories: List<com.development.gocipes.core.model.Category>) {
+    private fun setupRecyclerCategory(categories: List<Category>) {
         categoryAdapter = CategoryAdapter { category ->
             navigateToCategory(category)
         }
@@ -72,7 +74,7 @@ class HomeFragment : Fragment() {
 
     private fun setupRecyclerViewFood(listFood: List<Food>) {
         foodAdapter = FoodAdapter { food ->
-            navigateToDetailFood(food)
+            navigateToFoodGraph(food)
         }
 
         binding?.contentHome?.rvFood?.apply {
@@ -85,9 +87,9 @@ class HomeFragment : Fragment() {
         foodAdapter.submitList(listFood)
     }
 
-    private fun setupRecyclerViewGuide(listInformation: List<com.development.gocipes.core.model.Information>) {
+    private fun setupRecyclerViewGuide(listInformation: List<Information>) {
         informationAdapter = InformationAdapter { information ->
-            navigateDetailArticle(information)
+            navigateToArticleGraph(information)
         }
 
         binding?.contentHome?.rvGuide?.apply {
@@ -99,9 +101,9 @@ class HomeFragment : Fragment() {
         informationAdapter.submitList(listInformation)
     }
 
-    private fun setupRecyclerViewTechnique(listTechnique: List<com.development.gocipes.core.model.Information>) {
+    private fun setupRecyclerViewTechnique(listTechnique: List<Information>) {
         informationAdapter = InformationAdapter { information ->
-            navigateToDetailTechnique(information)
+            navigateToTechniqueGraph(information)
         }
 
         binding?.contentHome?.rvTechnique?.apply {
@@ -113,17 +115,14 @@ class HomeFragment : Fragment() {
         informationAdapter.submitList(listTechnique)
     }
 
-    private fun navigateToDetailFood(food: Food) {
-        val action =
-            HomeFragmentDirections.actionHomeFragmentToDetailFoodFragment(
-                food
-            )
-        findNavController().navigate(action)
-    }
-
     private fun navigateToFood() {
         val action =
             HomeFragmentDirections.actionHomeFragmentToFoodFragment()
+        findNavController().navigate(action)
+    }
+
+    private fun navigateToFoodGraph(food: Food) {
+        val action = HomeFragmentDirections.actionHomeFragmentToFoodGraph(food)
         findNavController().navigate(action)
     }
 
@@ -133,11 +132,9 @@ class HomeFragment : Fragment() {
         findNavController().navigate(action)
     }
 
-    private fun navigateDetailArticle(information: com.development.gocipes.core.model.Information) {
+    private fun navigateToArticleGraph(information: Information) {
         val action =
-            HomeFragmentDirections.actionHomeFragmentToDetailArticleFragment(
-                information
-            )
+            HomeFragmentDirections.actionHomeFragmentToArticleGraph(information)
         findNavController().navigate(action)
     }
 
@@ -147,11 +144,9 @@ class HomeFragment : Fragment() {
         findNavController().navigate(action)
     }
 
-    private fun navigateToDetailTechnique(information: com.development.gocipes.core.model.Information) {
+    private fun navigateToTechniqueGraph(information: Information) {
         val action =
-            HomeFragmentDirections.actionHomeFragmentToDetailTechniqueFragment(
-                information
-            )
+            HomeFragmentDirections.actionHomeFragmentToTechniqueGraph(information)
         findNavController().navigate(action)
     }
 
@@ -161,7 +156,7 @@ class HomeFragment : Fragment() {
         findNavController().navigate(action)
     }
 
-    private fun navigateToCategory(category: com.development.gocipes.core.model.Category) {
+    private fun navigateToCategory(category: Category) {
         val action =
             HomeFragmentDirections.actionHomeFragmentToCategoryFragment(
                 category

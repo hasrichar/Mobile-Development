@@ -80,9 +80,7 @@ class FoodFragment : Fragment() {
 
     private fun navigateToDetail(food: Food) {
         val action =
-            FoodFragmentDirections.actionFoodFragmentToDetailFoodFragment(
-                food
-            )
+            FoodFragmentDirections.actionFoodFragmentToFoodGraph(food)
         findNavController().navigate(action)
     }
 

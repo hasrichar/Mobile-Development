@@ -15,6 +15,7 @@ import androidx.fragment.app.Fragment
 import androidx.lifecycle.Lifecycle
 import androidx.navigation.fragment.findNavController
 import androidx.recyclerview.widget.GridLayoutManager
+import com.development.gocipes.core.model.Information
 import com.development.gocipes.databinding.FragmentTechniqueBinding
 import com.development.gocipes.core.presentation.adapter.InformationGridAdapter
 
@@ -61,7 +62,7 @@ class TechniqueFragment : Fragment() {
 
     private fun setupView() {
         informationGridAdapter = InformationGridAdapter { information ->
-            navigateToDetailTechnique(information)
+            navigateToTechniqueGraph(information)
         }
         val listArticle = com.development.gocipes.core.data.DummyInformation.dummyTechnique
         val gridCount =
@@ -77,11 +78,8 @@ class TechniqueFragment : Fragment() {
         informationGridAdapter.submitList(listArticle)
     }
 
-    private fun navigateToDetailTechnique(information: com.development.gocipes.core.model.Information) {
-        val action =
-            TechniqueFragmentDirections.actionTechniqueFragmentToDetailTechniqueFragment(
-                information
-            )
+    private fun navigateToTechniqueGraph(information: Information) {
+        val action = TechniqueFragmentDirections.actionTechniqueFragmentToTechniqueGraph(information)
         findNavController().navigate(action)
     }
 
