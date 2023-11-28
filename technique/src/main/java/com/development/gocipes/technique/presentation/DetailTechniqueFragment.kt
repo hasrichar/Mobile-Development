@@ -1,4 +1,4 @@
-package com.development.gocipes.presentation.home.technique.detail
+package com.development.gocipes.technique.presentation
 
 import android.os.Bundle
 import android.view.LayoutInflater
@@ -14,7 +14,7 @@ import androidx.fragment.app.Fragment
 import androidx.lifecycle.Lifecycle
 import androidx.navigation.fragment.findNavController
 import androidx.navigation.fragment.navArgs
-import com.development.gocipes.databinding.FragmentDetailTechniqueBinding
+import com.development.gocipes.technique.databinding.FragmentDetailTechniqueBinding
 import com.pierfrancescosoffritti.androidyoutubeplayer.core.player.YouTubePlayer
 import com.pierfrancescosoffritti.androidyoutubeplayer.core.player.listeners.AbstractYouTubePlayerListener
 

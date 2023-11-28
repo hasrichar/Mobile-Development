@@ -22,7 +22,7 @@
     </fragment>
     <activity
         android:id="@+id/mainActivity"
-        android:name="com.development.gocipes.presentation.main.MainActivity"
+        android:name="com.development.gocipes.presentation.MainActivity"
         android:label="activity_main" />
     <fragment
         android:id="@+id/registerFragment"

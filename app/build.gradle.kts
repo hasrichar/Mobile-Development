@@ -48,6 +48,7 @@ dependencies {
     implementation(project(Modules.auth))
     implementation(project(Modules.food))
     implementation(project(Modules.article))
+    implementation(project(Modules.technique))
 
     implementation(Dependencies.coreKtx)
     implementation(Dependencies.appCompat)
@@ -72,7 +73,4 @@ dependencies {
 
     //circle-image
     implementation(Dependencies.hdodenhof)
-
-    //youtube-api
-    implementation(Dependencies.youtubePlayer)
 }

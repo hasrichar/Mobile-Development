@@ -4,4 +4,5 @@ object Modules {
     val app = ":app"
     val food = ":food"
     val article = ":article"
+    val technique = ":technique"
 }

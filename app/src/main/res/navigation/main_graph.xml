@@ -130,7 +130,7 @@
     </fragment>
     <fragment
         android:id="@+id/detailTechniqueFragment"
-        android:name="com.development.gocipes.presentation.home.technique.detail.DetailTechniqueFragment"
+        android:name="com.development.gocipes.technique.presentation.DetailTechniqueFragment"
         android:label="fragment_detail_technique"
         tools:layout="@layout/fragment_detail_technique" >
         <argument

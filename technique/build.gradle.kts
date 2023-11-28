@@ -4,11 +4,10 @@ plugins {
     id("kotlin-kapt")
     id("dagger.hilt.android.plugin")
     id("androidx.navigation.safeargs")
-    id("kotlin-parcelize")
 }
 
 android {
-    namespace = "com.development.gocipes.core"
+    namespace = "com.development.gocipes.technique"
     compileSdk = 33
 
     defaultConfig {
@@ -42,6 +41,8 @@ android {
 
 dependencies {
 
+    implementation(project(Modules.core))
+
     implementation(Dependencies.coreKtx)
     implementation(Dependencies.appCompat)
 
@@ -49,20 +50,20 @@ dependencies {
     implementation(Dependencies.material)
     implementation(Dependencies.constraintLayout)
 
-    //navigation
-    implementation(Dependencies.navigationKtx)
-    implementation(Dependencies.navigationUiKtx)
-
     //testing
     testImplementation(Dependencies.junit)
     androidTestImplementation(Dependencies.extJunit)
     androidTestImplementation(Dependencies.esspresso)
 
-    //glide
-    implementation(Dependencies.glide)
-
     //dagger-hilt
     implementation(Dependencies.daggerHilt)
     kapt(Dependencies.hiltCompiler)
     kapt(Dependencies.daggerHiltCompiler)
+
+    //navigation
+    implementation(Dependencies.navigationKtx)
+    implementation(Dependencies.navigationUiKtx)
+
+    //youtube-api
+    implementation(Dependencies.youtubePlayer)
 }
