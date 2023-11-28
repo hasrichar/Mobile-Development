@@ -15,8 +15,8 @@ import androidx.fragment.app.Fragment
 import androidx.lifecycle.Lifecycle
 import androidx.navigation.fragment.findNavController
 import androidx.recyclerview.widget.GridLayoutManager
-import com.development.gocipes.databinding.FragmentArticleBinding
 import com.development.gocipes.core.presentation.adapter.InformationGridAdapter
+import com.development.gocipes.databinding.FragmentArticleBinding
 
 class ArticleFragment : Fragment() {
 
@@ -64,7 +64,8 @@ class ArticleFragment : Fragment() {
             navigateDetailArticle(information)
         }
         val listArticle = com.development.gocipes.core.data.DummyInformation.dummyArticle
-        val gridCount = if (requireActivity().resources.configuration.orientation == Configuration.ORIENTATION_PORTRAIT) 2 else 4
+        val gridCount =
+            if (requireActivity().resources.configuration.orientation == Configuration.ORIENTATION_PORTRAIT) 2 else 4
 
         binding?.apply {
             rvArticle.apply {
@@ -77,10 +78,7 @@ class ArticleFragment : Fragment() {
     }
 
     private fun navigateDetailArticle(information: com.development.gocipes.core.model.Information) {
-        val action =
-            com.development.gocipes.presentation.main.home.article.ArticleFragmentDirections.actionArticleFragmentToDetailArticleFragment(
-                information
-            )
+        val action = ArticleFragmentDirections.actionArticleFragmentToDetailArticleFragment(information)
         findNavController().navigate(action)
     }
 

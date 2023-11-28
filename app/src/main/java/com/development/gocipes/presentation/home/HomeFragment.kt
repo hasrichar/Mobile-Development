@@ -115,7 +115,7 @@ class HomeFragment : Fragment() {
 
     private fun navigateToDetailFood(food: Food) {
         val action =
-            com.development.gocipes.presentation.main.home.HomeFragmentDirections.actionHomeFragmentToDetailFoodFragment(
+            HomeFragmentDirections.actionHomeFragmentToDetailFoodFragment(
                 food
             )
         findNavController().navigate(action)
@@ -123,19 +123,19 @@ class HomeFragment : Fragment() {
 
     private fun navigateToFood() {
         val action =
-            com.development.gocipes.presentation.main.home.HomeFragmentDirections.actionHomeFragmentToFoodFragment()
+            HomeFragmentDirections.actionHomeFragmentToFoodFragment()
         findNavController().navigate(action)
     }
 
     private fun navigateToArticle() {
         val action =
-            com.development.gocipes.presentation.main.home.HomeFragmentDirections.actionHomeFragmentToArticleFragment()
+            HomeFragmentDirections.actionHomeFragmentToArticleFragment()
         findNavController().navigate(action)
     }
 
     private fun navigateDetailArticle(information: com.development.gocipes.core.model.Information) {
         val action =
-            com.development.gocipes.presentation.main.home.HomeFragmentDirections.actionHomeFragmentToDetailArticleFragment(
+            HomeFragmentDirections.actionHomeFragmentToDetailArticleFragment(
                 information
             )
         findNavController().navigate(action)
@@ -143,13 +143,13 @@ class HomeFragment : Fragment() {
 
     private fun navigateToTechnique() {
         val action =
-            com.development.gocipes.presentation.main.home.HomeFragmentDirections.actionHomeFragmentToTechniqueFragment()
+            HomeFragmentDirections.actionHomeFragmentToTechniqueFragment()
         findNavController().navigate(action)
     }
 
     private fun navigateToDetailTechnique(information: com.development.gocipes.core.model.Information) {
         val action =
-            com.development.gocipes.presentation.main.home.HomeFragmentDirections.actionHomeFragmentToDetailTechniqueFragment(
+            HomeFragmentDirections.actionHomeFragmentToDetailTechniqueFragment(
                 information
             )
         findNavController().navigate(action)
@@ -157,13 +157,13 @@ class HomeFragment : Fragment() {
 
     private fun navigateToSearch() {
         val action =
-            com.development.gocipes.presentation.main.home.HomeFragmentDirections.actionHomeFragmentToSearchFragment()
+            HomeFragmentDirections.actionHomeFragmentToSearchFragment()
         findNavController().navigate(action)
     }
 
     private fun navigateToCategory(category: com.development.gocipes.core.model.Category) {
         val action =
-            com.development.gocipes.presentation.main.home.HomeFragmentDirections.actionHomeFragmentToCategoryFragment(
+            HomeFragmentDirections.actionHomeFragmentToCategoryFragment(
                 category
             )
         findNavController().navigate(action)

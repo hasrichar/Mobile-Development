@@ -80,7 +80,7 @@ class FoodFragment : Fragment() {
 
     private fun navigateToDetail(food: Food) {
         val action =
-            com.development.gocipes.presentation.main.home.food.FoodFragmentDirections.actionFoodFragmentToDetailFoodFragment(
+            FoodFragmentDirections.actionFoodFragmentToDetailFoodFragment(
                 food
             )
         findNavController().navigate(action)

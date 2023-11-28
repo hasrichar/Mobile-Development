@@ -24,7 +24,7 @@ class CategoryFragment : Fragment() {
     private var _binding: FragmentCategoryBinding? = null
     private val binding get() = _binding
     private lateinit var foodGridAdapter: FoodGridAdapter
-    private val navArgs by navArgs<com.development.gocipes.presentation.main.home.category.CategoryFragmentArgs>()
+    private val navArgs by navArgs<CategoryFragmentArgs>()
 
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,

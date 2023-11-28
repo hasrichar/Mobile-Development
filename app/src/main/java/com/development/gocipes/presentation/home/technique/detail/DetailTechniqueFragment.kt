@@ -22,7 +22,7 @@ class DetailTechniqueFragment : Fragment() {
 
     private var _binding: FragmentDetailTechniqueBinding? = null
     private val binding get() = _binding
-    private val navArgs by navArgs<com.development.gocipes.presentation.main.home.technique.detail.DetailTechniqueFragmentArgs>()
+    private val navArgs by navArgs<DetailTechniqueFragmentArgs>()
 
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,

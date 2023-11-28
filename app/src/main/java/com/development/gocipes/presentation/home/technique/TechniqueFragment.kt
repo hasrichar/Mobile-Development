@@ -79,7 +79,7 @@ class TechniqueFragment : Fragment() {
 
     private fun navigateToDetailTechnique(information: com.development.gocipes.core.model.Information) {
         val action =
-            com.development.gocipes.presentation.main.home.technique.TechniqueFragmentDirections.actionTechniqueFragmentToDetailTechniqueFragment(
+            TechniqueFragmentDirections.actionTechniqueFragmentToDetailTechniqueFragment(
                 information
             )
         findNavController().navigate(action)
