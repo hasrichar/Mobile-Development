@@ -1,0 +1,16 @@
+object Versions {
+    val coreKtx = "1.9.0"
+    val appCompat = "1.6.1"
+    val material = "1.9.0"
+    val constraintLayout = "2.1.4"
+    val junit = "4.13.2"
+    val extJunit = "1.1.5"
+    val esspresso = "3.5.1"
+    val daggerHilt = "2.43.2"
+    val hiltCompiler = "1.1.0"
+    val navigationKtx = "2.5.3"
+    val hdodenhof = "3.1.0"
+    val glide = "4.16.0"
+    val youtubePlayer = "12.1.0"
+    val sonicCountDown = "1.0.4"
+}
