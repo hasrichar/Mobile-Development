@@ -44,4 +44,11 @@
     <string name="head_analysis">Bahan bahan</string>
     <string name="add">Add</string>
     <string name="next">Next</string>
+    <string name="energy">Energi</string>
+    <string name="protein">Protein</string>
+    <string name="lemak">Lemak</string>
+    <string name="karbo">Karbohidrat</string>
+    <string name="kilo_kalori">%1$s kkal</string>
+    <string name="gram">%1$s g</string>
+    <string name="bahan">Bahan</string>
 </resources>
