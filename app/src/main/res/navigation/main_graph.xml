@@ -60,7 +60,11 @@
         android:id="@+id/analysisFragment"
         android:name="com.development.gocipes.presentation.analysis.AnalysisFragment"
         android:label="fragment_analysis"
-        tools:layout="@layout/fragment_analysis" />
+        tools:layout="@layout/fragment_analysis" >
+        <action
+            android:id="@+id/action_analysisFragment_to_detailAnalysisFragment"
+            app:destination="@id/detailAnalysisFragment" />
+    </fragment>
     <fragment
         android:id="@+id/profileFragment"
         android:name="com.development.gocipes.presentation.profile.ProfileFragment"
@@ -127,4 +131,12 @@
     <include app:graph="@navigation/food_graph" />
     <include app:graph="@navigation/article_graph" />
     <include app:graph="@navigation/technique_graph" />
+    <fragment
+        android:id="@+id/detailAnalysisFragment"
+        android:name="com.development.gocipes.presentation.analysis.DetailAnalysisFragment"
+        android:label="fragment_detail_analysis"
+        tools:layout="@layout/fragment_detail_analysis" >
+        <argument android:name="analysis"
+            app:argType="com.development.gocipes.core.model.Analysis" />
+    </fragment>
 </navigation>

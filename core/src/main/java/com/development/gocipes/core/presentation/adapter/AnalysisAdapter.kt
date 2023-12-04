@@ -30,7 +30,7 @@ class AnalysisAdapter(val data: (Analysis) -> Unit) :
                 tvHeadIngridient.text = analysis.name
                 tvDescIngridient.text = analysis.description
             }
-//            itemView.setOnClickListener { data.invoke(analysis) }
+            itemView.setOnClickListener { data.invoke(analysis) }
         }
     }
 
