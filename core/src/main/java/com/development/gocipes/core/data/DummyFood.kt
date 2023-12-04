@@ -13,6 +13,9 @@ object DummyFood {
             minutes = "2-3 Menit",
             imageUrl = "https://raw.githubusercontent.com/GoCipes/Resources/main/assets/sandwitch%203.jpeg",
             category = "Roti",
+            fat = 8,
+            carbohydrates = 75,
+            protein = 17,
             ingredients = listOf(
                 Ingredient(
                     id = 1,
@@ -103,6 +106,9 @@ object DummyFood {
             description = "\t\t\tBayam merupakan salah satu tumbuhan yang sering ditanam untuk dijadikan sayuran hijau. Daun bayam ini dikonsumsi karena kandungan nutrisi yang bergizi. Dalam setiap 100 gram daun bayam, terdapat sekitar 2.3 gram protein, 3.2 gram karbohidrat, 3 gram besi, dan 81 gram kalsium. Selain itu, bayam juga mengandung berbagai jenis vitamin dan mineral, seperti vitamin A, vitamin C, niasin, thiamin, fosfor, riboflavin, natrium, kalium, dan magnesium. Bayam merupakan sumber nutrisi yang kaya dan bermanfaat bagi kesehatan.",
             imageUrl = "https://raw.githubusercontent.com/GoCipes/Resources/main/assets/Sayur%20Bening%20Bayam.jpeg",
             category = "Sayur",
+            fat = 25,
+            carbohydrates = 50,
+            protein = 35,
             ingredients = listOf(
                 Ingredient(
                     id = 1,
@@ -187,6 +193,9 @@ object DummyFood {
             minutes = "15-20 Menit",
             imageUrl = "https://d1vbn70lmn1nqe.cloudfront.net/prod/wp-content/uploads/2022/08/24051133/X-Tips-Kreatif-agar-Anak-Suka-Makan-Sayur-Kangkung.jpg",
             category = "Sayur",
+            fat = 21,
+            carbohydrates = 29,
+            protein = 35,
             ingredients = listOf(
                 Ingredient(
                     id = 1,
@@ -264,6 +273,9 @@ object DummyFood {
             description = "",
             minutes = "",
             category = "",
+            fat = 8,
+            carbohydrates = 75,
+            protein = 17,
             ingredients = listOf(),
             step = listOf()
         ),
@@ -274,6 +286,9 @@ object DummyFood {
             description = "",
             minutes = "",
             category = "",
+            fat = 8,
+            carbohydrates = 75,
+            protein = 17,
             ingredients = listOf(),
             step = listOf()
         ),
@@ -284,6 +299,9 @@ object DummyFood {
             description = "",
             minutes = "",
             category = "",
+            fat = 8,
+            carbohydrates = 75,
+            protein = 17,
             ingredients = listOf(),
             step = listOf()
         ),
@@ -294,6 +312,9 @@ object DummyFood {
             description = "",
             minutes = "",
             category = "",
+            fat = 8,
+            carbohydrates = 75,
+            protein = 17,
             ingredients = listOf(),
             step = listOf()
         ),
@@ -304,6 +325,9 @@ object DummyFood {
             description = "",
             minutes = "",
             category = "",
+            fat = 8,
+            carbohydrates = 75,
+            protein = 17,
             ingredients = listOf(),
             step = listOf()
         ),
@@ -314,6 +338,9 @@ object DummyFood {
             description = "",
             minutes = "",
             category = "",
+            fat = 8,
+            carbohydrates = 75,
+            protein = 17,
             ingredients = listOf(),
             step = listOf()
         ),
@@ -324,6 +351,9 @@ object DummyFood {
             description = "",
             minutes = "",
             category = "",
+            fat = 8,
+            carbohydrates = 75,
+            protein = 17,
             ingredients = listOf(),
             step = listOf()
         ),
@@ -334,6 +364,9 @@ object DummyFood {
             description = "",
             minutes = "",
             category = "",
+            fat = 8,
+            carbohydrates = 75,
+            protein = 17,
             ingredients = listOf(),
             step = listOf()
         ),
@@ -344,6 +377,9 @@ object DummyFood {
             description = "",
             minutes = "",
             category = "",
+            fat = 8,
+            carbohydrates = 75,
+            protein = 17,
             ingredients = listOf(),
             step = listOf()
         ),
@@ -354,6 +390,9 @@ object DummyFood {
             description = "",
             minutes = "",
             category = "",
+            fat = 8,
+            carbohydrates = 75,
+            protein = 17,
             ingredients = listOf(),
             step = listOf()
         ),
@@ -364,6 +403,9 @@ object DummyFood {
             description = "",
             minutes = "",
             category = "",
+            fat = 8,
+            carbohydrates = 75,
+            protein = 17,
             ingredients = listOf(),
             step = listOf()
         ),
@@ -374,6 +416,9 @@ object DummyFood {
             description = "",
             minutes = "",
             category = "",
+            fat = 8,
+            carbohydrates = 75,
+            protein = 17,
             ingredients = listOf(),
             step = listOf()
         ),
@@ -384,6 +429,9 @@ object DummyFood {
             description = "",
             minutes = "",
             category = "",
+            fat = 8,
+            carbohydrates = 75,
+            protein = 17,
             ingredients = listOf(),
             step = listOf()
         ),
@@ -394,6 +442,9 @@ object DummyFood {
             description = "",
             minutes = "",
             category = "",
+            fat = 8,
+            carbohydrates = 75,
+            protein = 17,
             ingredients = listOf(),
             step = listOf()
         ),
@@ -404,6 +455,9 @@ object DummyFood {
             description = "",
             minutes = "",
             category = "",
+            fat = 8,
+            carbohydrates = 75,
+            protein = 17,
             ingredients = listOf(),
             step = listOf()
         ),
@@ -414,6 +468,9 @@ object DummyFood {
             description = "",
             minutes = "",
             category = "",
+            fat = 8,
+            carbohydrates = 75,
+            protein = 17,
             ingredients = listOf(),
             step = listOf()
         ),

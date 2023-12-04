@@ -19,6 +19,7 @@ import androidx.navigation.fragment.findNavController
 import androidx.navigation.fragment.navArgs
 import androidx.viewpager.widget.ViewPager
 import com.development.gocipes.core.R
+import com.development.gocipes.core.model.Food
 import com.development.gocipes.core.presentation.adapter.TimerAdapter
 import com.development.gocipes.food.databinding.FragmentTimerBinding
 import com.orbitalsonic.sonictimer.SonicCountDownTimer
@@ -93,14 +94,13 @@ class TimerFragment : Fragment() {
         }, viewLifecycleOwner, Lifecycle.State.CREATED)
     }
 
-    private fun pageChange(food: com.development.gocipes.core.model.Food) {
+    private fun pageChange(food: Food) {
         binding?.viewPager?.addOnPageChangeListener(object : ViewPager.OnPageChangeListener {
             override fun onPageScrolled(
                 position: Int,
                 positionOffset: Float,
                 positionOffsetPixels: Int
-            ) {
-            }
+            ) {}
 
             override fun onPageSelected(position: Int) {
                 setupTimer(food.step[position].minutes)
