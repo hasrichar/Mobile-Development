@@ -9,7 +9,7 @@
         xmlns:card_view="http://schemas.android.com/apk/res-auto"
         android:id="@+id/card_view"
         android:layout_width="wrap_content"
-        android:layout_height="26dp"
+        android:layout_height="wrap_content"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
         android:backgroundTint="@color/primary"
@@ -28,7 +28,8 @@
                 app:layout_constraintStart_toStartOf="parent"
                 app:layout_constraintTop_toTopOf="parent"
                 app:layout_constraintBottom_toBottomOf="parent"
-                app:tint="@color/white" />
+                app:tint="@color/white"
+                android:contentDescription="@string/time" />
 
             <TextView
                 android:id="@+id/tv_time"
@@ -37,6 +38,7 @@
                 android:layout_marginStart="6dp"
                 android:fontFamily="@font/poppins_semi_bold"
                 android:textColor="@color/white"
+                android:padding="8dp"
                 app:layout_constraintStart_toEndOf="@+id/iv_icon"
                 app:layout_constraintTop_toTopOf="parent"
                 app:layout_constraintBottom_toBottomOf="parent"

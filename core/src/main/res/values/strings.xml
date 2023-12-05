@@ -1,5 +1,5 @@
 <resources>
-    <string name="app_name">GoCipes</string>
+    <string name="app_name">BeCipes</string>
     <string name="analysis_gizi">Analisis Gizi</string>
     <string name="favorite">Favorite</string>
     <string name="home">Home</string>
@@ -26,7 +26,7 @@
     <string name="dummy_username">example</string>
     <string name="dummy_password">******</string>
     <string name="artikel">Artikel</string>
-    <string name="dummy_artikel">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Curabitur elementum sit amet dui at tristique. Quisque mattis mattis gravida. Ut id lacus elit. Donec justo augue, maximus facilisis nisi a, blandit luctus orci. Morbi elementum, felis vel iaculis dignissim, dolor libero posuere nisl, sed euismod metus diam sit amet lectus. Quisque et fringilla quam, at malesuada nunc. Vivamus a nulla imperdiet metus facilisis bibendum a id dolor. Quisque feugiat malesuada sapien, sodales convallis ipsum dictum at. Ut vehicula quam a dapibus interdum. Nunc sit amet lobortis tortor, vitae fringilla eros. Duis vel mi justo. In hac habitasse platea dictumst. Mauris eleifend vel ex eu vulputate. Nam augue quam, rutrum sit amet suscipit et, malesuada accumsan turpis. Phasellus pulvinar pulvinar auctor. Maecenas consequat iaculis dolor, ac laoreet urna porttitor sed.\nDonec dictum justo non varius porta. Etiam et nisl id ante fringilla venenatis non sit amet felis. Nunc auctor leo at ante suscipit faucibus. Vivamus vehicula tempus orci, et mollis erat pharetra at. Interdum et malesuada fames ac ante ipsum primis in faucibus. Mauris eu pulvinar augue. Nunc mattis lorem ac vestibulum tempus. Nulla id tincidunt est. Maecenas egestas ligula ut suscipit pharetra.</string>
+    <string name="dummy_artikel">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Curabitur elementum sit amet dui at tristique. Quisque mattis gravida. Ut id lacus elit. Donec justo augue, maximus facilisis nisi a, blandit luctus orci. Morbi elementum, felis vel iaculis dignissim, dolor libero posuere nisl, sed euismod metus diam sit amet lectus. Quisque et fringilla quam, at malesuada nunc. Vivamus a nulla imperdiet metus facilisis bibendum a id dolor. Quisque feugiat malesuada sapien, sodales convallis ipsum dictum at. Ut vehicula quam a dapibus interdum. Nunc sit amet lobortis tortor, vitae fringilla eros. Duis vel mi justo. In hac habitasse platea dictumst. Mauris eleifend vel ex eu vulputate. Nam augue quam, rutrum sit amet suscipit et, malesuada accumsan turpis. Phasellus pulvinar auctor. Maecenas consequat iaculis dolor, ac laoreet urna porttitor sed.\nDonec dictum justo non varius porta. Etiam et nisl id ante fringilla venenatis non sit amet felis. Nunc auctor leo at ante suscipit faucibus. Vivamus vehicula tempus orci, et mollis erat pharetra at. Interdum et malesuada fames ac ante ipsum primis in faucibus. Mauris eu pulvinar augue. Nunc mattis lorem ac vestibulum tempus. Nulla id tincidunt est. Maecenas egestas ligula ut suscipit pharetra.</string>
     <string name="article_photo">Foto Artikel</string>
     <string name="are_you_ready">Siapkah Anda memasak hari ini?</string>
     <string name="ingredients">Bahan-bahan</string>
@@ -46,9 +46,10 @@
     <string name="next">Next</string>
     <string name="energy">Energi</string>
     <string name="protein">Protein</string>
-    <string name="lemak">Lemak</string>
-    <string name="karbo">Karbohidrat</string>
     <string name="kilo_kalori">%1$s kkal</string>
     <string name="gram">%1$s g</string>
     <string name="bahan">Bahan</string>
+    <string name="calories">Rincian Kalori</string>
+    <string name="carbohydrates">Karbohidrat</string>
+    <string name="fat">Lemak</string>
 </resources>

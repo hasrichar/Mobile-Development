@@ -33,7 +33,7 @@ class FavoriteFragment : Fragment() {
     private fun setupRecyclerFavorite(favorite: List<com.development.gocipes.core.model.Favorite>) {
         favoriteAdapter = FavoriteAdapter()
 
-        binding?.contentFavorite?.rvFavorite?.apply {
+        binding?.rvFavorite?.apply {
             adapter = favoriteAdapter
             layoutManager = LinearLayoutManager(requireActivity(), LinearLayoutManager.VERTICAL, false)
         }

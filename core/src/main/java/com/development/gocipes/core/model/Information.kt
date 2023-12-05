@@ -10,5 +10,7 @@ data class Information(
     val description: String,
     val imageUrl: String,
     val videoUrl: String? = null,
-    val listPractice: List<String?>? = null
+    val listPractice: List<String?>? = null,
+    val author: String,
+    val release: String,
 ): Parcelable
