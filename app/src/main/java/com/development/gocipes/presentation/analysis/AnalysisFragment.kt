@@ -7,10 +7,10 @@ import android.view.ViewGroup
 import androidx.fragment.app.Fragment
 import androidx.navigation.fragment.findNavController
 import androidx.recyclerview.widget.LinearLayoutManager
+import com.development.gocipes.core.data.dummy.DummyIngridients
 import com.development.gocipes.core.model.Analysis
 import com.development.gocipes.databinding.FragmentAnalysisBinding
 import com.development.gocipes.core.presentation.adapter.AnalysisAdapter
-import com.development.gocipes.presentation.home.article.ArticleFragmentDirections
 
 class AnalysisFragment : Fragment() {
 
@@ -33,7 +33,7 @@ class AnalysisFragment : Fragment() {
     }
 
     private fun setupRecycler() {
-        val listAnalysis = com.development.gocipes.core.data.DummyIngridients.dummyIngridient
+        val listAnalysis = DummyIngridients.dummyIngridient
         adapterAnalysis = AnalysisAdapter { analysis ->
             navigateToDetail(analysis)
         }

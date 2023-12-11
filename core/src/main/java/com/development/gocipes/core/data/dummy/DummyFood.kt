@@ -1,4 +1,4 @@
-package com.development.gocipes.core.data
+package com.development.gocipes.core.data.dummy
 
 import com.development.gocipes.core.model.Cook
 import com.development.gocipes.core.model.Food
@@ -13,6 +13,9 @@ object DummyFood {
             minutes = "2-3 Menit",
             imageUrl = "https://raw.githubusercontent.com/GoCipes/Resources/main/assets/sandwitch%203.jpeg",
             category = "Roti",
+            fat = 34,
+            carbohydrates = 38,
+            protein = 27,
             ingredients = listOf(
                 Ingredient(
                     id = 1,
@@ -92,7 +95,7 @@ object DummyFood {
                     id = 7,
                     description = "Sandwich siap disajikan",
                     imageUrl = "https://raw.githubusercontent.com/GoCipes/Resources/main/assets/sd%209.jpeg",
-                    minutes = 0
+                    minutes = 1
                 )
             )
         ),
@@ -103,6 +106,9 @@ object DummyFood {
             description = "\t\t\tBayam merupakan salah satu tumbuhan yang sering ditanam untuk dijadikan sayuran hijau. Daun bayam ini dikonsumsi karena kandungan nutrisi yang bergizi. Dalam setiap 100 gram daun bayam, terdapat sekitar 2.3 gram protein, 3.2 gram karbohidrat, 3 gram besi, dan 81 gram kalsium. Selain itu, bayam juga mengandung berbagai jenis vitamin dan mineral, seperti vitamin A, vitamin C, niasin, thiamin, fosfor, riboflavin, natrium, kalium, dan magnesium. Bayam merupakan sumber nutrisi yang kaya dan bermanfaat bagi kesehatan.",
             imageUrl = "https://raw.githubusercontent.com/GoCipes/Resources/main/assets/Sayur%20Bening%20Bayam.jpeg",
             category = "Sayur",
+            fat = 8,
+            carbohydrates = 74,
+            protein = 17,
             ingredients = listOf(
                 Ingredient(
                     id = 1,
@@ -187,10 +193,13 @@ object DummyFood {
             minutes = "15-20 Menit",
             imageUrl = "https://d1vbn70lmn1nqe.cloudfront.net/prod/wp-content/uploads/2022/08/24051133/X-Tips-Kreatif-agar-Anak-Suka-Makan-Sayur-Kangkung.jpg",
             category = "Sayur",
+            fat = 49,
+            carbohydrates = 35,
+            protein = 15,
             ingredients = listOf(
                 Ingredient(
                     id = 1,
-                    description = "1.3 ikat kangkung,potong dan cuci "
+                    description = "3 ikat kangkung,potong dan cuci "
                 ),
                 Ingredient(
                     id = 2,
@@ -260,12 +269,95 @@ object DummyFood {
         Food(
             id = 1,
             name = "Sandwich",
+            description = "\t\t\tSandwich merupakan sajian berupa dua potong roti yang didalamnya berisi daging, berbagai jenis sayuran, keju, ditambah dengan saus tomat atau mayonais.",
+            minutes = "2-3 Menit",
             imageUrl = "https://raw.githubusercontent.com/GoCipes/Resources/main/assets/sandwitch%203.jpeg",
-            description = "",
-            minutes = "",
-            category = "",
-            ingredients = listOf(),
-            step = listOf()
+            category = "Roti",
+            fat = 34,
+            carbohydrates = 38,
+            protein = 27,
+            ingredients = listOf(
+                Ingredient(
+                    id = 1,
+                    description = "2 Slice Roti Tawar/Gandum"
+                ),
+                Ingredient(
+                    id = 2,
+                    description = "1 Slice Beef"
+                ),
+                Ingredient(
+                    id = 3,
+                    description = "1 slice keju mozzarella"
+                ),
+                Ingredient(
+                    id = 4,
+                    description = "1/4 bawang bombang"
+                ),
+                Ingredient(
+                    id = 5,
+                    description = "selada"
+                ),
+                Ingredient(
+                    id = 6,
+                    description = "tomat"
+                ),
+                Ingredient(
+                    id = 7,
+                    description = "Margarin"
+                ),
+                Ingredient(
+                    id = 8,
+                    description = "Saus Sambal(tomat)"
+                ),
+                Ingredient(
+                    id = 9,
+                    description = "Mayonnaise"
+                )
+            ),
+            step = listOf(
+                Cook(
+                    id = 1,
+                    description = "Panaskan pan / teflon yang telah dilumuri margarin",
+                    imageUrl = "https://raw.githubusercontent.com/GoCipes/Resources/main/assets/sd%201.jpeg",
+                    minutes = 1
+                ),
+                Cook(
+                    id = 2,
+                    description = "Panggang roti dengan api kecil ",
+                    imageUrl = "https://raw.githubusercontent.com/GoCipes/Resources/main/assets/sd%202.jpeg",
+                    minutes = 2
+                ),
+                Cook(
+                    id = 3,
+                    description = "Tambahkan selada,tomat dan keju",
+                    imageUrl = "https://raw.githubusercontent.com/GoCipes/Resources/main/assets/sd%204.jpeg",
+                    minutes = 1
+                ),
+                Cook(
+                    id = 4,
+                    description = "Tambahkan beef ",
+                    imageUrl = "https://raw.githubusercontent.com/GoCipes/Resources/main/assets/sd%205.jpeg",
+                    minutes = 1
+                ),
+                Cook(
+                    id = 5,
+                    description = "Tambahkan saus dan mayonaise sesuai selera",
+                    imageUrl = "https://raw.githubusercontent.com/GoCipes/Resources/main/assets/sd%206.jpeg",
+                    minutes = 1
+                ),
+                Cook(
+                    id = 6,
+                    description = "Tutup dan panggang kembali sebentar hingga keju meleleh",
+                    imageUrl = "https://raw.githubusercontent.com/GoCipes/Resources/main/assets/sd%207.jpeg",
+                    minutes = 8
+                ),
+                Cook(
+                    id = 7,
+                    description = "Sandwich siap disajikan",
+                    imageUrl = "https://raw.githubusercontent.com/GoCipes/Resources/main/assets/sd%209.jpeg",
+                    minutes = 1
+                )
+            )
         ),
         Food(
             id = 2,
@@ -274,6 +366,9 @@ object DummyFood {
             description = "",
             minutes = "",
             category = "",
+            fat = 8,
+            carbohydrates = 74,
+            protein = 17,
             ingredients = listOf(),
             step = listOf()
         ),
@@ -284,6 +379,9 @@ object DummyFood {
             description = "",
             minutes = "",
             category = "",
+            fat = 8,
+            carbohydrates = 75,
+            protein = 17,
             ingredients = listOf(),
             step = listOf()
         ),
@@ -294,6 +392,9 @@ object DummyFood {
             description = "",
             minutes = "",
             category = "",
+            fat = 8,
+            carbohydrates = 75,
+            protein = 17,
             ingredients = listOf(),
             step = listOf()
         ),
@@ -304,6 +405,9 @@ object DummyFood {
             description = "",
             minutes = "",
             category = "",
+            fat = 8,
+            carbohydrates = 75,
+            protein = 17,
             ingredients = listOf(),
             step = listOf()
         ),
@@ -314,6 +418,9 @@ object DummyFood {
             description = "",
             minutes = "",
             category = "",
+            fat = 8,
+            carbohydrates = 75,
+            protein = 17,
             ingredients = listOf(),
             step = listOf()
         ),
@@ -324,6 +431,9 @@ object DummyFood {
             description = "",
             minutes = "",
             category = "",
+            fat = 8,
+            carbohydrates = 75,
+            protein = 17,
             ingredients = listOf(),
             step = listOf()
         ),
@@ -334,6 +444,9 @@ object DummyFood {
             description = "",
             minutes = "",
             category = "",
+            fat = 8,
+            carbohydrates = 75,
+            protein = 17,
             ingredients = listOf(),
             step = listOf()
         ),
@@ -344,6 +457,9 @@ object DummyFood {
             description = "",
             minutes = "",
             category = "",
+            fat = 8,
+            carbohydrates = 75,
+            protein = 17,
             ingredients = listOf(),
             step = listOf()
         ),
@@ -354,6 +470,9 @@ object DummyFood {
             description = "",
             minutes = "",
             category = "",
+            fat = 8,
+            carbohydrates = 75,
+            protein = 17,
             ingredients = listOf(),
             step = listOf()
         ),
@@ -364,6 +483,9 @@ object DummyFood {
             description = "",
             minutes = "",
             category = "",
+            fat = 8,
+            carbohydrates = 75,
+            protein = 17,
             ingredients = listOf(),
             step = listOf()
         ),
@@ -374,6 +496,9 @@ object DummyFood {
             description = "",
             minutes = "",
             category = "",
+            fat = 8,
+            carbohydrates = 75,
+            protein = 17,
             ingredients = listOf(),
             step = listOf()
         ),
@@ -384,6 +509,9 @@ object DummyFood {
             description = "",
             minutes = "",
             category = "",
+            fat = 8,
+            carbohydrates = 75,
+            protein = 17,
             ingredients = listOf(),
             step = listOf()
         ),
@@ -394,6 +522,9 @@ object DummyFood {
             description = "",
             minutes = "",
             category = "",
+            fat = 8,
+            carbohydrates = 75,
+            protein = 17,
             ingredients = listOf(),
             step = listOf()
         ),
@@ -404,6 +535,9 @@ object DummyFood {
             description = "",
             minutes = "",
             category = "",
+            fat = 8,
+            carbohydrates = 75,
+            protein = 17,
             ingredients = listOf(),
             step = listOf()
         ),
@@ -414,6 +548,9 @@ object DummyFood {
             description = "",
             minutes = "",
             category = "",
+            fat = 8,
+            carbohydrates = 75,
+            protein = 17,
             ingredients = listOf(),
             step = listOf()
         ),

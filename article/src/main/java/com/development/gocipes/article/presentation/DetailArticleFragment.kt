@@ -46,6 +46,8 @@ class DetailArticleFragment : Fragment() {
                 ivArticlePhoto.showImage(requireActivity(), information.imageUrl)
                 tvArticleHeader.text = information.name
                 tvArticleContent.text = information.description
+                tvAuthor.text = information.author
+                tvDateRelease.text = information.release
             }
         }
     }

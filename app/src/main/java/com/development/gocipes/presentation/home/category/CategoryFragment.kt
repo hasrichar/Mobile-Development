@@ -16,6 +16,7 @@ import androidx.lifecycle.Lifecycle
 import androidx.navigation.fragment.findNavController
 import androidx.navigation.fragment.navArgs
 import androidx.recyclerview.widget.GridLayoutManager
+import com.development.gocipes.core.model.Food
 import com.development.gocipes.databinding.FragmentCategoryBinding
 import com.development.gocipes.core.presentation.adapter.FoodGridAdapter
 
@@ -67,7 +68,9 @@ class CategoryFragment : Fragment() {
         val gridCount =
             if (requireActivity().resources.configuration.orientation == Configuration.ORIENTATION_PORTRAIT) 2 else 4
 
-        foodGridAdapter = FoodGridAdapter {}
+        foodGridAdapter = FoodGridAdapter{ food ->
+            navigateToDetailFood(food)
+        }
 
         binding?.rvFood?.apply {
             layoutManager = GridLayoutManager(requireActivity(), gridCount)
@@ -76,6 +79,11 @@ class CategoryFragment : Fragment() {
         }
 
         foodGridAdapter.submitList(foodList)
+    }
+
+    private fun navigateToDetailFood(food: Food) {
+        val action = CategoryFragmentDirections.actionCategoryFragmentToFoodGraph(food)
+        findNavController().navigate(action)
     }
 
     override fun onDestroy() {

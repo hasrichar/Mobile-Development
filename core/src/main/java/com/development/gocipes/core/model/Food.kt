@@ -11,6 +11,9 @@ data class Food(
     val minutes: String,
     val imageUrl: String,
     val category: String,
+    val fat: Int,
+    val carbohydrates: Int,
+    val protein: Int,
     val ingredients: List<Ingredient>,
     val step: List<Cook>,
 ): Parcelable

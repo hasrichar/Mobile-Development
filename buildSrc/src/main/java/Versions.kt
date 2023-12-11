@@ -13,4 +13,5 @@ object Versions {
     val glide = "4.16.0"
     val youtubePlayer = "12.1.0"
     val sonicCountDown = "1.0.4"
+    val retrofit = "2.9.0"
 }

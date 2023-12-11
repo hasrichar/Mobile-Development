@@ -15,6 +15,8 @@ import androidx.fragment.app.Fragment
 import androidx.lifecycle.Lifecycle
 import androidx.navigation.fragment.findNavController
 import androidx.recyclerview.widget.LinearLayoutManager
+import com.development.gocipes.core.data.dummy.DummyFood
+import com.development.gocipes.core.model.Food
 import com.development.gocipes.databinding.FragmentSearchBinding
 import com.development.gocipes.core.presentation.adapter.SearchAdapter
 
@@ -60,8 +62,10 @@ class SearchFragment : Fragment() {
     }
 
     private fun setupRecyclerView() {
-        val dummyAllFood = com.development.gocipes.core.data.DummyFood.dummyAllFood
-        searchAdapter = SearchAdapter()
+        val dummyAllFood = DummyFood.dummyAllFood
+        searchAdapter = SearchAdapter{ food ->
+            navigateToDetailFood(food)
+        }
 
         binding?.rvSearch?.apply {
             adapter = searchAdapter
@@ -87,6 +91,12 @@ class SearchFragment : Fragment() {
             })
         }
     }
+
+    private fun navigateToDetailFood(food: Food) {
+        val action = SearchFragmentDirections.actionSearchFragmentToFoodGraph(food)
+        findNavController().navigate(action)
+    }
+
     override fun onDestroy() {
         super.onDestroy()
         _binding = null

@@ -15,6 +15,7 @@ import androidx.fragment.app.Fragment
 import androidx.lifecycle.Lifecycle
 import androidx.navigation.fragment.findNavController
 import androidx.recyclerview.widget.GridLayoutManager
+import com.development.gocipes.core.data.dummy.DummyInformation
 import com.development.gocipes.core.model.Information
 import com.development.gocipes.databinding.FragmentTechniqueBinding
 import com.development.gocipes.core.presentation.adapter.InformationGridAdapter
@@ -64,7 +65,7 @@ class TechniqueFragment : Fragment() {
         informationGridAdapter = InformationGridAdapter { information ->
             navigateToTechniqueGraph(information)
         }
-        val listArticle = com.development.gocipes.core.data.DummyInformation.dummyTechnique
+        val listArticle = DummyInformation.dummyTechnique
         val gridCount =
             if (requireActivity().resources.configuration.orientation == Configuration.ORIENTATION_PORTRAIT) 2 else 4
 

@@ -5,6 +5,7 @@ import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import androidx.fragment.app.Fragment
+import com.development.gocipes.core.utils.Extensions.showImage
 import com.development.gocipes.databinding.FragmentProfileBinding
 
 class ProfileFragment : Fragment() {
@@ -24,11 +25,18 @@ class ProfileFragment : Fragment() {
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
 
+        setupView()
         binding?.btnProfileEdit?.setOnClickListener {
             onClickEdit()
         }
         binding?.btnProfileSimpan?.setOnClickListener {
             onClickSave()
+        }
+    }
+
+    private fun setupView() {
+        binding?.apply {
+            ivProfileFotoProfil.showImage(requireActivity(), "https://www.betterup.com/hubfs/Blog%20Images/authentic-self-person-smiling-at-camera.jpg")
         }
     }
 

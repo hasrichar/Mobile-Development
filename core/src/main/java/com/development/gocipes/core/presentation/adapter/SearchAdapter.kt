@@ -10,7 +10,7 @@ import com.development.gocipes.core.presentation.adapter.FoodAdapter.Companion.D
 import com.development.gocipes.core.utils.Extensions.showImage
 import java.util.Locale
 
-class SearchAdapter : ListAdapter<Food, SearchAdapter.SearchViewHolder>(DIFF_CALLBACK) {
+class SearchAdapter(val data: (Food) -> Unit) : ListAdapter<Food, SearchAdapter.SearchViewHolder>(DIFF_CALLBACK) {
 
     private var unFilteredList = listOf<Food>()
 
@@ -30,6 +30,8 @@ class SearchAdapter : ListAdapter<Food, SearchAdapter.SearchViewHolder>(DIFF_CAL
                 sivFood.showImage(itemView.context, food.imageUrl)
                 tvName.text = food.name
             }
+
+            itemView.setOnClickListener { data.invoke(food) }
         }
     }
 

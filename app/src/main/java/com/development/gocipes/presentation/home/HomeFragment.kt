@@ -7,6 +7,9 @@ import android.view.ViewGroup
 import androidx.fragment.app.Fragment
 import androidx.navigation.fragment.findNavController
 import androidx.recyclerview.widget.LinearLayoutManager
+import com.development.gocipes.core.data.dummy.DummyCategory
+import com.development.gocipes.core.data.dummy.DummyFood
+import com.development.gocipes.core.data.dummy.DummyInformation
 import com.development.gocipes.core.model.Category
 import com.development.gocipes.core.model.Food
 import com.development.gocipes.core.model.Information
@@ -34,10 +37,10 @@ class HomeFragment : Fragment() {
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
-        val listCategory = com.development.gocipes.core.data.DummyCategory.dummyCategory
-        val listFood = com.development.gocipes.core.data.DummyFood.dummyFood
-        val listGuide = com.development.gocipes.core.data.DummyInformation.dummyArticle
-        val listTechnique = com.development.gocipes.core.data.DummyInformation.dummyTechnique
+        val listCategory = DummyCategory.dummyCategory
+        val listFood = DummyFood.dummyFood
+        val listGuide = DummyInformation.dummyArticle
+        val listTechnique = DummyInformation.dummyTechnique
 
         val name = "Mutiara!"
         val url =

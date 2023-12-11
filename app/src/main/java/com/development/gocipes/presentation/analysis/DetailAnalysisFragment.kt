@@ -1,13 +1,19 @@
 package com.development.gocipes.presentation.analysis
 
 import android.os.Bundle
-import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
+import android.view.Menu
+import android.view.MenuInflater
+import android.view.MenuItem
 import android.view.View
 import android.view.ViewGroup
 import androidx.appcompat.app.AppCompatActivity
+import androidx.core.view.MenuHost
+import androidx.core.view.MenuProvider
+import androidx.fragment.app.Fragment
+import androidx.lifecycle.Lifecycle
+import androidx.navigation.fragment.findNavController
 import androidx.navigation.fragment.navArgs
-import com.development.gocipes.R
 import com.development.gocipes.core.model.Analysis
 import com.development.gocipes.core.utils.Extensions.showImage
 import com.development.gocipes.databinding.FragmentDetailAnalysisBinding
@@ -22,7 +28,6 @@ class DetailAnalysisFragment : Fragment() {
         inflater: LayoutInflater, container: ViewGroup?,
         savedInstanceState: Bundle?,
     ): View? {
-        // Inflate the layout for this fragment
         _binding = FragmentDetailAnalysisBinding.inflate(layoutInflater, container, false)
         return binding?.root
     }
@@ -40,11 +45,17 @@ class DetailAnalysisFragment : Fragment() {
         binding?.apply {
             ivIngridient.showImage(requireActivity(), analysis.imageUrl)
             tvNameIngridient.text = analysis.name
-            tvNameAnalysis.text = analysis.name
-            tvEnergyTotal.text = getString(com.development.gocipes.core.R.string.kilo_kalori, analysis.energi.toString())
-            tvProteinTotal.text =  getString(com.development.gocipes.core.R.string.gram, analysis.protein.toString())
-            tvLemakTotal.text =  getString(com.development.gocipes.core.R.string.gram, analysis.lemak.toString())
-            tvKarboTotal.text =  getString(com.development.gocipes.core.R.string.gram, analysis.karbo.toString())
+            tvDescription.text = analysis.description
+            tvEnergyTotal.text = getString(
+                com.development.gocipes.core.R.string.kilo_kalori,
+                analysis.energi.toString()
+            )
+            tvProteinTotal.text =
+                getString(com.development.gocipes.core.R.string.gram, analysis.protein.toString())
+            tvLemakTotal.text =
+                getString(com.development.gocipes.core.R.string.gram, analysis.lemak.toString())
+            tvKarboTotal.text =
+                getString(com.development.gocipes.core.R.string.gram, analysis.karbo.toString())
         }
     }
 
@@ -56,6 +67,16 @@ class DetailAnalysisFragment : Fragment() {
                 title = getString(com.development.gocipes.core.R.string.bahan)
             }
         }
+
+        val menuHost: MenuHost = requireActivity()
+        menuHost.addMenuProvider(object : MenuProvider {
+            override fun onCreateMenu(menu: Menu, menuInflater: MenuInflater) {}
+
+            override fun onMenuItemSelected(menuItem: MenuItem): Boolean {
+                findNavController().navigateUp()
+                return true
+            }
+        }, viewLifecycleOwner, Lifecycle.State.CREATED)
     }
 
     override fun onDestroy() {

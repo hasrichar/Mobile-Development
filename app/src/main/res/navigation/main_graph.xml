@@ -118,7 +118,15 @@
         android:id="@+id/searchFragment"
         android:name="com.development.gocipes.presentation.home.search.SearchFragment"
         android:label="fragment_search"
-        tools:layout="@layout/fragment_search" />
+        tools:layout="@layout/fragment_search" >
+        <action
+            android:id="@+id/action_searchFragment_to_food_graph"
+            app:destination="@id/food_graph">
+            <argument
+                android:name="food"
+                app:argType="com.development.gocipes.core.model.Food" />
+        </action>
+    </fragment>
     <fragment
         android:id="@+id/categoryFragment"
         android:name="com.development.gocipes.presentation.home.category.CategoryFragment"
@@ -127,6 +135,13 @@
         <argument
             android:name="category"
             app:argType="com.development.gocipes.core.model.Category" />
+        <action
+            android:id="@+id/action_categoryFragment_to_food_graph"
+            app:destination="@id/food_graph">
+            <argument
+                android:name="food"
+                app:argType="com.development.gocipes.core.model.Food" />
+        </action>
     </fragment>
     <include app:graph="@navigation/food_graph" />
     <include app:graph="@navigation/article_graph" />

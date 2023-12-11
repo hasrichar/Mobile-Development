@@ -16,11 +16,12 @@ import androidx.lifecycle.Lifecycle
 import androidx.navigation.fragment.findNavController
 import androidx.navigation.fragment.navArgs
 import androidx.recyclerview.widget.LinearLayoutManager
+import com.development.gocipes.core.model.Food
 import com.development.gocipes.core.presentation.adapter.IngredientAdapter
 import com.development.gocipes.core.utils.Extensions.showImage
 import com.development.gocipes.food.R
-import com.development.gocipes.core.R as Resource
 import com.development.gocipes.food.databinding.FragmentDetailFoodBinding
+import com.development.gocipes.core.R as Resource
 
 class DetailFoodFragment : Fragment() {
 
@@ -49,16 +50,22 @@ class DetailFoodFragment : Fragment() {
         setupToolbar(foodArgs)
     }
 
-    private fun setupView(food: com.development.gocipes.core.model.Food) {
-        binding?.apply {
-            contentDetail.apply {
-                sivFood.showImage(requireActivity(), food.imageUrl)
-                tvDescription.text = food.description
-                tvMinutes.text = food.minutes
+    private fun setupView(food: Food) {
+        binding?.contentDetail?.apply {
+            sivFood.showImage(requireActivity(), food.imageUrl)
+            tvDescription.text = food.description
+            tvMinutes.text = food.minutes
+            contentCalories.apply {
+                pbFat.progress = food.fat
+                tvFat.text = "${food.fat}%"
+                pbCarbohydrates.progress = food.carbohydrates
+                tvCarbohydrates.text = "${food.carbohydrates}%"
+                pbProtein.progress = food.protein
+                tvProtein.text = "${food.protein}%"
             }
-
-            btnCook.setOnClickListener { navigateToCook(food) }
         }
+
+        binding?.btnCook?.setOnClickListener { navigateToCook(food) }
     }
 
     private fun setupRecyclerIngredient(listIngredient: List<com.development.gocipes.core.model.Ingredient>) {
@@ -73,7 +80,7 @@ class DetailFoodFragment : Fragment() {
         ingredientAdapter.submitList(listIngredient)
     }
 
-    private fun setupToolbar(food: com.development.gocipes.core.model.Food) {
+    private fun setupToolbar(food: Food) {
         (activity as AppCompatActivity).apply {
             setSupportActionBar(binding?.toolbar)
             supportActionBar?.apply {
@@ -120,7 +127,7 @@ class DetailFoodFragment : Fragment() {
         }
     }
 
-    private fun navigateToCook(food: com.development.gocipes.core.model.Food) {
+    private fun navigateToCook(food: Food) {
         val action =
             DetailFoodFragmentDirections.actionDetailFoodFragmentToCookFragment(
                 food
