@@ -1,4 +1,4 @@
-package com.development.gocipes.core.data
+package com.development.gocipes.core.data.dummy
 
 import com.development.gocipes.core.model.Cook
 import com.development.gocipes.core.model.Food

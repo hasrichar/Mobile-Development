@@ -15,6 +15,7 @@ import androidx.fragment.app.Fragment
 import androidx.lifecycle.Lifecycle
 import androidx.navigation.fragment.findNavController
 import androidx.recyclerview.widget.GridLayoutManager
+import com.development.gocipes.core.data.dummy.DummyFood
 import com.development.gocipes.core.model.Food
 import com.development.gocipes.core.presentation.adapter.FoodGridAdapter
 import com.development.gocipes.databinding.FragmentFoodBinding
@@ -61,7 +62,7 @@ class FoodFragment : Fragment() {
     }
 
     private fun setupView() {
-        val foodList = com.development.gocipes.core.data.DummyFood.dummyFood
+        val foodList = DummyFood.dummyFood
         val gridCount =
             if (requireActivity().resources.configuration.orientation == Configuration.ORIENTATION_PORTRAIT) 2 else 4
 

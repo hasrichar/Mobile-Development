@@ -15,7 +15,7 @@ import androidx.fragment.app.Fragment
 import androidx.lifecycle.Lifecycle
 import androidx.navigation.fragment.findNavController
 import androidx.recyclerview.widget.GridLayoutManager
-import com.development.gocipes.core.data.DummyInformation
+import com.development.gocipes.core.data.dummy.DummyInformation
 import com.development.gocipes.core.presentation.adapter.InformationGridAdapter
 import com.development.gocipes.databinding.FragmentArticleBinding
 

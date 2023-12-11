@@ -6,6 +6,7 @@ import android.view.View
 import android.view.ViewGroup
 import androidx.fragment.app.Fragment
 import androidx.recyclerview.widget.LinearLayoutManager
+import com.development.gocipes.core.data.dummy.DummyFavorite
 import com.development.gocipes.databinding.FragmentFavoriteBinding
 import com.development.gocipes.core.presentation.adapter.FavoriteAdapter
 
@@ -26,7 +27,7 @@ class FavoriteFragment : Fragment() {
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
 
-        val listFavorite = com.development.gocipes.core.data.DummyFavorite.dummyFavorite
+        val listFavorite = DummyFavorite.dummyFavorite
         setupRecyclerFavorite(listFavorite)
     }
 
