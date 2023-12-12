@@ -10,6 +10,6 @@
         android:label="DetailArticleFragment" >
         <argument
             android:name="information"
-            app:argType="com.development.gocipes.core.model.Information" />
+            app:argType="com.development.gocipes.core.domain.model.information.Information" />
     </fragment>
 </navigation>

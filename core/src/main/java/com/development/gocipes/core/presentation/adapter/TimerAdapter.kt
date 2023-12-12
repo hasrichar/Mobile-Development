@@ -6,7 +6,7 @@ import android.view.View
 import android.view.ViewGroup
 import androidx.viewpager.widget.PagerAdapter
 import com.development.gocipes.core.databinding.ItemTimerBinding
-import com.development.gocipes.core.model.Cook
+import com.development.gocipes.core.domain.model.food.Cook
 import com.development.gocipes.core.utils.Extensions.showImage
 
 class TimerAdapter(private val context: Context, private val steps: List<Cook>) : PagerAdapter() {

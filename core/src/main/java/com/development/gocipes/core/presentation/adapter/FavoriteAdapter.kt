@@ -6,7 +6,7 @@ import androidx.recyclerview.widget.DiffUtil
 import androidx.recyclerview.widget.ListAdapter
 import androidx.recyclerview.widget.RecyclerView
 import com.development.gocipes.core.databinding.ItemFavoriteBinding
-import com.development.gocipes.core.model.Favorite
+import com.development.gocipes.core.domain.model.favorite.Favorite
 import com.development.gocipes.core.utils.Extensions.showImage
 
 class FavoriteAdapter : ListAdapter<Favorite, FavoriteAdapter.FavoriteViewHolder>(

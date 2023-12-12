@@ -1,3 +1,5 @@
+import java.util.Properties
+
 plugins {
     id("com.android.library")
     id("org.jetbrains.kotlin.android")
@@ -16,6 +18,11 @@ android {
 
         testInstrumentationRunner = "androidx.test.runner.AndroidJUnitRunner"
         consumerProguardFiles("consumer-rules.pro")
+
+        val properties = Properties()
+        properties.load(project.rootProject.file("local.properties").inputStream())
+
+        buildConfigField("String", "BASE_URL", "\"${properties.getProperty("BASE_URL")}\"")
     }
 
     buildTypes {
@@ -37,6 +44,7 @@ android {
 
     buildFeatures {
         viewBinding = true
+        buildConfig = true
     }
 }
 
@@ -65,4 +73,9 @@ dependencies {
     implementation(Dependencies.daggerHilt)
     kapt(Dependencies.hiltCompiler)
     kapt(Dependencies.daggerHiltCompiler)
+
+    //retrofit
+    implementation(Dependencies.retrofit)
+    implementation(Dependencies.retrofitConverter)
+    implementation(Dependencies.interceptor)
 }

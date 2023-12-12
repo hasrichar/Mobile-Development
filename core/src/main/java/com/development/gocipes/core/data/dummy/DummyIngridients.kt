@@ -1,6 +1,6 @@
 package com.development.gocipes.core.data.dummy
 
-import com.development.gocipes.core.model.Analysis
+import com.development.gocipes.core.domain.model.food.Analysis
 
 object DummyIngridients {
     val dummyIngridient = listOf(

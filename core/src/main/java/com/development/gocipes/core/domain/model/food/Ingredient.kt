@@ -1,4 +1,4 @@
-package com.development.gocipes.core.model
+package com.development.gocipes.core.domain.model.food
 
 import android.os.Parcelable
 import kotlinx.parcelize.Parcelize

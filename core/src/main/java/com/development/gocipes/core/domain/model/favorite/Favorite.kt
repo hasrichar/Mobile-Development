@@ -1,4 +1,6 @@
-package com.development.gocipes.core.model
+package com.development.gocipes.core.domain.model.favorite
+
+import com.development.gocipes.core.domain.model.food.Category
 
 data class Favorite(
     val id: Int,

@@ -15,4 +15,9 @@ object Dependencies {
     val glide by lazy { "com.github.bumptech.glide:glide:${Versions.glide}" }
     val youtubePlayer by lazy { "com.pierfrancescosoffritti.androidyoutubeplayer:core:${Versions.youtubePlayer}" }
     val sonicCountDown by lazy { "com.github.orbitalsonic:SonicCountDownTimer:${Versions.sonicCountDown}" }
+    val retrofit by lazy { "com.squareup.retrofit2:retrofit:${Versions.retrofit}" }
+    val retrofitConverter by lazy { "com.squareup.retrofit2:converter-gson:${Versions.retrofit}" }
+    val interceptor by lazy { "com.squareup.okhttp3:logging-interceptor:${Versions.interceptor}" }
+    val viewModel by lazy { "androidx.lifecycle:lifecycle-viewmodel-ktx:${Versions.lifecycle}" }
+    val liveData by lazy { "androidx.lifecycle:lifecycle-livedata-ktx:${Versions.lifecycle}" }
 }

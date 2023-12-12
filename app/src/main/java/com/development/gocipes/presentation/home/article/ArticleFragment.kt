@@ -16,6 +16,7 @@ import androidx.lifecycle.Lifecycle
 import androidx.navigation.fragment.findNavController
 import androidx.recyclerview.widget.GridLayoutManager
 import com.development.gocipes.core.data.dummy.DummyInformation
+import com.development.gocipes.core.domain.model.information.Information
 import com.development.gocipes.core.presentation.adapter.InformationGridAdapter
 import com.development.gocipes.databinding.FragmentArticleBinding
 
@@ -78,7 +79,7 @@ class ArticleFragment : Fragment() {
         informationGridAdapter.submitList(listArticle)
     }
 
-    private fun navigateToArticleGraph(information: com.development.gocipes.core.model.Information) {
+    private fun navigateToArticleGraph(information: Information) {
         val action = ArticleFragmentDirections.actionArticleFragmentToArticleGraph(information)
         findNavController().navigate(action)
     }

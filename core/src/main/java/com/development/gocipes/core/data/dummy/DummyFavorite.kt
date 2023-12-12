@@ -1,7 +1,7 @@
 package com.development.gocipes.core.data.dummy
 
-import com.development.gocipes.core.model.Category
-import com.development.gocipes.core.model.Favorite
+import com.development.gocipes.core.domain.model.food.Category
+import com.development.gocipes.core.domain.model.favorite.Favorite
 
 object DummyFavorite {
     val dummyFavorite = listOf(

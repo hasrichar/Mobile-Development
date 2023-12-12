@@ -16,7 +16,7 @@ import androidx.lifecycle.Lifecycle
 import androidx.navigation.fragment.findNavController
 import androidx.navigation.fragment.navArgs
 import androidx.recyclerview.widget.GridLayoutManager
-import com.development.gocipes.core.model.Food
+import com.development.gocipes.core.domain.model.food.Food
 import com.development.gocipes.databinding.FragmentCategoryBinding
 import com.development.gocipes.core.presentation.adapter.FoodGridAdapter
 

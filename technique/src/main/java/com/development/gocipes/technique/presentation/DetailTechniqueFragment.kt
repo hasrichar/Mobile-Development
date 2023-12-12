@@ -14,6 +14,7 @@ import androidx.fragment.app.Fragment
 import androidx.lifecycle.Lifecycle
 import androidx.navigation.fragment.findNavController
 import androidx.navigation.fragment.navArgs
+import com.development.gocipes.core.domain.model.information.Information
 import com.development.gocipes.technique.databinding.FragmentDetailTechniqueBinding
 import com.pierfrancescosoffritti.androidyoutubeplayer.core.player.YouTubePlayer
 import com.pierfrancescosoffritti.androidyoutubeplayer.core.player.listeners.AbstractYouTubePlayerListener
@@ -70,7 +71,7 @@ class DetailTechniqueFragment : Fragment() {
         }, viewLifecycleOwner, Lifecycle.State.CREATED)
     }
 
-    private fun setUpYoutubeApi(information: com.development.gocipes.core.model.Information) {
+    private fun setUpYoutubeApi(information: Information) {
         binding?.contentDetailTechnique?.apply {
             lifecycle.addObserver(ytPlayer)
             ytPlayer.addYouTubePlayerListener(object : AbstractYouTubePlayerListener() {

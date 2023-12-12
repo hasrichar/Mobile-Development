@@ -1,8 +1,8 @@
 package com.development.gocipes.core.data.dummy
 
-import com.development.gocipes.core.model.Cook
-import com.development.gocipes.core.model.Food
-import com.development.gocipes.core.model.Ingredient
+import com.development.gocipes.core.domain.model.food.Cook
+import com.development.gocipes.core.domain.model.food.Food
+import com.development.gocipes.core.domain.model.food.Ingredient
 
 object DummyFood {
     val dummyFood = listOf(

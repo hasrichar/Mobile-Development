@@ -6,7 +6,7 @@ import androidx.recyclerview.widget.DiffUtil
 import androidx.recyclerview.widget.ListAdapter
 import androidx.recyclerview.widget.RecyclerView
 import com.development.gocipes.core.databinding.ItemCategoryBinding
-import com.development.gocipes.core.model.Category
+import com.development.gocipes.core.domain.model.food.Category
 import com.development.gocipes.core.utils.Extensions.showImage
 
 class CategoryAdapter(val data: (Category) -> Unit) :

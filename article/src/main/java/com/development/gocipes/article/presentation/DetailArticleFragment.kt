@@ -15,6 +15,7 @@ import androidx.lifecycle.Lifecycle
 import androidx.navigation.fragment.findNavController
 import androidx.navigation.fragment.navArgs
 import com.development.gocipes.article.databinding.FragmentDetailArticleBinding
+import com.development.gocipes.core.domain.model.information.Information
 import com.development.gocipes.core.utils.Extensions.showImage
 
 class DetailArticleFragment : Fragment() {
@@ -40,7 +41,7 @@ class DetailArticleFragment : Fragment() {
 
     }
 
-    private fun setupView(information: com.development.gocipes.core.model.Information) {
+    private fun setupView(information: Information) {
         binding?.apply {
             contentDetailArticle.apply {
                 ivArticlePhoto.showImage(requireActivity(), information.imageUrl)

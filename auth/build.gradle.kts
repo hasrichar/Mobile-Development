@@ -62,4 +62,8 @@ dependencies {
     //navigation
     implementation(Dependencies.navigationKtx)
     implementation(Dependencies.navigationUiKtx)
+
+    //lifecycle
+    implementation(Dependencies.viewModel)
+    implementation(Dependencies.liveData)
 }

@@ -8,7 +8,7 @@ import androidx.fragment.app.Fragment
 import androidx.navigation.fragment.findNavController
 import androidx.recyclerview.widget.LinearLayoutManager
 import com.development.gocipes.core.data.dummy.DummyIngridients
-import com.development.gocipes.core.model.Analysis
+import com.development.gocipes.core.domain.model.food.Analysis
 import com.development.gocipes.databinding.FragmentAnalysisBinding
 import com.development.gocipes.core.presentation.adapter.AnalysisAdapter
 
