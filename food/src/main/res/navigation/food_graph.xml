@@ -13,7 +13,7 @@
             app:destination="@id/cookFragment" />
         <argument
             android:name="food"
-            app:argType="com.development.gocipes.core.model.Food" />
+            app:argType="com.development.gocipes.core.domain.model.food.Food" />
     </fragment>
     <fragment
         android:id="@+id/cookFragment"
@@ -24,7 +24,7 @@
             app:destination="@id/timerFragment" />
         <argument
             android:name="food"
-            app:argType="com.development.gocipes.core.model.Food" />
+            app:argType="com.development.gocipes.core.domain.model.food.Food" />
     </fragment>
     <fragment
         android:id="@+id/timerFragment"
@@ -32,9 +32,9 @@
         android:label="TimerFragment" >
         <argument
             android:name="food"
-            app:argType="com.development.gocipes.core.model.Food" />
+            app:argType="com.development.gocipes.core.domain.model.food.Food" />
     </fragment>
     <argument
         android:name="food"
-        app:argType="com.development.gocipes.core.model.Food" />
+        app:argType="com.development.gocipes.core.domain.model.food.Food" />
 </navigation>

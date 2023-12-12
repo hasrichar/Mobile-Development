@@ -16,7 +16,8 @@ import androidx.lifecycle.Lifecycle
 import androidx.navigation.fragment.findNavController
 import androidx.navigation.fragment.navArgs
 import androidx.recyclerview.widget.LinearLayoutManager
-import com.development.gocipes.core.model.Food
+import com.development.gocipes.core.domain.model.food.Food
+import com.development.gocipes.core.domain.model.food.Ingredient
 import com.development.gocipes.core.presentation.adapter.IngredientAdapter
 import com.development.gocipes.core.utils.Extensions.showImage
 import com.development.gocipes.food.R
@@ -68,7 +69,7 @@ class DetailFoodFragment : Fragment() {
         binding?.btnCook?.setOnClickListener { navigateToCook(food) }
     }
 
-    private fun setupRecyclerIngredient(listIngredient: List<com.development.gocipes.core.model.Ingredient>) {
+    private fun setupRecyclerIngredient(listIngredient: List<Ingredient>) {
         ingredientAdapter = IngredientAdapter()
 
         binding?.contentDetail?.rvIngredients?.apply {

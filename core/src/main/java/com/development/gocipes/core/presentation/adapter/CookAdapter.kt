@@ -7,7 +7,7 @@ import androidx.recyclerview.widget.ListAdapter
 import androidx.recyclerview.widget.RecyclerView
 import com.development.gocipes.core.R
 import com.development.gocipes.core.databinding.ItemCookBinding
-import com.development.gocipes.core.model.Cook
+import com.development.gocipes.core.domain.model.food.Cook
 import com.development.gocipes.core.utils.Extensions.showImage
 
 class CookAdapter : ListAdapter<Cook, CookAdapter.CookViewHolder>(DIFF_CALLBACK) {

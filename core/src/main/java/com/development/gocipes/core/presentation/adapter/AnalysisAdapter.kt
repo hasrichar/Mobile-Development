@@ -6,7 +6,7 @@ import androidx.recyclerview.widget.DiffUtil
 import androidx.recyclerview.widget.ListAdapter
 import androidx.recyclerview.widget.RecyclerView
 import com.development.gocipes.core.databinding.ItemAnalysisBinding
-import com.development.gocipes.core.model.Analysis
+import com.development.gocipes.core.domain.model.food.Analysis
 import com.development.gocipes.core.utils.Extensions.showImage
 
 class AnalysisAdapter(val data: (Analysis) -> Unit) :

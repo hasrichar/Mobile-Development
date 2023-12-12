@@ -1,6 +1,6 @@
 package com.development.gocipes.core.data.dummy
 
-import com.development.gocipes.core.model.Information
+import com.development.gocipes.core.domain.model.information.Information
 
 object DummyInformation {
     val dummyArticle = listOf(

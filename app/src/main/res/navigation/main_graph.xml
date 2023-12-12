@@ -39,21 +39,21 @@
             app:destination="@id/food_graph">
             <argument
                 android:name="food"
-                app:argType="com.development.gocipes.core.model.Food" />
+                app:argType="com.development.gocipes.core.domain.model.food.Food" />
         </action>
         <action
             android:id="@+id/action_homeFragment_to_article_graph"
             app:destination="@id/article_graph">
             <argument
                 android:name="information"
-                app:argType="com.development.gocipes.core.model.Information" />
+                app:argType="com.development.gocipes.core.domain.model.information.Information" />
         </action>
         <action
             android:id="@+id/action_homeFragment_to_technique_graph"
             app:destination="@id/technique_graph">
             <argument
                 android:name="information"
-                app:argType="com.development.gocipes.core.model.Information" />
+                app:argType="com.development.gocipes.core.domain.model.information.Information" />
         </action>
     </fragment>
     <fragment
@@ -85,7 +85,7 @@
             app:destination="@id/food_graph">
             <argument
                 android:name="food"
-                app:argType="com.development.gocipes.core.model.Food" />
+                app:argType="com.development.gocipes.core.domain.model.food.Food" />
         </action>
     </fragment>
     <fragment
@@ -98,7 +98,7 @@
             app:destination="@id/article_graph">
             <argument
                 android:name="information"
-                app:argType="com.development.gocipes.core.model.Information" />
+                app:argType="com.development.gocipes.core.domain.model.information.Information" />
         </action>
     </fragment>
     <fragment
@@ -111,7 +111,7 @@
             app:destination="@id/technique_graph">
             <argument
                 android:name="information"
-                app:argType="com.development.gocipes.core.model.Information" />
+                app:argType="com.development.gocipes.core.domain.model.information.Information" />
         </action>
     </fragment>
     <fragment
@@ -124,7 +124,7 @@
             app:destination="@id/food_graph">
             <argument
                 android:name="food"
-                app:argType="com.development.gocipes.core.model.Food" />
+                app:argType="com.development.gocipes.core.domain.model.food.Food" />
         </action>
     </fragment>
     <fragment
@@ -134,13 +134,13 @@
         tools:layout="@layout/fragment_category">
         <argument
             android:name="category"
-            app:argType="com.development.gocipes.core.model.Category" />
+            app:argType="com.development.gocipes.core.domain.model.food.Category" />
         <action
             android:id="@+id/action_categoryFragment_to_food_graph"
             app:destination="@id/food_graph">
             <argument
                 android:name="food"
-                app:argType="com.development.gocipes.core.model.Food" />
+                app:argType="com.development.gocipes.core.domain.model.food.Food" />
         </action>
     </fragment>
     <include app:graph="@navigation/food_graph" />
@@ -152,6 +152,6 @@
         android:label="fragment_detail_analysis"
         tools:layout="@layout/fragment_detail_analysis" >
         <argument android:name="analysis"
-            app:argType="com.development.gocipes.core.model.Analysis" />
+            app:argType="com.development.gocipes.core.domain.model.food.Analysis" />
     </fragment>
 </navigation>

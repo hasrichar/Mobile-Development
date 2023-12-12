@@ -15,6 +15,8 @@ import androidx.lifecycle.Lifecycle
 import androidx.navigation.fragment.findNavController
 import androidx.navigation.fragment.navArgs
 import androidx.recyclerview.widget.LinearLayoutManager
+import com.development.gocipes.core.domain.model.food.Cook
+import com.development.gocipes.core.domain.model.food.Food
 import com.development.gocipes.core.presentation.adapter.CookAdapter
 import com.development.gocipes.food.databinding.FragmentCookBinding
 
@@ -41,7 +43,7 @@ class CookFragment : Fragment() {
         setupView(foodArgs)
     }
 
-    private fun setupView(food: com.development.gocipes.core.model.Food) {
+    private fun setupView(food: Food) {
 
         setupToolbar()
         setupRecyclerView(food.step)
@@ -68,7 +70,7 @@ class CookFragment : Fragment() {
         }, viewLifecycleOwner, Lifecycle.State.CREATED)
     }
 
-    private fun setupRecyclerView(listCook: List<com.development.gocipes.core.model.Cook>) {
+    private fun setupRecyclerView(listCook: List<Cook>) {
         cookAdapter = CookAdapter()
 
         binding?.rvCook?.apply {
@@ -79,7 +81,7 @@ class CookFragment : Fragment() {
         cookAdapter.submitList(listCook)
     }
 
-    private fun navigateToTimer(food: com.development.gocipes.core.model.Food) {
+    private fun navigateToTimer(food: Food) {
         val action =
             CookFragmentDirections.actionCookFragmentToTimerFragment(
                 food

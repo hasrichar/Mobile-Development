@@ -19,7 +19,8 @@ import androidx.navigation.fragment.findNavController
 import androidx.navigation.fragment.navArgs
 import androidx.viewpager.widget.ViewPager
 import com.development.gocipes.core.R
-import com.development.gocipes.core.model.Food
+import com.development.gocipes.core.domain.model.food.Cook
+import com.development.gocipes.core.domain.model.food.Food
 import com.development.gocipes.core.presentation.adapter.TimerAdapter
 import com.development.gocipes.food.databinding.FragmentTimerBinding
 import com.orbitalsonic.sonictimer.SonicCountDownTimer
@@ -64,7 +65,7 @@ class TimerFragment : Fragment() {
     }
 
     @SuppressLint("ClickableViewAccessibility")
-    private fun setupViewPager(steps: List<com.development.gocipes.core.model.Cook>) {
+    private fun setupViewPager(steps: List<Cook>) {
         timerAdapter = TimerAdapter(requireActivity(), steps)
 
         binding?.viewPager?.apply {

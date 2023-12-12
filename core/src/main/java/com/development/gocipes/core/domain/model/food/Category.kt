@@ -1,4 +1,4 @@
-package com.development.gocipes.core.model
+package com.development.gocipes.core.domain.model.food
 
 import android.os.Parcelable
 import kotlinx.parcelize.Parcelize
@@ -9,4 +9,4 @@ data class Category(
     val name: String,
     val imageUrl: String,
     val listFood: List<Food> = emptyList()
-): Parcelable
+) : Parcelable

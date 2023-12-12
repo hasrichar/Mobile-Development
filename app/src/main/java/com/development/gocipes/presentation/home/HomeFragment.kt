@@ -10,9 +10,9 @@ import androidx.recyclerview.widget.LinearLayoutManager
 import com.development.gocipes.core.data.dummy.DummyCategory
 import com.development.gocipes.core.data.dummy.DummyFood
 import com.development.gocipes.core.data.dummy.DummyInformation
-import com.development.gocipes.core.model.Category
-import com.development.gocipes.core.model.Food
-import com.development.gocipes.core.model.Information
+import com.development.gocipes.core.domain.model.food.Category
+import com.development.gocipes.core.domain.model.food.Food
+import com.development.gocipes.core.domain.model.information.Information
 import com.development.gocipes.core.presentation.adapter.CategoryAdapter
 import com.development.gocipes.core.presentation.adapter.FoodAdapter
 import com.development.gocipes.core.presentation.adapter.InformationAdapter

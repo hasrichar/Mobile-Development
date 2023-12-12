@@ -14,7 +14,7 @@ import androidx.fragment.app.Fragment
 import androidx.lifecycle.Lifecycle
 import androidx.navigation.fragment.findNavController
 import androidx.navigation.fragment.navArgs
-import com.development.gocipes.core.model.Analysis
+import com.development.gocipes.core.domain.model.food.Analysis
 import com.development.gocipes.core.utils.Extensions.showImage
 import com.development.gocipes.databinding.FragmentDetailAnalysisBinding
 

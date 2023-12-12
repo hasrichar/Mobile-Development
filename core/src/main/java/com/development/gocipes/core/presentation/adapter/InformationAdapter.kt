@@ -6,7 +6,7 @@ import androidx.recyclerview.widget.DiffUtil
 import androidx.recyclerview.widget.ListAdapter
 import androidx.recyclerview.widget.RecyclerView
 import com.development.gocipes.core.databinding.ItemGuideBinding
-import com.development.gocipes.core.model.Information
+import com.development.gocipes.core.domain.model.information.Information
 import com.development.gocipes.core.utils.Extensions.showImage
 
 class InformationAdapter(val data: (Information) -> Unit) :

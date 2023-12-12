@@ -7,7 +7,7 @@ import androidx.recyclerview.widget.ListAdapter
 import androidx.recyclerview.widget.RecyclerView
 import com.development.gocipes.core.R
 import com.development.gocipes.core.databinding.ItemIngredientsBinding
-import com.development.gocipes.core.model.Ingredient
+import com.development.gocipes.core.domain.model.food.Ingredient
 
 class IngredientAdapter :
     ListAdapter<Ingredient, IngredientAdapter.IngredientViewHolder>(DIFF_CALLBACK) {

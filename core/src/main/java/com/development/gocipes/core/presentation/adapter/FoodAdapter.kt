@@ -6,7 +6,7 @@ import androidx.recyclerview.widget.DiffUtil
 import androidx.recyclerview.widget.ListAdapter
 import androidx.recyclerview.widget.RecyclerView
 import com.development.gocipes.core.databinding.ItemFoodBinding
-import com.development.gocipes.core.model.Food
+import com.development.gocipes.core.domain.model.food.Food
 import com.development.gocipes.core.utils.Extensions.showImage
 
 class FoodAdapter(val data: (Food) -> Unit) : ListAdapter<Food, FoodAdapter.FoodViewHolder>(DIFF_CALLBACK) {

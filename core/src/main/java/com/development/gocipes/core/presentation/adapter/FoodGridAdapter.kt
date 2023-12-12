@@ -5,7 +5,7 @@ import android.view.ViewGroup
 import androidx.recyclerview.widget.ListAdapter
 import androidx.recyclerview.widget.RecyclerView
 import com.development.gocipes.core.databinding.ItemFoodGridBinding
-import com.development.gocipes.core.model.Food
+import com.development.gocipes.core.domain.model.food.Food
 import com.development.gocipes.core.presentation.adapter.FoodAdapter.Companion.DIFF_CALLBACK
 import com.development.gocipes.core.utils.Extensions.showImage
 
