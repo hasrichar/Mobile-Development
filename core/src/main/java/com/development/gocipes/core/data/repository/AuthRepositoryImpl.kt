@@ -28,4 +28,16 @@ class AuthRepositoryImpl @Inject constructor(
             emit(Result.Error(e.message))
         }
     }
+
+    override fun forgotPassword(
+        email: String
+    ) = flow {
+        emit(Result.Loading())
+        try {
+            val response = remoteDataSource.forgotPassword(email)
+            emit(Result.Success(response))
+        } catch (e: Exception) {
+            emit(Result.Error(e.message))
+        }
+    }
 }
