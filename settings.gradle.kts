@@ -16,4 +16,8 @@ dependencyResolutionManagement {
 
 rootProject.name = "GoCipes"
 include(":app")
- 
+include(":core")
+include(":auth")
+include(":food")
+include(":article")
+include(":technique")

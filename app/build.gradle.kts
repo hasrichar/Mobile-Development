@@ -4,7 +4,6 @@ plugins {
     id("kotlin-kapt")
     id("dagger.hilt.android.plugin")
     id("androidx.navigation.safeargs")
-    id("kotlin-parcelize")
 }
 
 android {
@@ -45,32 +44,33 @@ android {
 
 dependencies {
 
-    implementation("androidx.core:core-ktx:1.9.0")
-    implementation("androidx.appcompat:appcompat:1.6.1")
-    implementation("com.google.android.material:material:1.9.0")
-    implementation("androidx.constraintlayout:constraintlayout:2.1.4")
-    testImplementation("junit:junit:4.13.2")
-    androidTestImplementation("androidx.test.ext:junit:1.1.5")
-    androidTestImplementation("androidx.test.espresso:espresso-core:3.5.1")
+    implementation(project(Modules.core))
+    implementation(project(Modules.auth))
+    implementation(project(Modules.food))
+    implementation(project(Modules.article))
+    implementation(project(Modules.technique))
+
+    implementation(Dependencies.coreKtx)
+    implementation(Dependencies.appCompat)
+
+    //ui
+    implementation(Dependencies.material)
+    implementation(Dependencies.constraintLayout)
+
+    //testing
+    testImplementation(Dependencies.junit)
+    androidTestImplementation(Dependencies.extJunit)
+    androidTestImplementation(Dependencies.esspresso)
 
     //dagger-hilt
-    implementation("com.google.dagger:hilt-android:2.43.2")
-    kapt("androidx.hilt:hilt-compiler:1.1.0")
-    kapt("com.google.dagger:hilt-android-compiler:2.43.2")
+    implementation(Dependencies.daggerHilt)
+    kapt(Dependencies.hiltCompiler)
+    kapt(Dependencies.daggerHiltCompiler)
 
-    //nav-args
-    implementation ("androidx.navigation:navigation-fragment-ktx:2.5.3")
-    implementation ("androidx.navigation:navigation-ui-ktx:2.5.3")
+    //navigation
+    implementation(Dependencies.navigationKtx)
+    implementation(Dependencies.navigationUiKtx)
 
-    //Circle-image-view
-    implementation ("de.hdodenhof:circleimageview:3.1.0")
-
-    //glide
-    implementation ("com.github.bumptech.glide:glide:4.16.0")
-
-    //Youtube API
-    implementation ("com.pierfrancescosoffritti.androidyoutubeplayer:core:12.1.0")
-
-    //sonic-countdown
-    implementation ("com.github.orbitalsonic:SonicCountDownTimer:1.0.4")
+    //circle-image
+    implementation(Dependencies.hdodenhof)
 }

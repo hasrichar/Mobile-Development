@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:id="@+id/food_graph"
+    app:startDestination="@id/detailFoodFragment">
+
+    <fragment
+        android:id="@+id/detailFoodFragment"
+        android:name="com.development.gocipes.food.presentation.detail.DetailFoodFragment"
+        android:label="DetailFoodFragment" >
+        <action
+            android:id="@+id/action_detailFoodFragment_to_cookFragment"
+            app:destination="@id/cookFragment" />
+        <argument
+            android:name="food"
+            app:argType="com.development.gocipes.core.domain.model.food.Food" />
+    </fragment>
+    <fragment
+        android:id="@+id/cookFragment"
+        android:name="com.development.gocipes.food.presentation.cook.CookFragment"
+        android:label="CookFragment" >
+        <action
+            android:id="@+id/action_cookFragment_to_timerFragment"
+            app:destination="@id/timerFragment" />
+        <argument
+            android:name="food"
+            app:argType="com.development.gocipes.core.domain.model.food.Food" />
+    </fragment>
+    <fragment
+        android:id="@+id/timerFragment"
+        android:name="com.development.gocipes.food.presentation.timer.TimerFragment"
+        android:label="TimerFragment" >
+        <argument
+            android:name="food"
+            app:argType="com.development.gocipes.core.domain.model.food.Food" />
+    </fragment>
+    <argument
+        android:name="food"
+        app:argType="com.development.gocipes.core.domain.model.food.Food" />
+</navigation>
