@@ -36,17 +36,12 @@ class RegisterFragment : Fragment() {
 
     private fun setupView() {
         binding?.contentRegister?.apply {
+
             btnRegister.setOnClickListener {
                 val firstName = tilFirstName.editText?.text?.toString()?.trim()
                 val lastName = tilLastName.editText?.text?.toString()?.trim()
                 val email = tilEmail.editText?.text?.toString()?.trim()
                 val password = tilPassword.editText?.text?.toString()?.trim()
-
-                Log.d("TAG", "setupView: $firstName")
-                Log.d("TAG", "setupView: $lastName")
-                Log.d("TAG", "setupView: $email")
-                Log.d("TAG", "setupView: $password")
-
 
                 if (firstName != null && lastName != null && email != null && password != null)
                     registerObserver(firstName, lastName, email, password)
@@ -66,7 +61,6 @@ class RegisterFragment : Fragment() {
                     is Result.Error -> {
                         Toast.makeText(requireActivity(), result.message, Toast.LENGTH_SHORT).show()
                     }
-
                     is Result.Loading -> {}
                     is Result.Success -> {
                         navigateToLogin()
