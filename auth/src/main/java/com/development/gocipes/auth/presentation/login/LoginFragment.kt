@@ -36,10 +36,10 @@ class LoginFragment : Fragment() {
     private fun setupView() {
         binding?.contentLogin?.apply {
             btnLogin.setOnClickListener {
-                val email = tilEmail.editText?.text?.toString()?.trim()
-                val password = tilPassword.editText?.text?.toString()?.trim()
+                val email = tilEmail.editText?.text.toString().trim()
+                val password = tilPassword.editText?.text.toString().trim()
 
-                if (email != null && password != null) loginObserver(email, password)
+                loginObserver(email, password)
             }
             btnRegister.setOnClickListener { navigateToRegister() }
             tvForgotPassword.setOnClickListener { navigateToForgot() }

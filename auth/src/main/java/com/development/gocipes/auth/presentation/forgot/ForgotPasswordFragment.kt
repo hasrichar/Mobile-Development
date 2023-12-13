@@ -1,7 +1,6 @@
 package com.development.gocipes.auth.presentation.forgot
 
 import android.os.Bundle
-import android.util.Log
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
@@ -11,7 +10,9 @@ import androidx.fragment.app.viewModels
 import androidx.navigation.fragment.findNavController
 import com.development.gocipes.auth.databinding.FragmentForgotPasswordBinding
 import com.development.gocipes.core.utils.Result
+import dagger.hilt.android.AndroidEntryPoint
 
+@AndroidEntryPoint
 class ForgotPasswordFragment : Fragment() {
 
     private var _binding: FragmentForgotPasswordBinding? = null
@@ -36,10 +37,8 @@ class ForgotPasswordFragment : Fragment() {
         binding?.contentForgot?.apply {
             btnRegister.setOnClickListener {
                 val email = tilEmail.editText?.text.toString().trim()
-                Log.d("TAG", "setupView: $email")
 
-                if (email != null)
-                     forgotObserver(email)
+                forgotObserver(email)
             }
         }
     }

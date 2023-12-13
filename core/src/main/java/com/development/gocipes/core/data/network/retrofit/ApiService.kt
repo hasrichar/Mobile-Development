@@ -1,5 +1,7 @@
 package com.development.gocipes.core.data.network.retrofit
 
+import com.development.gocipes.core.data.network.response.ForgotPasswordResponse
+import com.development.gocipes.core.data.network.response.LoginResponse
 import com.development.gocipes.core.data.network.response.RegisterResponse
 import retrofit2.http.Field
 import retrofit2.http.FormUrlEncoded
