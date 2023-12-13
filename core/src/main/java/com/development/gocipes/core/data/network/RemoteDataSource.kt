@@ -9,5 +9,7 @@ class RemoteDataSource @Inject constructor(
     private val apiService: ApiService
 ) {
 
-    suspend fun register(firstName: String, lastName: String, username: String, password: String) = apiService.register(firstName, lastName, username, password)
+    suspend fun register(firstName: String, lastName: String, email: String, password: String) = apiService.register(firstName, lastName, email, password)
+
+    suspend fun login(email: String, password: String) = apiService.login(email, password)
 }

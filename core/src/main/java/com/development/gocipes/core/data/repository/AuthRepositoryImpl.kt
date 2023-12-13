@@ -21,9 +21,18 @@ class AuthRepositoryImpl @Inject constructor(
         try {
             val response = remoteDataSource.register(firstName, lastName, email, password)
             val result = response.data
-            if (result != null) {
-                emit(Result.Success(result))
-            }
+            if (result != null) emit(Result.Success(result))
+        } catch (e: Exception) {
+            emit(Result.Error(e.message))
+        }
+    }
+
+    override fun login(email: String, password: String) = flow {
+        emit(Result.Loading())
+        try {
+            val response = remoteDataSource.login(email, password)
+            val result = response.data
+            if (result != null) emit(Result.Success(result))
         } catch (e: Exception) {
             emit(Result.Error(e.message))
         }
