@@ -10,4 +10,6 @@ class RemoteDataSource @Inject constructor(
 ) {
 
     suspend fun register(firstName: String, lastName: String, username: String, password: String) = apiService.register(firstName, lastName, username, password)
+
+    suspend fun forgotPassword(email: String) = apiService.forgotPassword(email)
 }

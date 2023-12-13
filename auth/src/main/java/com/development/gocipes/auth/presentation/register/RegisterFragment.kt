@@ -1,6 +1,7 @@
 package com.development.gocipes.auth.presentation.register
 
 import android.os.Bundle
+import android.util.Log
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
@@ -35,12 +36,18 @@ class RegisterFragment : Fragment() {
 
     private fun setupView() {
         binding?.contentRegister?.apply {
-            val firstName = tilFirstName.editText?.text?.toString()?.trim()
-            val lastName = tilLastName.editText?.text?.toString()?.trim()
-            val email = tilEmail.editText?.text?.toString()?.trim()
-            val password = tilPassword.editText?.text?.toString()?.trim()
-
             btnRegister.setOnClickListener {
+                val firstName = tilFirstName.editText?.text?.toString()?.trim()
+                val lastName = tilLastName.editText?.text?.toString()?.trim()
+                val email = tilEmail.editText?.text?.toString()?.trim()
+                val password = tilPassword.editText?.text?.toString()?.trim()
+
+                Log.d("TAG", "setupView: $firstName")
+                Log.d("TAG", "setupView: $lastName")
+                Log.d("TAG", "setupView: $email")
+                Log.d("TAG", "setupView: $password")
+
+
                 if (firstName != null && lastName != null && email != null && password != null)
                     registerObserver(firstName, lastName, email, password)
             }
