@@ -2,5 +2,14 @@
     <style name="Base.Theme.GoCipes" parent="Theme.Material3.DayNight.NoActionBar">
         <item name="colorPrimary">@color/primary</item>
         <item name="android:includeFontPadding">false</item>
+        <item name="cardBackgroundColor">@color/black</item>
+    </style>
+
+    <style name="Widget.App.CardStyle"
+        parent="Widget.Material3.CardView.Elevated">
+        <item name="materialThemeOverlay">@style/Widget.App.CardStyle</item>
+    </style>
+    <style name="materialThemeOverlay">
+        <item name="colorPrimary">@color/black</item>
     </style>
 </resources>

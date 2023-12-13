@@ -3,6 +3,8 @@
     <style name="Base.Theme.GoCipes" parent="Theme.Material3.DayNight.NoActionBar">
         <item name="colorPrimary">@color/primary</item>
         <item name="android:includeFontPadding">false</item>
+        <item name="android:colorBackground">@color/white</item>
+        <item name="cardBackgroundColor">@color/white</item>
     </style>
 
     <style name="BottomNavigationView" parent="@style/TextAppearance.AppCompat.Caption">
@@ -20,5 +22,23 @@
     <style name="TextAppearanceToolbar" parent="android:TextAppearance">
         <item name="android:fontFamily">@font/poppins_semi_bold</item>
         <item name="android:textSize">20sp</item>
+        <item name="android:textColor">?attr/colorControlNormal</item>
+    </style>
+
+    <style name="ShapeAppearanceOverlay.MyApp.Button.Circle" parent="">
+        <item name="cornerFamily">rounded</item>
+        <item name="cornerSize">50%</item>
+    </style>
+
+    <style name="Widget.App.CardStyle"
+        parent="Widget.Material3.CardView.Elevated">
+        <item name="materialThemeOverlay">@style/Widget.App.CardStyle</item>
+    </style>
+    <style name="materialThemeOverlay">
+        <item name="colorPrimary">@color/white</item>
+    </style>
+
+    <style name="AppSearchView" parent="Widget.AppCompat.SearchView" >
+        <item name="android:textSize">16sp</item>
     </style>
 </resources>

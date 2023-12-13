@@ -5,7 +5,7 @@
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_marginStart="8dp"
-    android:background="@color/white"
+    style="@style/Widget.Material3.CardView.Elevated"
     app:shapeAppearance="@style/ShapeAppearance.Material3.Corner.Medium">
 
     <androidx.constraintlayout.widget.ConstraintLayout
@@ -14,8 +14,8 @@
         
         <com.google.android.material.imageview.ShapeableImageView
             android:id="@+id/siv_guide"
-            android:layout_width="168dp"
-            android:layout_height="140dp"
+            android:layout_width="160dp"
+            android:layout_height="200dp"
             android:scaleType="centerCrop"
             app:layout_constraintTop_toTopOf="parent"
             app:layout_constraintStart_toStartOf="parent"
