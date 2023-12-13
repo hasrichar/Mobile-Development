@@ -1,6 +1,5 @@
 package com.development.gocipes.core.data.network.retrofit
 
-import com.development.gocipes.core.data.network.response.LoginResponse
 import com.development.gocipes.core.data.network.response.RegisterResponse
 import retrofit2.http.Field
 import retrofit2.http.FormUrlEncoded
@@ -23,4 +22,10 @@ interface ApiService {
         @Field("email") email: String,
         @Field("password") password: String
     ): LoginResponse
+
+    @FormUrlEncoded
+    @POST("auth/forgot-password")
+    suspend fun forgotPassword(
+        @Field("email") email: String,
+    ): ForgotPasswordResponse
 }
