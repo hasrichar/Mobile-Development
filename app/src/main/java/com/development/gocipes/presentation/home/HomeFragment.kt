@@ -7,9 +7,9 @@ import android.view.ViewGroup
 import androidx.fragment.app.Fragment
 import androidx.navigation.fragment.findNavController
 import androidx.recyclerview.widget.LinearLayoutManager
-import com.development.gocipes.core.data.dummy.DummyCategory
-import com.development.gocipes.core.data.dummy.DummyFood
-import com.development.gocipes.core.data.dummy.DummyInformation
+import com.development.gocipes.core.data.local.dummy.DummyCategory
+import com.development.gocipes.core.data.local.dummy.DummyFood
+import com.development.gocipes.core.data.local.dummy.DummyInformation
 import com.development.gocipes.core.domain.model.food.Category
 import com.development.gocipes.core.domain.model.food.Food
 import com.development.gocipes.core.domain.model.information.Information

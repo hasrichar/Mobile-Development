@@ -73,4 +73,7 @@ dependencies {
 
     //circle-image
     implementation(Dependencies.hdodenhof)
+
+    //prefs
+    implementation(Dependencies.prefs)
 }

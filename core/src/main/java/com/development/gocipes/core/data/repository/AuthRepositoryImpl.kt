@@ -1,6 +1,6 @@
 package com.development.gocipes.core.data.repository
 
-import com.development.gocipes.core.data.network.RemoteDataSource
+import com.development.gocipes.core.data.remote.RemoteDataSource
 import com.development.gocipes.core.domain.repository.AuthRepository
 import com.development.gocipes.core.utils.Result
 import kotlinx.coroutines.flow.flow

@@ -1,4 +1,4 @@
-package com.development.gocipes.core.data.network.response
+package com.development.gocipes.core.data.remote.response
 
 import com.google.gson.annotations.SerializedName
 

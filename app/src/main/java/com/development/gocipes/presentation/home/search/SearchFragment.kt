@@ -15,7 +15,7 @@ import androidx.fragment.app.Fragment
 import androidx.lifecycle.Lifecycle
 import androidx.navigation.fragment.findNavController
 import androidx.recyclerview.widget.LinearLayoutManager
-import com.development.gocipes.core.data.dummy.DummyFood
+import com.development.gocipes.core.data.local.dummy.DummyFood
 import com.development.gocipes.core.domain.model.food.Food
 import com.development.gocipes.databinding.FragmentSearchBinding
 import com.development.gocipes.core.presentation.adapter.SearchAdapter

@@ -1,6 +1,6 @@
-package com.development.gocipes.core.data.network
+package com.development.gocipes.core.data.remote
 
-import com.development.gocipes.core.data.network.retrofit.ApiService
+import com.development.gocipes.core.data.remote.retrofit.ApiService
 import javax.inject.Inject
 import javax.inject.Singleton
 

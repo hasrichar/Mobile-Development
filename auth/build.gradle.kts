@@ -66,4 +66,7 @@ dependencies {
     //lifecycle
     implementation(Dependencies.viewModel)
     implementation(Dependencies.liveData)
+
+    //prefs
+    implementation(Dependencies.prefs)
 }
