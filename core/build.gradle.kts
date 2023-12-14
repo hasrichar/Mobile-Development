@@ -78,4 +78,7 @@ dependencies {
     implementation(Dependencies.retrofit)
     implementation(Dependencies.retrofitConverter)
     implementation(Dependencies.interceptor)
+
+    //prefs
+    implementation(Dependencies.prefs)
 }

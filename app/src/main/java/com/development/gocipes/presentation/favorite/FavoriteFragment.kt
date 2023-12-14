@@ -6,7 +6,7 @@ import android.view.View
 import android.view.ViewGroup
 import androidx.fragment.app.Fragment
 import androidx.recyclerview.widget.LinearLayoutManager
-import com.development.gocipes.core.data.dummy.DummyFavorite
+import com.development.gocipes.core.data.local.dummy.DummyFavorite
 import com.development.gocipes.core.domain.model.favorite.Favorite
 import com.development.gocipes.databinding.FragmentFavoriteBinding
 import com.development.gocipes.core.presentation.adapter.FavoriteAdapter

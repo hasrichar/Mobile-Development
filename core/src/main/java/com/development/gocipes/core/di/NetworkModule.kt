@@ -1,8 +1,8 @@
 package com.development.gocipes.core.di
 
 import com.development.gocipes.core.BuildConfig
-import com.development.gocipes.core.data.network.retrofit.ApiService
-import com.development.gocipes.core.data.network.retrofit.AuthInterceptor
+import com.development.gocipes.core.data.remote.retrofit.ApiService
+import com.development.gocipes.core.data.remote.retrofit.AuthInterceptor
 import dagger.Module
 import dagger.Provides
 import dagger.hilt.InstallIn

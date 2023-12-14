@@ -1,4 +1,4 @@
-package com.development.gocipes.core.data.dummy
+package com.development.gocipes.core.data.local.dummy
 
 import com.development.gocipes.core.domain.model.food.Category
 import com.development.gocipes.core.domain.model.food.Cook

@@ -20,4 +20,5 @@ object Dependencies {
     val interceptor by lazy { "com.squareup.okhttp3:logging-interceptor:${Versions.interceptor}" }
     val viewModel by lazy { "androidx.lifecycle:lifecycle-viewmodel-ktx:${Versions.lifecycle}" }
     val liveData by lazy { "androidx.lifecycle:lifecycle-livedata-ktx:${Versions.lifecycle}" }
+    val prefs by lazy { "com.pixplicity.easyprefs:EasyPrefs:${Versions.prefs}" }
 }
