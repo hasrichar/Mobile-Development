@@ -4,12 +4,15 @@ import android.os.Bundle
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import android.widget.Toast
 import androidx.fragment.app.Fragment
+import androidx.fragment.app.viewModels
 import androidx.navigation.fragment.findNavController
 import androidx.recyclerview.widget.LinearLayoutManager
 import com.development.gocipes.core.data.local.dummy.DummyCategory
 import com.development.gocipes.core.data.local.dummy.DummyFood
 import com.development.gocipes.core.data.local.dummy.DummyInformation
+import com.development.gocipes.core.data.local.prefs.Prefs
 import com.development.gocipes.core.domain.model.food.Category
 import com.development.gocipes.core.domain.model.food.Food
 import com.development.gocipes.core.domain.model.information.Information
@@ -17,8 +20,11 @@ import com.development.gocipes.core.presentation.adapter.CategoryAdapter
 import com.development.gocipes.core.presentation.adapter.FoodAdapter
 import com.development.gocipes.core.presentation.adapter.InformationAdapter
 import com.development.gocipes.core.utils.Extensions.showImage
+import com.development.gocipes.core.utils.Result
 import com.development.gocipes.databinding.FragmentHomeBinding
+import dagger.hilt.android.AndroidEntryPoint
 
+@AndroidEntryPoint
 class HomeFragment : Fragment() {
 
     private var _binding: FragmentHomeBinding? = null
@@ -26,6 +32,7 @@ class HomeFragment : Fragment() {
     private lateinit var categoryAdapter: CategoryAdapter
     private lateinit var foodAdapter: FoodAdapter
     private lateinit var informationAdapter: InformationAdapter
+    private val viewModel by viewModels<HomeViewModel>()
 
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
@@ -42,7 +49,9 @@ class HomeFragment : Fragment() {
         val listGuide = DummyInformation.dummyArticle
         val listTechnique = DummyInformation.dummyTechnique
 
-        val name = "Mutiara!"
+        userInfoObserver()
+
+        val name = Prefs.firstName
         val url =
             "https://www.betterup.com/hubfs/Blog%20Images/authentic-self-person-smiling-at-camera.jpg"
 
@@ -116,6 +125,21 @@ class HomeFragment : Fragment() {
         }
 
         informationAdapter.submitList(listTechnique)
+    }
+
+    private fun userInfoObserver(){
+        viewModel.getUserInfo().observe(viewLifecycleOwner) { result ->
+            when (result) {
+                is Result.Error -> {
+                    Toast.makeText(requireActivity(), result.message, Toast.LENGTH_SHORT).show()
+                }
+                is Result.Loading -> {}
+                is Result.Success -> {
+                    val user = result.data
+                    Prefs.firstName = user.data.firstName
+                }
+            }
+        }
     }
 
     private fun navigateToFood() {
