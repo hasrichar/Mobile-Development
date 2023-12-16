@@ -1,23 +1,23 @@
-package com.development.gocipes.core.data.remote.response
+package com.development.gocipes.core.data.remote.response.auth
 
 import com.google.gson.annotations.SerializedName
 
 data class GetUserResponse(
 
-	@field:SerializedName("msg")
+    @field:SerializedName("msg")
 	val msg: String,
 
-	@field:SerializedName("code")
+    @field:SerializedName("code")
 	val code: Int,
 
-	@field:SerializedName("data")
-	val data: Data,
+    @field:SerializedName("data")
+	val data: UserResult,
 
-	@field:SerializedName("status")
+    @field:SerializedName("status")
 	val status: String
 )
 
-data class Data(
+data class UserResult(
 
 	@field:SerializedName("role")
 	val role: String,
@@ -29,7 +29,7 @@ data class Data(
 	val lastName: String,
 
 	@field:SerializedName("photo")
-	val photo: Any,
+	val photo: String,
 
 	@field:SerializedName("first_name")
 	val firstName: String,

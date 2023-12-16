@@ -1,6 +1,7 @@
 <?xml version="1.0" encoding="utf-8"?>
 <navigation xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
     android:id="@+id/food_graph"
     app:startDestination="@id/detailFoodFragment">
 
@@ -33,8 +34,16 @@
         <argument
             android:name="food"
             app:argType="com.development.gocipes.core.domain.model.food.Food" />
+        <action
+            android:id="@+id/action_timerFragment_to_finishFragment"
+            app:destination="@id/finishFragment" />
     </fragment>
     <argument
         android:name="food"
         app:argType="com.development.gocipes.core.domain.model.food.Food" />
+    <fragment
+        android:id="@+id/finishFragment"
+        android:name="com.development.gocipes.food.presentation.finish.FinishFragment"
+        android:label="fragment_finish"
+        tools:layout="@layout/fragment_finish" />
 </navigation>

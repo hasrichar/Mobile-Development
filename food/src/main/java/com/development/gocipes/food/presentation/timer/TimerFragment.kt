@@ -113,7 +113,7 @@ class TimerFragment : Fragment() {
     }
 
     private fun setupTimer(timer: Int) {
-        val clockTime = (timer * 60 * 1000).toLong()
+        val clockTime = (timer * 1000).toLong()
         val progressTime = (clockTime / 1000).toFloat()
         val second = (clockTime / 1000.0f).roundToInt()
 
@@ -132,8 +132,13 @@ class TimerFragment : Fragment() {
             override fun onTimerFinish() {
                 binding?.apply {
                     binding?.apply {
-                        viewPager.setCurrentItem(viewPager.currentItem + 1, true)
-                        countDownTimer.startCountDownTimer()
+                        if (viewPager.currentItem == viewPager.adapter?.count?.minus(1)) {
+                            val action = TimerFragmentDirections.actionTimerFragmentToFinishFragment()
+                            findNavController().navigate(action)
+                        } else {
+                            viewPager.setCurrentItem(viewPager.currentItem + 1, true)
+                            countDownTimer.startCountDownTimer()
+                        }
                     }
                 }
             }

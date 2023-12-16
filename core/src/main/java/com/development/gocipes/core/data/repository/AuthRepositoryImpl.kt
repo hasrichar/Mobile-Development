@@ -1,12 +1,11 @@
 package com.development.gocipes.core.data.repository
 
-import com.development.gocipes.core.data.local.prefs.Prefs
 import com.development.gocipes.core.data.remote.RemoteDataSource
-import com.development.gocipes.core.data.remote.response.GetUserResponse
 import com.development.gocipes.core.domain.repository.AuthRepository
 import com.development.gocipes.core.utils.Result
-import kotlinx.coroutines.flow.Flow
+import kotlinx.coroutines.Dispatchers
 import kotlinx.coroutines.flow.flow
+import kotlinx.coroutines.flow.flowOn
 import javax.inject.Inject
 import javax.inject.Singleton
 
@@ -28,7 +27,7 @@ class AuthRepositoryImpl @Inject constructor(
         } catch (e: Exception) {
             emit(Result.Error(e.message))
         }
-    }
+    }.flowOn(Dispatchers.IO)
 
     override fun login(email: String, password: String) = flow {
         emit(Result.Loading())
@@ -39,7 +38,7 @@ class AuthRepositoryImpl @Inject constructor(
         } catch (e: Exception) {
             emit(Result.Error(e.message))
         }
-    }
+    }.flowOn(Dispatchers.IO)
 
     override fun forgotPassword(
         email: String
@@ -51,15 +50,16 @@ class AuthRepositoryImpl @Inject constructor(
         } catch (e: Exception) {
             emit(Result.Error(e.message))
         }
-    }
+    }.flowOn(Dispatchers.IO)
 
     override fun getUserInfo() = flow {
         emit(Result.Loading())
         try {
             val response = remoteDataSource.getUserInfo()
-            emit(Result.Success(response))
+            val result = response.data
+            emit(Result.Success(result))
         } catch (e: Exception) {
             emit(Result.Error(e.message))
         }
-    }
+    }.flowOn(Dispatchers.IO)
 }
