@@ -13,11 +13,13 @@ import com.development.gocipes.core.data.local.dummy.DummyCategory
 import com.development.gocipes.core.data.local.dummy.DummyFood
 import com.development.gocipes.core.data.local.dummy.DummyInformation
 import com.development.gocipes.core.data.local.prefs.Prefs
+import com.development.gocipes.core.data.remote.response.article.ArtikelItem
 import com.development.gocipes.core.data.remote.response.auth.UserResult
 import com.development.gocipes.core.domain.model.food.Category
 import com.development.gocipes.core.domain.model.food.Food
 import com.development.gocipes.core.domain.model.information.Information
 import com.development.gocipes.core.domain.model.technique.Technique
+import com.development.gocipes.core.presentation.adapter.ArticleAdapter
 import com.development.gocipes.core.presentation.adapter.CategoryAdapter
 import com.development.gocipes.core.presentation.adapter.FoodAdapter
 import com.development.gocipes.core.presentation.adapter.InformationAdapter
@@ -34,7 +36,7 @@ class HomeFragment : Fragment() {
     private val binding get() = _binding
     private lateinit var categoryAdapter: CategoryAdapter
     private lateinit var foodAdapter: FoodAdapter
-    private lateinit var informationAdapter: InformationAdapter
+    private lateinit var articleAdapter: ArticleAdapter
     private val techniqueAdapter by lazy { TechniqueAdapter() }
     private val viewModel by viewModels<HomeViewModel>()
 
@@ -50,14 +52,27 @@ class HomeFragment : Fragment() {
         super.onViewCreated(view, savedInstanceState)
         val listCategory = DummyCategory.dummyCategory
         val listFood = DummyFood.dummyFood
-        val listGuide = DummyInformation.dummyArticle
 
         userInfoObserver()
         techniqueObserver()
+        articleObserver()
 
         setupRecyclerCategory(listCategory)
         setupRecyclerViewFood(listFood)
-        setupRecyclerViewGuide(listGuide)
+    }
+
+    private fun articleObserver() {
+        viewModel.getAllArticle().observe(viewLifecycleOwner) { result ->
+            when (result) {
+                is Result.Error -> {
+                    Toast.makeText(context, result.message, Toast.LENGTH_SHORT).show()
+                }
+                is Result.Loading -> {}
+                is Result.Success -> {
+                    setupRecyclerViewGuide(result.data)
+                }
+            }
+        }
     }
 
     private fun userInfoObserver() {
@@ -92,9 +107,10 @@ class HomeFragment : Fragment() {
 
     private fun setupView(userResult: UserResult) {
         val fullName = userResult.firstName + userResult.lastName
+        val urlPhoto = "https://t4.ftcdn.net/jpg/00/64/67/63/360_F_64676383_LdbmhiNM6Ypzb3FM4PPuFP9rHe7ri8Ju.jpg"
 
         binding?.contentHome?.apply {
-            sivProfile.showImage(requireActivity(), userResult.photo)
+            sivProfile.showImage(requireActivity(), userResult.photo ?: urlPhoto )
             tvName.text = fullName
             searchBar.setOnClickListener { navigateToSearch() }
             tvAllFood.setOnClickListener { navigateToFood() }
@@ -132,18 +148,16 @@ class HomeFragment : Fragment() {
         foodAdapter.submitList(listFood)
     }
 
-    private fun setupRecyclerViewGuide(listInformation: List<Information>) {
-        informationAdapter = InformationAdapter { information ->
-            navigateToArticleGraph(information)
-        }
+    private fun setupRecyclerViewGuide(listArtikel: List<ArtikelItem>) {
+        articleAdapter = ArticleAdapter()
 
         binding?.contentHome?.rvGuide?.apply {
-            adapter = informationAdapter
+            adapter = articleAdapter
             layoutManager =
                 LinearLayoutManager(requireActivity(), LinearLayoutManager.HORIZONTAL, false)
         }
 
-        informationAdapter.submitList(listInformation)
+        articleAdapter.submitList(listArtikel)
     }
 
     private fun setupRecyclerViewTechnique(listTechnique: List<Technique>) {

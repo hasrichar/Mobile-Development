@@ -29,7 +29,7 @@ data class UserResult(
 	val lastName: String,
 
 	@field:SerializedName("photo")
-	val photo: String,
+	val photo: String?= null ,
 
 	@field:SerializedName("first_name")
 	val firstName: String,
