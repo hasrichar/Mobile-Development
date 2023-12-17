@@ -17,12 +17,9 @@ import androidx.fragment.app.viewModels
 import androidx.lifecycle.Lifecycle
 import androidx.navigation.fragment.findNavController
 import androidx.recyclerview.widget.GridLayoutManager
-import com.development.gocipes.core.data.local.dummy.DummyInformation
-import com.development.gocipes.core.data.local.prefs.Prefs
-import com.development.gocipes.core.data.remote.response.article.ArtikelItem
+import com.development.gocipes.core.domain.model.article.Article
 import com.development.gocipes.core.domain.model.information.Information
 import com.development.gocipes.core.presentation.adapter.ArticleGridAdapter
-import com.development.gocipes.core.presentation.adapter.InformationGridAdapter
 import com.development.gocipes.core.utils.Result
 import com.development.gocipes.databinding.FragmentArticleBinding
 import dagger.hilt.android.AndroidEntryPoint
@@ -76,6 +73,7 @@ class ArticleFragment : Fragment() {
                 is Result.Error -> {
                     Toast.makeText(context, result.message, Toast.LENGTH_SHORT).show()
                 }
+
                 is Result.Loading -> {}
                 is Result.Success -> {
                     setupView(result.data)
@@ -84,7 +82,7 @@ class ArticleFragment : Fragment() {
         }
     }
 
-    private fun setupView(artikelItem: List<ArtikelItem>) {
+    private fun setupView(artikelItem: List<Article>) {
         articleGridAdapter = ArticleGridAdapter { article ->
 
         }

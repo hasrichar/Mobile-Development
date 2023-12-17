@@ -2,17 +2,15 @@ package com.development.gocipes.core.presentation.adapter
 
 import android.view.LayoutInflater
 import android.view.ViewGroup
-import androidx.recyclerview.widget.DiffUtil
 import androidx.recyclerview.widget.ListAdapter
 import androidx.recyclerview.widget.RecyclerView
-import com.development.gocipes.core.data.remote.response.article.ArtikelItem
 import com.development.gocipes.core.databinding.ItemInformationGridBinding
-import com.development.gocipes.core.domain.model.technique.Technique
+import com.development.gocipes.core.domain.model.article.Article
 import com.development.gocipes.core.presentation.adapter.ArticleAdapter.Companion.DIFF_CALLBACK
 import com.development.gocipes.core.utils.Extensions.showImage
 
-class ArticleGridAdapter(val data: (ArtikelItem) -> Unit) :
-    ListAdapter<ArtikelItem, ArticleGridAdapter.InformationGridViewHolder>(DIFF_CALLBACK) {
+class ArticleGridAdapter(val data: (Article) -> Unit) :
+    ListAdapter<Article, ArticleGridAdapter.InformationGridViewHolder>(DIFF_CALLBACK) {
 
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): InformationGridViewHolder {
         val binding =
@@ -26,12 +24,12 @@ class ArticleGridAdapter(val data: (ArtikelItem) -> Unit) :
 
     inner class InformationGridViewHolder(private val binding: ItemInformationGridBinding) :
         RecyclerView.ViewHolder(binding.root) {
-        fun bind(artikelItem: ArtikelItem) {
+        fun bind(article: Article) {
             binding.apply {
-                sivGuide.showImage(itemView.context, artikelItem.gambar)
-                tvName.text = artikelItem.headline
+                sivGuide.showImage(itemView.context, article.cover ?: "")
+                tvName.text = article.headline
             }
-            itemView.setOnClickListener { data.invoke(artikelItem) }
+            itemView.setOnClickListener { data.invoke(article) }
         }
     }
 }

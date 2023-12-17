@@ -11,10 +11,9 @@ import androidx.navigation.fragment.findNavController
 import androidx.recyclerview.widget.LinearLayoutManager
 import com.development.gocipes.core.data.local.dummy.DummyCategory
 import com.development.gocipes.core.data.local.dummy.DummyFood
-import com.development.gocipes.core.data.local.dummy.DummyInformation
 import com.development.gocipes.core.data.local.prefs.Prefs
-import com.development.gocipes.core.data.remote.response.article.ArtikelItem
 import com.development.gocipes.core.data.remote.response.auth.UserResult
+import com.development.gocipes.core.domain.model.article.Article
 import com.development.gocipes.core.domain.model.food.Category
 import com.development.gocipes.core.domain.model.food.Food
 import com.development.gocipes.core.domain.model.information.Information
@@ -22,7 +21,6 @@ import com.development.gocipes.core.domain.model.technique.Technique
 import com.development.gocipes.core.presentation.adapter.ArticleAdapter
 import com.development.gocipes.core.presentation.adapter.CategoryAdapter
 import com.development.gocipes.core.presentation.adapter.FoodAdapter
-import com.development.gocipes.core.presentation.adapter.InformationAdapter
 import com.development.gocipes.core.presentation.adapter.TechniqueAdapter
 import com.development.gocipes.core.utils.Extensions.showImage
 import com.development.gocipes.core.utils.Result
@@ -52,10 +50,10 @@ class HomeFragment : Fragment() {
         super.onViewCreated(view, savedInstanceState)
         val listCategory = DummyCategory.dummyCategory
         val listFood = DummyFood.dummyFood
-        val listGuide = DummyInformation.dummyArticle
 
         userInfoObserver()
         techniqueObserver()
+        articleObserver()
 
         setupRecyclerCategory(listCategory)
         setupRecyclerViewFood(listFood)
@@ -67,6 +65,7 @@ class HomeFragment : Fragment() {
                 is Result.Error -> {
                     Toast.makeText(context, result.message, Toast.LENGTH_SHORT).show()
                 }
+
                 is Result.Loading -> {}
                 is Result.Success -> {
                     setupRecyclerViewGuide(result.data)
@@ -81,6 +80,7 @@ class HomeFragment : Fragment() {
                 is Result.Error -> {
                     Toast.makeText(requireActivity(), result.message, Toast.LENGTH_SHORT).show()
                 }
+
                 is Result.Loading -> {}
                 is Result.Success -> {
                     val user = result.data
@@ -97,6 +97,7 @@ class HomeFragment : Fragment() {
                 is Result.Error -> {
                     Toast.makeText(context, result.message, Toast.LENGTH_SHORT).show()
                 }
+
                 is Result.Loading -> {}
                 is Result.Success -> {
                     setupRecyclerViewTechnique(result.data)
@@ -106,11 +107,12 @@ class HomeFragment : Fragment() {
     }
 
     private fun setupView(userResult: UserResult) {
-        val urlPhoto = "https://t4.ftcdn.net/jpg/00/64/67/63/360_F_64676383_LdbmhiNM6Ypzb3FM4PPuFP9rHe7ri8Ju.jpg"
+        val urlPhoto =
+            "https://t4.ftcdn.net/jpg/00/64/67/63/360_F_64676383_LdbmhiNM6Ypzb3FM4PPuFP9rHe7ri8Ju.jpg"
 
         binding?.contentHome?.apply {
             tvName.text = userResult.firstName
-            sivProfile.showImage(requireActivity(), userResult.photo ?: urlPhoto )
+            sivProfile.showImage(requireActivity(), userResult.photo ?: urlPhoto)
             searchBar.setOnClickListener { navigateToSearch() }
             tvAllFood.setOnClickListener { navigateToFood() }
             tvAllArticle.setOnClickListener { navigateToArticle() }
@@ -147,7 +149,7 @@ class HomeFragment : Fragment() {
         foodAdapter.submitList(listFood)
     }
 
-    private fun setupRecyclerViewGuide(listArtikel: List<ArtikelItem>) {
+    private fun setupRecyclerViewGuide(listArtikel: List<Article>) {
         articleAdapter = ArticleAdapter()
 
         binding?.contentHome?.rvGuide?.apply {
