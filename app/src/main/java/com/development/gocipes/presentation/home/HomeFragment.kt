@@ -91,11 +91,10 @@ class HomeFragment : Fragment() {
     }
 
     private fun setupView(userResult: UserResult) {
-        val fullName = userResult.firstName + userResult.lastName
 
         binding?.contentHome?.apply {
             sivProfile.showImage(requireActivity(), userResult.photo)
-            tvName.text = fullName
+            tvName.text = userResult.firstName
             searchBar.setOnClickListener { navigateToSearch() }
             tvAllFood.setOnClickListener { navigateToFood() }
             tvAllArticle.setOnClickListener { navigateToArticle() }
