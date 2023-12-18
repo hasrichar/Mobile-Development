@@ -69,7 +69,11 @@
         android:id="@+id/profileFragment"
         android:name="com.development.gocipes.presentation.profile.ProfileFragment"
         android:label="fragment_profile"
-        tools:layout="@layout/fragment_profile" />
+        tools:layout="@layout/fragment_profile" >
+        <action
+            android:id="@+id/action_profileFragment_to_auth_graph"
+            app:destination="@id/auth_graph" />
+    </fragment>
     <fragment
         android:id="@+id/favoriteFragment"
         android:name="com.development.gocipes.presentation.favorite.FavoriteFragment"
@@ -154,4 +158,5 @@
         <argument android:name="analysis"
             app:argType="com.development.gocipes.core.domain.model.food.Analysis" />
     </fragment>
+    <include app:graph="@navigation/auth_graph" />
 </navigation>

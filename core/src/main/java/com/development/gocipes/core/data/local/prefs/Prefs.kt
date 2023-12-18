@@ -21,6 +21,8 @@ object Prefs {
         set(value) = Prefs.putString(TOKEN_KEY, value)
 
     var firstName: String
-        get() = Prefs.getString(FIRST_NAME,"")
-        set(value) = Prefs.putString(FIRST_NAME,value)
+        get() = Prefs.getString(FIRST_NAME, "")
+        set(value) = Prefs.putString(FIRST_NAME, value)
+
+    val logout = Prefs.edit().clear().commit()
 }

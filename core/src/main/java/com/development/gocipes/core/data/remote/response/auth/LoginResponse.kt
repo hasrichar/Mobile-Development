@@ -25,3 +25,12 @@ data class LoginItem(
 	@field:SerializedName("token")
 	val token: Token? = null
 )
+
+data class Token(
+
+	@field:SerializedName("accessToken")
+	val accessToken: String? = null,
+
+	@field:SerializedName("refreshToken")
+	val refreshToken: String? = null
+)

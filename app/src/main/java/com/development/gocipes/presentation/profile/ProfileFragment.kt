@@ -5,6 +5,8 @@ import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import androidx.fragment.app.Fragment
+import androidx.navigation.fragment.findNavController
+import com.development.gocipes.core.data.local.prefs.Prefs
 import com.development.gocipes.core.utils.Extensions.showImage
 import com.development.gocipes.databinding.FragmentProfileBinding
 
@@ -32,11 +34,17 @@ class ProfileFragment : Fragment() {
         binding?.btnProfileSimpan?.setOnClickListener {
             onClickSave()
         }
+        binding?.btnLogout?.setOnClickListener {
+            logout()
+        }
     }
 
     private fun setupView() {
         binding?.apply {
-            ivProfileFotoProfil.showImage(requireActivity(), "https://www.betterup.com/hubfs/Blog%20Images/authentic-self-person-smiling-at-camera.jpg")
+            ivProfileFotoProfil.showImage(
+                requireActivity(),
+                "https://www.betterup.com/hubfs/Blog%20Images/authentic-self-person-smiling-at-camera.jpg"
+            )
         }
     }
 
@@ -67,22 +75,26 @@ class ProfileFragment : Fragment() {
         }
     }
 
-    /*private fun logout() {
-        val logoutDialog = AlertDialog.Builder(this)
-        with(logoutDialog) {
-            setTitle(resources.getString(R.string.keluar))
-            setMessage(resources.getString(R.string.log_desc))
-            setPositiveButton(resources.getString(R.string.yes)) { _, _ ->
-                viewModel.logout()
-                viewModel.rmvSession()
-                intent = Intent(this@ProfileFragment, LoginActivity::class.java)
-                intent.flags = Intent.FLAG_ACTIVITY_NEW_TASK or Intent.FLAG_ACTIVITY_CLEAR_TASK
-                startActivity(intent)
-                finish()
-            }
-            setNegativeButton(resources.getString(R.string.no)) { dialog, _ -> dialog.cancel() }
-        }
-        val alertDialog = logoutDialog.create()
-        alertDialog.show()
-    }*/
+    private fun logout() {
+//        val logoutDialog = AlertDialog.Builder(this)
+//        with(logoutDialog) {
+//            setTitle(resources.getString(R.string.keluar))
+//            setMessage(resources.getString(R.string.log_desc))
+//            setPositiveButton(resources.getString(R.string.yes)) { _, _ ->
+//                viewModel.logout()
+//                viewModel.rmvSession()
+//                intent = Intent(this@ProfileFragment, LoginActivity::class.java)
+//                intent.flags = Intent.FLAG_ACTIVITY_NEW_TASK or Intent.FLAG_ACTIVITY_CLEAR_TASK
+//                startActivity(intent)
+//                finish()
+//            }
+//            setNegativeButton(resources.getString(R.string.no)) { dialog, _ -> dialog.cancel() }
+//        }
+//        val alertDialog = logoutDialog.create()
+//        alertDialog.show()
+
+        Prefs.logout
+        val action = ProfileFragmentDirections.actionProfileFragmentToAuthGraph()
+        findNavController().navigate(action)
+    }
 }

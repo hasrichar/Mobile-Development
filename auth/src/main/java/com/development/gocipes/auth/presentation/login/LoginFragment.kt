@@ -69,8 +69,8 @@ class LoginFragment : Fragment() {
                 }
                 is Result.Success -> {
                     val token = result.data.token?.accessToken
+                    Prefs.userToken = token ?: ""
 
-                    if (token != null) Prefs.userToken = token
                     navigateToMain()
                 }
             }
