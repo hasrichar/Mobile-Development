@@ -42,6 +42,7 @@ android {
 dependencies {
 
     implementation(project(Modules.core))
+
     implementation(Dependencies.coreKtx)
     implementation(Dependencies.appCompat)
 

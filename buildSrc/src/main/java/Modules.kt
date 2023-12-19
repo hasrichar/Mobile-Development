@@ -1,8 +1,12 @@
 object Modules {
-    val core = ":core"
-    val auth = ":auth"
-    val app = ":app"
-    val food = ":food"
-    val article = ":article"
-    val technique = ":technique"
+    const val core = ":core"
+    const val auth = ":auth"
+    const val app = ":app"
+    const val food = ":food"
+    const val article = ":article"
+    const val technique = ":technique"
+    const val home = ":home"
+    const val analysis = ":analysis"
+    const val chatbot = ":chatbot"
+    const val profile = ":profile"
 }

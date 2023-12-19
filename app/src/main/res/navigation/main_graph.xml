@@ -3,59 +3,8 @@
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:id="@+id/main_graph"
-    app:startDestination="@id/homeFragment">
+    app:startDestination="@id/home_graph">
 
-    <fragment
-        android:id="@+id/homeFragment"
-        android:name="com.development.gocipes.presentation.home.HomeFragment"
-        android:label="fragment_home"
-        tools:layout="@layout/fragment_home">
-        <action
-            android:id="@+id/action_homeFragment_to_foodFragment"
-            app:destination="@id/foodFragment" />
-        <action
-            android:id="@+id/action_homeFragment_to_articleFragment"
-            app:destination="@id/articleFragment" />
-        <action
-            android:id="@+id/action_homeFragment_to_techniqueFragment"
-            app:destination="@id/techniqueFragment" />
-        <action
-            android:id="@+id/action_homeFragment_to_searchFragment"
-            app:destination="@id/searchFragment" />
-        <action
-            android:id="@+id/action_homeFragment_to_categoryFragment"
-            app:destination="@id/categoryFragment" />
-        <action
-            android:id="@+id/action_homeFragment_to_favoriteFragment"
-            app:destination="@id/favoriteFragment" />
-        <action
-            android:id="@+id/action_homeFragment_to_analysisFragment"
-            app:destination="@id/analysisFragment" />
-        <action
-            android:id="@+id/action_homeFragment_to_profileFragment"
-            app:destination="@id/profileFragment" />
-        <action
-            android:id="@+id/action_homeFragment_to_food_graph"
-            app:destination="@id/food_graph">
-            <argument
-                android:name="food"
-                app:argType="com.development.gocipes.core.model.Food" />
-        </action>
-        <action
-            android:id="@+id/action_homeFragment_to_article_graph"
-            app:destination="@id/article_graph">
-            <argument
-                android:name="information"
-                app:argType="com.development.gocipes.core.model.Information" />
-        </action>
-        <action
-            android:id="@+id/action_homeFragment_to_technique_graph"
-            app:destination="@id/technique_graph">
-            <argument
-                android:name="information"
-                app:argType="com.development.gocipes.core.model.Information" />
-        </action>
-    </fragment>
     <fragment
         android:id="@+id/analysisFragment"
         android:name="com.development.gocipes.presentation.analysis.AnalysisFragment"
@@ -76,77 +25,6 @@
         android:label="fragment_favorite"
         tools:layout="@layout/fragment_favorite" />
     <fragment
-        android:id="@+id/foodFragment"
-        android:name="com.development.gocipes.presentation.home.food.FoodFragment"
-        android:label="fragment_food"
-        tools:layout="@layout/fragment_food">
-        <action
-            android:id="@+id/action_foodFragment_to_food_graph"
-            app:destination="@id/food_graph">
-            <argument
-                android:name="food"
-                app:argType="com.development.gocipes.core.model.Food" />
-        </action>
-    </fragment>
-    <fragment
-        android:id="@+id/articleFragment"
-        android:name="com.development.gocipes.presentation.home.article.ArticleFragment"
-        android:label="fragment_article"
-        tools:layout="@layout/fragment_article">
-        <action
-            android:id="@+id/action_articleFragment_to_article_graph"
-            app:destination="@id/article_graph">
-            <argument
-                android:name="information"
-                app:argType="com.development.gocipes.core.model.Information" />
-        </action>
-    </fragment>
-    <fragment
-        android:id="@+id/techniqueFragment"
-        android:name="com.development.gocipes.presentation.home.technique.TechniqueFragment"
-        android:label="fragment_technique"
-        tools:layout="@layout/fragment_technique">
-        <action
-            android:id="@+id/action_techniqueFragment_to_technique_graph"
-            app:destination="@id/technique_graph">
-            <argument
-                android:name="information"
-                app:argType="com.development.gocipes.core.model.Information" />
-        </action>
-    </fragment>
-    <fragment
-        android:id="@+id/searchFragment"
-        android:name="com.development.gocipes.presentation.home.search.SearchFragment"
-        android:label="fragment_search"
-        tools:layout="@layout/fragment_search" >
-        <action
-            android:id="@+id/action_searchFragment_to_food_graph"
-            app:destination="@id/food_graph">
-            <argument
-                android:name="food"
-                app:argType="com.development.gocipes.core.model.Food" />
-        </action>
-    </fragment>
-    <fragment
-        android:id="@+id/categoryFragment"
-        android:name="com.development.gocipes.presentation.home.category.CategoryFragment"
-        android:label="fragment_category"
-        tools:layout="@layout/fragment_category">
-        <argument
-            android:name="category"
-            app:argType="com.development.gocipes.core.model.Category" />
-        <action
-            android:id="@+id/action_categoryFragment_to_food_graph"
-            app:destination="@id/food_graph">
-            <argument
-                android:name="food"
-                app:argType="com.development.gocipes.core.model.Food" />
-        </action>
-    </fragment>
-    <include app:graph="@navigation/food_graph" />
-    <include app:graph="@navigation/article_graph" />
-    <include app:graph="@navigation/technique_graph" />
-    <fragment
         android:id="@+id/detailAnalysisFragment"
         android:name="com.development.gocipes.presentation.analysis.DetailAnalysisFragment"
         android:label="fragment_detail_analysis"
@@ -154,4 +32,7 @@
         <argument android:name="analysis"
             app:argType="com.development.gocipes.core.model.Analysis" />
     </fragment>
+    <include
+        android:id="@+id/home_graph"
+        app:graph="@navigation/home_graph" />
 </navigation>

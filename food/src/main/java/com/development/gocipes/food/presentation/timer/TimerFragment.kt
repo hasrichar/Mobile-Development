@@ -15,6 +15,7 @@ import androidx.core.view.MenuHost
 import androidx.core.view.MenuProvider
 import androidx.fragment.app.Fragment
 import androidx.lifecycle.Lifecycle
+import androidx.navigation.NavOptions
 import androidx.navigation.fragment.findNavController
 import androidx.navigation.fragment.navArgs
 import androidx.viewpager.widget.ViewPager
@@ -57,8 +58,8 @@ class TimerFragment : Fragment() {
             btnPrevious.setOnClickListener { previous() }
         }
 
-        setupTimer(foodArgs.step[0].minutes)
-        setupToolbar(foodArgs.step[0].id)
+        setupTimer(step[0].minutes, foodArgs)
+        setupToolbar(step[0].id)
         setupViewPager(step)
         pageChange(foodArgs)
     }
@@ -103,7 +104,7 @@ class TimerFragment : Fragment() {
             ) {}
 
             override fun onPageSelected(position: Int) {
-                setupTimer(food.step[position].minutes)
+                setupTimer(food.step[position].minutes, food)
                 setupToolbar(food.step[position].id)
             }
 
@@ -111,8 +112,8 @@ class TimerFragment : Fragment() {
         })
     }
 
-    private fun setupTimer(timer: Int) {
-        val clockTime = (timer * 60 * 1000).toLong()
+    private fun setupTimer(timer: Int, food: Food) {
+        val clockTime = (timer * 1000).toLong()
         val progressTime = (clockTime / 1000).toFloat()
         val second = (clockTime / 1000.0f).roundToInt()
 
@@ -131,8 +132,15 @@ class TimerFragment : Fragment() {
             override fun onTimerFinish() {
                 binding?.apply {
                     binding?.apply {
-                        viewPager.setCurrentItem(viewPager.currentItem + 1, true)
-                        countDownTimer.startCountDownTimer()
+                        if (viewPager.currentItem == viewPager.adapter?.count?.minus(1)) {
+                            val option = NavOptions.Builder()
+                                .setPopUpTo(com.development.gocipes.food.R.id.food_graph, inclusive = true)
+                                .build()
+                            findNavController().navigate(TimerFragmentDirections.actionTimerFragmentToFinishFragment(food), option)
+                        } else {
+                            viewPager.setCurrentItem(viewPager.currentItem + 1, true)
+                            countDownTimer.startCountDownTimer()
+                        }
                     }
                 }
             }

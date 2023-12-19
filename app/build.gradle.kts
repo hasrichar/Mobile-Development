@@ -49,6 +49,10 @@ dependencies {
     implementation(project(Modules.food))
     implementation(project(Modules.article))
     implementation(project(Modules.technique))
+    implementation(project(Modules.home))
+    implementation(project(Modules.analysis))
+    implementation(project(Modules.chatbot))
+    implementation(project(Modules.profile))
 
     implementation(Dependencies.coreKtx)
     implementation(Dependencies.appCompat)

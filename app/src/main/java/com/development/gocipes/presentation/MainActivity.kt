@@ -8,6 +8,7 @@ import androidx.appcompat.app.AppCompatActivity
 import androidx.navigation.fragment.NavHostFragment
 import androidx.navigation.ui.setupWithNavController
 import com.development.gocipes.R
+import com.development.gocipes.home.R as HomeResource
 import com.development.gocipes.databinding.ActivityMainBinding
 import dagger.hilt.android.AndroidEntryPoint
 
@@ -26,7 +27,7 @@ class MainActivity : AppCompatActivity() {
         navController.addOnDestinationChangedListener {_, navDestination, _ ->
             Handler(Looper.getMainLooper()).post {
                 when (navDestination.id) {
-                    R.id.homeFragment, R.id.analysisFragment, R.id.favoriteFragment, R.id.profileFragment -> {
+                    HomeResource.id.homeFragment, R.id.analysisFragment, R.id.favoriteFragment, R.id.profileFragment -> {
                         binding.bottomNav.visibility = View.VISIBLE
                     } else -> {
                         binding.bottomNav.visibility = View.GONE
