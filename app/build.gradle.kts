@@ -80,4 +80,7 @@ dependencies {
     //lifecycle
     implementation(Dependencies.viewModel)
     implementation(Dependencies.liveData)
+
+    //sonic-countdown
+    implementation(Dependencies.sonicCountDown)
 }

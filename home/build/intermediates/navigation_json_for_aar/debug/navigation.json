@@ -1,0 +1,11 @@
+[
+  {
+    "name": "home_graph",
+    "navigationXmlIds": [
+      "article_graph",
+      "food_graph",
+      "technique_graph"
+    ],
+    "deepLinks": []
+  }
+]

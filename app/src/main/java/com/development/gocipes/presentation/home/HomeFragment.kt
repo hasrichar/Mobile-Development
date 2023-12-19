@@ -188,7 +188,7 @@ class HomeFragment : Fragment() {
     }
 
     private fun navigateToFoodGraph(food: Food) {
-        val action = HomeFragmentDirections.actionHomeFragmentToFoodGraph(food)
+        val action = HomeFragmentDirections.actionHomeFragmentToDetailFoodFragment(food)
         findNavController().navigate(action)
     }
 
