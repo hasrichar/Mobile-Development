@@ -23,4 +23,14 @@ interface AuthRepository {
     ): Flow<Result<ForgotPasswordResponse>>
 
     fun getUserInfo(): Flow<Result<UserResult>>
+
+    fun isLoggedIn(): Flow<Boolean>
+
+    fun getToken(): Flow<String?>
+
+    suspend fun setLoginStatus(isLogin: Boolean)
+
+    suspend fun saveToken(token: String)
+
+    suspend fun deleteToken()
 }

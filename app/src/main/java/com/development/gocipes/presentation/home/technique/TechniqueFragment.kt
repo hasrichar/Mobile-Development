@@ -17,8 +17,10 @@ import androidx.fragment.app.viewModels
 import androidx.lifecycle.Lifecycle
 import androidx.navigation.fragment.findNavController
 import androidx.recyclerview.widget.GridLayoutManager
+import com.development.gocipes.core.data.local.dummy.DummyInformation
 import com.development.gocipes.core.domain.model.information.Information
 import com.development.gocipes.core.domain.model.technique.Technique
+import com.development.gocipes.core.presentation.adapter.InformationAdapter
 import com.development.gocipes.core.presentation.adapter.TechniqueGridAdapter
 import com.development.gocipes.core.utils.Result
 import com.development.gocipes.databinding.FragmentTechniqueBinding
@@ -30,6 +32,7 @@ class TechniqueFragment : Fragment() {
     private var _binding: FragmentTechniqueBinding? = null
     private val binding get() = _binding
     private lateinit var techniqueGridAdapter: TechniqueGridAdapter
+    private lateinit var informationAdapter: InformationAdapter
     private val viewModel by viewModels<TechniqueViewModel>()
 
     override fun onCreateView(
@@ -44,7 +47,7 @@ class TechniqueFragment : Fragment() {
         super.onViewCreated(view, savedInstanceState)
 
         setupToolbar()
-        techniqueObserver()
+        setupView()
     }
 
     private fun techniqueObserver() {
@@ -57,7 +60,7 @@ class TechniqueFragment : Fragment() {
 
                 }
                 is Result.Success -> {
-                    setupView(result.data)
+                    result.data
                 }
             }
         }
@@ -83,19 +86,22 @@ class TechniqueFragment : Fragment() {
         }, viewLifecycleOwner, Lifecycle.State.CREATED)
     }
 
-    private fun setupView(listTechnique: List<Technique>) {
-        techniqueGridAdapter = TechniqueGridAdapter { }
+    private fun setupView() {
+        val data = DummyInformation.dummyTechnique
+        informationAdapter = InformationAdapter { technique ->
+            navigateToTechniqueGraph(technique)
+        }
         val gridCount =
             if (requireActivity().resources.configuration.orientation == Configuration.ORIENTATION_PORTRAIT) 2 else 4
 
         binding?.apply {
             rvArticle.apply {
-                adapter = techniqueGridAdapter
+                adapter = informationAdapter
                 layoutManager = GridLayoutManager(requireActivity(), gridCount)
             }
         }
 
-        techniqueGridAdapter.submitList(listTechnique)
+        informationAdapter.submitList(data)
     }
 
     private fun navigateToTechniqueGraph(information: Information) {

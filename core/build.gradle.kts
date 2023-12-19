@@ -81,4 +81,7 @@ dependencies {
 
     //prefs
     implementation(Dependencies.prefs)
+
+    //datastore
+    implementation(Dependencies.dataStore)
 }

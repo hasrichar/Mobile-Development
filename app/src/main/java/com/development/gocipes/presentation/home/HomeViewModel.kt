@@ -10,13 +10,8 @@ import javax.inject.Inject
 
 @HiltViewModel
 class HomeViewModel @Inject constructor(
-    private val authRepository: AuthRepository,
-    private val techniqueRepository: TechniqueRepository,
-    private val articleRepository: ArticleRepository
+    private val authRepository: AuthRepository
 ): ViewModel() {
+
     fun getUserInfo() = authRepository.getUserInfo().asLiveData()
-
-    fun getAllTechnique() = techniqueRepository.getAllTechnique().asLiveData()
-
-    fun getAllArticle() = articleRepository.getAllArticle().asLiveData()
 }

@@ -11,7 +11,7 @@ import androidx.navigation.fragment.findNavController
 import androidx.recyclerview.widget.LinearLayoutManager
 import com.development.gocipes.core.data.local.dummy.DummyCategory
 import com.development.gocipes.core.data.local.dummy.DummyFood
-import com.development.gocipes.core.data.local.prefs.Prefs
+import com.development.gocipes.core.data.local.dummy.DummyInformation
 import com.development.gocipes.core.data.remote.response.auth.UserResult
 import com.development.gocipes.core.domain.model.article.Article
 import com.development.gocipes.core.domain.model.food.Category
@@ -21,10 +21,13 @@ import com.development.gocipes.core.domain.model.technique.Technique
 import com.development.gocipes.core.presentation.adapter.ArticleAdapter
 import com.development.gocipes.core.presentation.adapter.CategoryAdapter
 import com.development.gocipes.core.presentation.adapter.FoodAdapter
+import com.development.gocipes.core.presentation.adapter.InformationAdapter
 import com.development.gocipes.core.presentation.adapter.TechniqueAdapter
 import com.development.gocipes.core.utils.Extensions.showImage
 import com.development.gocipes.core.utils.Result
 import com.development.gocipes.databinding.FragmentHomeBinding
+import com.development.gocipes.presentation.home.article.ArticleViewModel
+import com.development.gocipes.presentation.home.technique.TechniqueViewModel
 import dagger.hilt.android.AndroidEntryPoint
 
 @AndroidEntryPoint
@@ -34,13 +37,14 @@ class HomeFragment : Fragment() {
     private val binding get() = _binding
     private lateinit var categoryAdapter: CategoryAdapter
     private lateinit var foodAdapter: FoodAdapter
-    private lateinit var articleAdapter: ArticleAdapter
-    private val techniqueAdapter by lazy { TechniqueAdapter() }
+    private lateinit var informationAdapter: InformationAdapter
     private val viewModel by viewModels<HomeViewModel>()
+    private val techniqueViewModel by viewModels<TechniqueViewModel>()
+    private val articleViewModel by viewModels<ArticleViewModel>()
 
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
-        savedInstanceState: Bundle?
+        savedInstanceState: Bundle?,
     ): View? {
         _binding = FragmentHomeBinding.inflate(layoutInflater, container, false)
         return binding?.root
@@ -50,17 +54,19 @@ class HomeFragment : Fragment() {
         super.onViewCreated(view, savedInstanceState)
         val listCategory = DummyCategory.dummyCategory
         val listFood = DummyFood.dummyFood
+        val listArticle = DummyInformation.dummyArticle
+        val listTechnique = DummyInformation.dummyTechnique
 
         userInfoObserver()
-        techniqueObserver()
-        articleObserver()
 
         setupRecyclerCategory(listCategory)
         setupRecyclerViewFood(listFood)
+        setupRecyclerViewTechnique(listTechnique)
+        setupRecyclerViewGuide(listArticle)
     }
 
     private fun articleObserver() {
-        viewModel.getAllArticle().observe(viewLifecycleOwner) { result ->
+        articleViewModel.getAllArticle().observe(viewLifecycleOwner) { result ->
             when (result) {
                 is Result.Error -> {
                     Toast.makeText(context, result.message, Toast.LENGTH_SHORT).show()
@@ -68,7 +74,7 @@ class HomeFragment : Fragment() {
 
                 is Result.Loading -> {}
                 is Result.Success -> {
-                    setupRecyclerViewGuide(result.data)
+                    result.data
                 }
             }
         }
@@ -84,7 +90,6 @@ class HomeFragment : Fragment() {
                 is Result.Loading -> {}
                 is Result.Success -> {
                     val user = result.data
-                    Prefs.firstName = user.firstName
                     setupView(user)
                 }
             }
@@ -92,7 +97,7 @@ class HomeFragment : Fragment() {
     }
 
     private fun techniqueObserver() {
-        viewModel.getAllTechnique().observe(viewLifecycleOwner) { result ->
+        techniqueViewModel.getAllTechnique().observe(viewLifecycleOwner) { result ->
             when (result) {
                 is Result.Error -> {
                     Toast.makeText(context, result.message, Toast.LENGTH_SHORT).show()
@@ -100,7 +105,7 @@ class HomeFragment : Fragment() {
 
                 is Result.Loading -> {}
                 is Result.Success -> {
-                    setupRecyclerViewTechnique(result.data)
+                    result.data
                 }
             }
         }
@@ -149,27 +154,31 @@ class HomeFragment : Fragment() {
         foodAdapter.submitList(listFood)
     }
 
-    private fun setupRecyclerViewGuide(listArtikel: List<Article>) {
-        articleAdapter = ArticleAdapter()
+    private fun setupRecyclerViewGuide(listArtikel: List<Information>) {
+        informationAdapter = InformationAdapter { article ->
+            navigateToArticleGraph(article)
+        }
 
         binding?.contentHome?.rvGuide?.apply {
-            adapter = articleAdapter
+            adapter = informationAdapter
             layoutManager =
                 LinearLayoutManager(requireActivity(), LinearLayoutManager.HORIZONTAL, false)
         }
 
-        articleAdapter.submitList(listArtikel)
+        informationAdapter.submitList(listArtikel)
     }
 
-    private fun setupRecyclerViewTechnique(listTechnique: List<Technique>) {
-
+    private fun setupRecyclerViewTechnique(listTechnique: List<Information>) {
+        informationAdapter = InformationAdapter { technique ->
+            navigateToTechniqueGraph(technique)
+        }
         binding?.contentHome?.rvTechnique?.apply {
-            adapter = techniqueAdapter
+            adapter = informationAdapter
             layoutManager =
                 LinearLayoutManager(requireActivity(), LinearLayoutManager.HORIZONTAL, false)
         }
 
-        techniqueAdapter.submitList(listTechnique)
+        informationAdapter.submitList(listTechnique)
     }
 
     private fun navigateToFood() {

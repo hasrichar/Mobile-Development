@@ -9,6 +9,7 @@ import com.development.gocipes.core.data.remote.response.technique.TechniqueResp
 import retrofit2.http.Field
 import retrofit2.http.FormUrlEncoded
 import retrofit2.http.GET
+import retrofit2.http.Header
 import retrofit2.http.POST
 
 interface ApiService {
@@ -36,11 +37,17 @@ interface ApiService {
     ): ForgotPasswordResponse
 
     @GET("user/get-info")
-    suspend fun getUserInfo(): GetUserResponse
+    suspend fun getUserInfo(
+        @Header("Authorization") token: String
+    ): GetUserResponse
 
     @GET("data/teknik")
-    suspend fun getAllTechnique(): TechniqueResponse
+    suspend fun getAllTechnique(
+        @Header("Authorization") token: String
+    ): TechniqueResponse
 
     @GET("data/artikel")
-    suspend fun getAllArticle(): ArticleResponse
+    suspend fun getAllArticle(
+        @Header("Authorization") token: String
+    ): ArticleResponse
 }

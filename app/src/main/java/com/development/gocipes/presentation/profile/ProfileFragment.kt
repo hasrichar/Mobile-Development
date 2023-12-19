@@ -6,7 +6,6 @@ import android.view.View
 import android.view.ViewGroup
 import androidx.fragment.app.Fragment
 import androidx.navigation.fragment.findNavController
-import com.development.gocipes.core.data.local.prefs.Prefs
 import com.development.gocipes.core.utils.Extensions.showImage
 import com.development.gocipes.databinding.FragmentProfileBinding
 
@@ -93,7 +92,6 @@ class ProfileFragment : Fragment() {
 //        val alertDialog = logoutDialog.create()
 //        alertDialog.show()
 
-        Prefs.logout
         val action = ProfileFragmentDirections.actionProfileFragmentToAuthGraph()
         findNavController().navigate(action)
     }

@@ -10,7 +10,6 @@ import androidx.fragment.app.viewModels
 import androidx.navigation.fragment.findNavController
 import com.development.gocipes.auth.R
 import com.development.gocipes.auth.databinding.FragmentRegisterBinding
-import com.development.gocipes.core.data.local.prefs.Prefs
 import com.development.gocipes.core.utils.Result
 import dagger.hilt.android.AndroidEntryPoint
 
@@ -44,10 +43,6 @@ class RegisterFragment : Fragment() {
                 val email = tilEmail.editText?.text.toString().trim()
                 val password = tilPassword.editText?.text.toString().trim()
 
-                Prefs.let {
-                    it.email = email
-                    it.password = password
-                }
                 registerObserver(firstName, lastName, email, password)
             }
         }

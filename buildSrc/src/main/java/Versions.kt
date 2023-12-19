@@ -17,4 +17,5 @@ object Versions {
     const val interceptor = "5.0.0-alpha.6"
     const val lifecycle = "2.6.2"
     const val prefs = "1.10.0"
+    const val dataStore = "1.0.0"
 }

@@ -21,4 +21,5 @@ object Dependencies {
     val viewModel by lazy { "androidx.lifecycle:lifecycle-viewmodel-ktx:${Versions.lifecycle}" }
     val liveData by lazy { "androidx.lifecycle:lifecycle-livedata-ktx:${Versions.lifecycle}" }
     val prefs by lazy { "com.pixplicity.easyprefs:EasyPrefs:${Versions.prefs}" }
+    val dataStore by lazy { "androidx.datastore:datastore-preferences:${Versions.dataStore}" }
 }

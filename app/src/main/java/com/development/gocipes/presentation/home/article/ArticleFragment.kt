@@ -17,9 +17,11 @@ import androidx.fragment.app.viewModels
 import androidx.lifecycle.Lifecycle
 import androidx.navigation.fragment.findNavController
 import androidx.recyclerview.widget.GridLayoutManager
+import com.development.gocipes.core.data.local.dummy.DummyInformation
 import com.development.gocipes.core.domain.model.article.Article
 import com.development.gocipes.core.domain.model.information.Information
 import com.development.gocipes.core.presentation.adapter.ArticleGridAdapter
+import com.development.gocipes.core.presentation.adapter.InformationGridAdapter
 import com.development.gocipes.core.utils.Result
 import com.development.gocipes.databinding.FragmentArticleBinding
 import dagger.hilt.android.AndroidEntryPoint
@@ -30,6 +32,7 @@ class ArticleFragment : Fragment() {
     private var _binding: FragmentArticleBinding? = null
     private val binding get() = _binding
     private lateinit var articleGridAdapter: ArticleGridAdapter
+    private lateinit var informationGridAdapter: InformationGridAdapter
     private val viewModel by viewModels<ArticleViewModel>()
 
     override fun onCreateView(
@@ -44,7 +47,7 @@ class ArticleFragment : Fragment() {
         super.onViewCreated(view, savedInstanceState)
 
         setupToolbar()
-        articleObserver()
+        setupView()
     }
 
     private fun setupToolbar() {
@@ -76,27 +79,28 @@ class ArticleFragment : Fragment() {
 
                 is Result.Loading -> {}
                 is Result.Success -> {
-                    setupView(result.data)
+                    result.data
                 }
             }
         }
     }
 
-    private fun setupView(artikelItem: List<Article>) {
-        articleGridAdapter = ArticleGridAdapter { article ->
-
+    private fun setupView() {
+        val data = DummyInformation.dummyArticle
+        informationGridAdapter = InformationGridAdapter { article ->
+            navigateToArticleGraph(article)
         }
         val gridCount =
             if (requireActivity().resources.configuration.orientation == Configuration.ORIENTATION_PORTRAIT) 2 else 4
 
         binding?.apply {
             rvArticle.apply {
-                adapter = articleGridAdapter
+                adapter = informationGridAdapter
                 layoutManager = GridLayoutManager(requireActivity(), gridCount)
             }
         }
 
-        articleGridAdapter.submitList(artikelItem)
+        informationGridAdapter.submitList(data)
     }
 
     private fun navigateToArticleGraph(information: Information) {
