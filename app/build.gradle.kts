@@ -83,4 +83,7 @@ dependencies {
 
     //sonic-countdown
     implementation(Dependencies.sonicCountDown)
+
+    //shimmer
+    implementation(Dependencies.shimmer)
 }

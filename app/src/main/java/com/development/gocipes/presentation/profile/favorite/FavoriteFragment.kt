@@ -1,4 +1,4 @@
-package com.development.gocipes.presentation.favorite
+package com.development.gocipes.presentation.profile.favorite
 
 import android.os.Bundle
 import android.view.LayoutInflater

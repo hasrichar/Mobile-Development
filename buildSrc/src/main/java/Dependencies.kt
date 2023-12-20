@@ -22,4 +22,5 @@ object Dependencies {
     val liveData by lazy { "androidx.lifecycle:lifecycle-livedata-ktx:${Versions.lifecycle}" }
     val prefs by lazy { "com.pixplicity.easyprefs:EasyPrefs:${Versions.prefs}" }
     val dataStore by lazy { "androidx.datastore:datastore-preferences:${Versions.dataStore}" }
+    val shimmer by lazy { "com.facebook.shimmer:shimmer:${Versions.shimmer}" }
 }

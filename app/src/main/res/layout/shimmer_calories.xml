@@ -1,0 +1,102 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content">
+
+    <ProgressBar
+        android:id="@+id/pb_fat"
+        android:layout_width="96dp"
+        android:layout_height="96dp"
+        android:indeterminateOnly="false"
+        android:progressDrawable="@drawable/shimmer_circular_progress_bar"
+        app:layout_constraintEnd_toStartOf="@id/pb_carbohydrates"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <TextView
+        android:id="@+id/tv_fat"
+        android:layout_width="26dp"
+        android:layout_height="wrap_content"
+        android:background="@color/shimmer"
+        android:fontFamily="@font/poppins_semi_bold"
+        android:textSize="16sp"
+        app:layout_constraintBottom_toBottomOf="@id/pb_fat"
+        app:layout_constraintEnd_toEndOf="@id/pb_fat"
+        app:layout_constraintStart_toStartOf="@id/pb_fat"
+        app:layout_constraintTop_toTopOf="@id/pb_fat" />
+
+    <TextView
+        android:layout_width="56dp"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="8dp"
+        android:background="@color/shimmer"
+        android:fontFamily="@font/poppins_medium"
+        app:layout_constraintEnd_toEndOf="@id/pb_fat"
+        app:layout_constraintStart_toStartOf="@id/pb_fat"
+        app:layout_constraintTop_toBottomOf="@id/pb_fat" />
+
+    <ProgressBar
+        android:id="@+id/pb_carbohydrates"
+        android:layout_width="96dp"
+        android:layout_height="96dp"
+        android:indeterminateOnly="false"
+        android:progressDrawable="@drawable/shimmer_circular_progress_bar"
+        app:layout_constraintEnd_toStartOf="@id/pb_protein"
+        app:layout_constraintStart_toEndOf="@id/pb_fat"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <TextView
+        android:id="@+id/tv_carbohydrates"
+        android:layout_width="26dp"
+        android:layout_height="wrap_content"
+        android:background="@color/shimmer"
+        android:fontFamily="@font/poppins_semi_bold"
+        android:textSize="16sp"
+        app:layout_constraintBottom_toBottomOf="@id/pb_carbohydrates"
+        app:layout_constraintEnd_toEndOf="@id/pb_carbohydrates"
+        app:layout_constraintStart_toStartOf="@id/pb_carbohydrates"
+        app:layout_constraintTop_toTopOf="@id/pb_carbohydrates" />
+
+    <TextView
+        android:layout_width="56dp"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="8dp"
+        android:background="@color/shimmer"
+        android:fontFamily="@font/poppins_medium"
+        app:layout_constraintEnd_toEndOf="@id/pb_carbohydrates"
+        app:layout_constraintStart_toStartOf="@id/pb_carbohydrates"
+        app:layout_constraintTop_toBottomOf="@id/pb_carbohydrates" />
+
+    <ProgressBar
+        android:id="@+id/pb_protein"
+        android:layout_width="96dp"
+        android:layout_height="96dp"
+        android:indeterminateOnly="false"
+        android:progressDrawable="@drawable/shimmer_circular_progress_bar"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toEndOf="@id/pb_carbohydrates"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <TextView
+        android:id="@+id/tv_protein"
+        android:layout_width="24dp"
+        android:layout_height="wrap_content"
+        android:background="@color/shimmer"
+        android:fontFamily="@font/poppins_semi_bold"
+        android:textSize="16sp"
+        app:layout_constraintBottom_toBottomOf="@id/pb_protein"
+        app:layout_constraintEnd_toEndOf="@id/pb_protein"
+        app:layout_constraintStart_toStartOf="@id/pb_protein"
+        app:layout_constraintTop_toTopOf="@id/pb_protein" />
+
+    <TextView
+        android:layout_width="56dp"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="8dp"
+        android:background="@color/shimmer"
+        android:fontFamily="@font/poppins_medium"
+        app:layout_constraintEnd_toEndOf="@id/pb_protein"
+        app:layout_constraintStart_toStartOf="@id/pb_protein"
+        app:layout_constraintTop_toBottomOf="@id/pb_protein" />
+</androidx.constraintlayout.widget.ConstraintLayout>

@@ -11,9 +11,9 @@
         android:icon="@drawable/ic_analysis"
         android:enabled="true" />
     <item
-        android:id="@+id/favoriteFragment"
-        android:title="@string/favorite"
-        android:icon="@drawable/ic_favorite"
+        android:id="@+id/chatBotFragment"
+        android:title="@string/chatbot"
+        android:icon="@drawable/ic_voice_chat"
         android:enabled="true" />
     <item
         android:id="@+id/profileFragment"

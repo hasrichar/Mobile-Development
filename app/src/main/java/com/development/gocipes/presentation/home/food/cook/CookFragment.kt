@@ -1,6 +1,8 @@
 package com.development.gocipes.presentation.home.food.cook
 
 import android.os.Bundle
+import android.os.Handler
+import android.os.Looper
 import android.view.LayoutInflater
 import android.view.Menu
 import android.view.MenuInflater
@@ -41,6 +43,25 @@ class CookFragment : Fragment() {
         val foodArgs = navArgs.food
 
         setupView(foodArgs)
+        setupShimmer()
+    }
+
+    private fun setupShimmer() {
+        binding?.apply {
+            rvCook.visibility = View.INVISIBLE
+            toolbar.visibility = View.INVISIBLE
+            btnCook.visibility = View.INVISIBLE
+
+            Handler(Looper.getMainLooper()).postDelayed({
+                rvCook.visibility = View.VISIBLE
+                toolbar.visibility = View.VISIBLE
+                btnCook.visibility = View.VISIBLE
+                shimmer.apply {
+                    stopShimmer()
+                    visibility = View.INVISIBLE
+                }
+            }, 1000)
+        }
     }
 
     private fun setupView(food: Food) {

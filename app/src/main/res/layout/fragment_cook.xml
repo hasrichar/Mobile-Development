@@ -58,4 +58,13 @@
         app:layout_constraintStart_toStartOf="@id/bottom_view"
         app:layout_constraintEnd_toEndOf="@id/bottom_view"
         app:layout_constraintBottom_toBottomOf="@id/bottom_view" />
+
+    <com.facebook.shimmer.ShimmerFrameLayout
+        android:id="@+id/shimmer"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        app:shimmer_auto_start="true">
+
+        <include layout="@layout/shimmer_fragment_cook" />
+    </com.facebook.shimmer.ShimmerFrameLayout>
 </androidx.constraintlayout.widget.ConstraintLayout>

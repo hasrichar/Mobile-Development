@@ -2,6 +2,8 @@ package com.development.gocipes.presentation.home.technique
 
 import android.content.res.Configuration
 import android.os.Bundle
+import android.os.Handler
+import android.os.Looper
 import android.view.LayoutInflater
 import android.view.Menu
 import android.view.MenuInflater
@@ -19,9 +21,7 @@ import androidx.navigation.fragment.findNavController
 import androidx.recyclerview.widget.GridLayoutManager
 import com.development.gocipes.core.data.local.dummy.DummyInformation
 import com.development.gocipes.core.domain.model.information.Information
-import com.development.gocipes.core.domain.model.technique.Technique
-import com.development.gocipes.core.presentation.adapter.InformationAdapter
-import com.development.gocipes.core.presentation.adapter.TechniqueGridAdapter
+import com.development.gocipes.core.presentation.adapter.InformationGridAdapter
 import com.development.gocipes.core.utils.Result
 import com.development.gocipes.databinding.FragmentTechniqueBinding
 import dagger.hilt.android.AndroidEntryPoint
@@ -31,13 +31,12 @@ class TechniqueFragment : Fragment() {
 
     private var _binding: FragmentTechniqueBinding? = null
     private val binding get() = _binding
-    private lateinit var techniqueGridAdapter: TechniqueGridAdapter
-    private lateinit var informationAdapter: InformationAdapter
+    private lateinit var informationAdapter: InformationGridAdapter
     private val viewModel by viewModels<TechniqueViewModel>()
 
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
-        savedInstanceState: Bundle?
+        savedInstanceState: Bundle?,
     ): View? {
         _binding = FragmentTechniqueBinding.inflate(layoutInflater, container, false)
         return binding?.root
@@ -48,6 +47,24 @@ class TechniqueFragment : Fragment() {
 
         setupToolbar()
         setupView()
+        setupShimmer()
+    }
+
+    private fun setupShimmer() {
+        binding?.apply {
+            rvArticle.visibility = View.INVISIBLE
+            toolbar.visibility = View.INVISIBLE
+
+            Handler(Looper.getMainLooper()).postDelayed({
+                rvArticle.visibility = View.VISIBLE
+                toolbar.visibility = View.VISIBLE
+
+                shimmer.apply {
+                    stopShimmer()
+                    visibility = View.INVISIBLE
+                }
+            }, 1500)
+        }
     }
 
     private fun techniqueObserver() {
@@ -56,9 +73,11 @@ class TechniqueFragment : Fragment() {
                 is Result.Error -> {
                     Toast.makeText(context, result.message, Toast.LENGTH_SHORT).show()
                 }
+
                 is Result.Loading -> {
 
                 }
+
                 is Result.Success -> {
                     result.data
                 }
@@ -88,7 +107,7 @@ class TechniqueFragment : Fragment() {
 
     private fun setupView() {
         val data = DummyInformation.dummyTechnique
-        informationAdapter = InformationAdapter { technique ->
+        informationAdapter = InformationGridAdapter { technique ->
             navigateToTechniqueGraph(technique)
         }
         val gridCount =
@@ -105,7 +124,8 @@ class TechniqueFragment : Fragment() {
     }
 
     private fun navigateToTechniqueGraph(information: Information) {
-        val action = TechniqueFragmentDirections.actionTechniqueFragmentToTechniqueGraph(information)
+        val action =
+            TechniqueFragmentDirections.actionTechniqueFragmentToTechniqueGraph(information)
         findNavController().navigate(action)
     }
 

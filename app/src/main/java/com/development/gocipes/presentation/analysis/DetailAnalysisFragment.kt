@@ -1,6 +1,8 @@
 package com.development.gocipes.presentation.analysis
 
 import android.os.Bundle
+import android.os.Handler
+import android.os.Looper
 import android.view.LayoutInflater
 import android.view.Menu
 import android.view.MenuInflater
@@ -38,7 +40,50 @@ class DetailAnalysisFragment : Fragment() {
         val analysisArgs = navArgs.analysis
         setupView(analysisArgs)
         setupToolbar()
+        setupShimmer()
+    }
 
+    private fun setupShimmer() {
+        binding?.apply {
+            toolbar.visibility = View.INVISIBLE
+            tvDescription.visibility = View.INVISIBLE
+            tvEnergyAnalysis.visibility = View.INVISIBLE
+            tvEnergyTotal.visibility = View.INVISIBLE
+            tvKarboAnalysis.visibility = View.INVISIBLE
+            tvKarboTotal.visibility = View.INVISIBLE
+            tvAnalisisGizi.visibility = View.INVISIBLE
+            tvLemakAnalysis.visibility = View.INVISIBLE
+            tvLemakTotal.visibility = View.INVISIBLE
+            tvProteinAnalysis.visibility = View.INVISIBLE
+            tvProteinTotal.visibility = View.INVISIBLE
+            tvNameIngridient.visibility = View.INVISIBLE
+            tvWeightIngridient.visibility = View.INVISIBLE
+            ivIngridient.visibility = View.INVISIBLE
+            cardView.visibility = View.INVISIBLE
+
+            Handler(Looper.getMainLooper()).postDelayed({
+                toolbar.visibility = View.VISIBLE
+                tvDescription.visibility = View.VISIBLE
+                tvEnergyAnalysis.visibility = View.VISIBLE
+                tvEnergyTotal.visibility = View.VISIBLE
+                tvKarboAnalysis.visibility = View.VISIBLE
+                tvKarboTotal.visibility = View.VISIBLE
+                tvAnalisisGizi.visibility = View.VISIBLE
+                tvLemakAnalysis.visibility = View.VISIBLE
+                tvLemakTotal.visibility = View.VISIBLE
+                tvProteinAnalysis.visibility = View.VISIBLE
+                tvProteinTotal.visibility = View.VISIBLE
+                tvNameIngridient.visibility = View.VISIBLE
+                tvWeightIngridient.visibility = View.VISIBLE
+                ivIngridient.visibility = View.VISIBLE
+                cardView.visibility = View.VISIBLE
+
+                shimmer.apply {
+                    stopShimmer()
+                    visibility = View.INVISIBLE
+                }
+            }, 1500)
+        }
     }
 
     private fun setupView(analysis: Analysis) {

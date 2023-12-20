@@ -1,6 +1,8 @@
 package com.development.gocipes.presentation.home.food.detail
 
 import android.os.Bundle
+import android.os.Handler
+import android.os.Looper
 import android.view.LayoutInflater
 import android.view.Menu
 import android.view.MenuInflater
@@ -21,7 +23,6 @@ import com.development.gocipes.core.domain.model.food.Ingredient
 import com.development.gocipes.core.presentation.adapter.IngredientAdapter
 import com.development.gocipes.core.utils.Extensions.showImage
 import com.development.gocipes.databinding.FragmentDetailFoodBinding
-import com.development.gocipes.food.R
 import com.development.gocipes.core.R as Resource
 
 class DetailFoodFragment : Fragment() {
@@ -49,6 +50,25 @@ class DetailFoodFragment : Fragment() {
         setupView(foodArgs)
         setupRecyclerIngredient(foodArgs.ingredients)
         setupToolbar(foodArgs)
+        setupShimmer()
+    }
+
+    private fun setupShimmer() {
+        binding?.apply {
+            contentDetail.root.visibility = View.INVISIBLE
+            toolbar.visibility = View.INVISIBLE
+            btnCook.visibility = View.INVISIBLE
+
+            Handler(Looper.getMainLooper()).postDelayed({
+                contentDetail.root.visibility = View.VISIBLE
+                toolbar.visibility = View.VISIBLE
+                btnCook.visibility = View.VISIBLE
+                shimmer.apply {
+                    stopShimmer()
+                    visibility = View.INVISIBLE
+                }
+            }, 1000)
+        }
     }
 
     private fun setupView(food: Food) {

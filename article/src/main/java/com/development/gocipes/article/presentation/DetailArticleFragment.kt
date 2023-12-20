@@ -1,6 +1,8 @@
 package com.development.gocipes.article.presentation
 
 import android.os.Bundle
+import android.os.Handler
+import android.os.Looper
 import android.view.LayoutInflater
 import android.view.Menu
 import android.view.MenuInflater
@@ -38,7 +40,24 @@ class DetailArticleFragment : Fragment() {
 
         setupView(articleArgs)
         setupToolbar()
+        setupShimmer()
+    }
 
+    private fun setupShimmer() {
+        binding?.apply {
+            contentDetailArticle.root.visibility = View.INVISIBLE
+            toolbar.visibility = View.INVISIBLE
+
+            Handler(Looper.getMainLooper()).postDelayed({
+                contentDetailArticle.root.visibility = View.VISIBLE
+                toolbar.visibility = View.VISIBLE
+
+                shimmer.apply {
+                    stopShimmer()
+                    visibility = View.INVISIBLE
+                }
+            }, 2000)
+        }
     }
 
     private fun setupView(information: Information) {

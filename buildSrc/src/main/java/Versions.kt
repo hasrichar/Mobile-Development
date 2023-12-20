@@ -18,4 +18,5 @@ object Versions {
     const val lifecycle = "2.6.2"
     const val prefs = "1.10.0"
     const val dataStore = "1.0.0"
+    const val shimmer = "0.5.0"
 }

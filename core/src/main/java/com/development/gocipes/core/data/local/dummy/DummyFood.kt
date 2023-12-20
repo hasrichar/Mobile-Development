@@ -10,7 +10,7 @@ object DummyFood {
             id = 1,
             name = "Sandwich",
             description = "\t\t\tSandwich merupakan sajian berupa dua potong roti yang didalamnya berisi daging, berbagai jenis sayuran, keju, ditambah dengan saus tomat atau mayonais.",
-            minutes = "2-3 Menit",
+            minutes = "3 Menit",
             imageUrl = "https://raw.githubusercontent.com/GoCipes/Resources/main/assets/sandwitch%203.jpeg",
             category = "Roti",
             fat = 34,
@@ -59,43 +59,43 @@ object DummyFood {
                     id = 1,
                     description = "Panaskan pan / teflon yang telah dilumuri margarin",
                     imageUrl = "https://raw.githubusercontent.com/GoCipes/Resources/main/assets/sd%201.jpeg",
-                    minutes = 1
+                    minutes = 30
                 ),
                 Cook(
                     id = 2,
                     description = "Panggang roti dengan api kecil ",
                     imageUrl = "https://raw.githubusercontent.com/GoCipes/Resources/main/assets/sd%202.jpeg",
-                    minutes = 2
+                    minutes = 120
                 ),
                 Cook(
                     id = 3,
                     description = "Tambahkan selada,tomat dan keju",
                     imageUrl = "https://raw.githubusercontent.com/GoCipes/Resources/main/assets/sd%204.jpeg",
-                    minutes = 1
+                    minutes = 60
                 ),
                 Cook(
                     id = 4,
                     description = "Tambahkan beef ",
                     imageUrl = "https://raw.githubusercontent.com/GoCipes/Resources/main/assets/sd%205.jpeg",
-                    minutes = 1
+                    minutes = 60
                 ),
                 Cook(
                     id = 5,
                     description = "Tambahkan saus dan mayonaise sesuai selera",
                     imageUrl = "https://raw.githubusercontent.com/GoCipes/Resources/main/assets/sd%206.jpeg",
-                    minutes = 1
+                    minutes = 60
                 ),
                 Cook(
                     id = 6,
                     description = "Tutup dan panggang kembali sebentar hingga keju meleleh",
                     imageUrl = "https://raw.githubusercontent.com/GoCipes/Resources/main/assets/sd%207.jpeg",
-                    minutes = 8
+                    minutes = 480
                 ),
                 Cook(
                     id = 7,
                     description = "Sandwich siap disajikan",
                     imageUrl = "https://raw.githubusercontent.com/GoCipes/Resources/main/assets/sd%209.jpeg",
-                    minutes = 1
+                    minutes = 60
                 )
             )
         ),
@@ -140,49 +140,49 @@ object DummyFood {
                     id = 1,
                     description = "Cuci bayam dengan baik dalam air mengalir dan buang batang yang keras.",
                     imageUrl = "https://raw.githubusercontent.com/GoCipes/Resources/main/assets/cuci-bayam.png",
-                    minutes = 2
+                    minutes = 120
                 ),
                 Cook(
                     id = 2,
                     description = "Potong bayam menjadi bagian-bagian yang lebih kecil.",
                     imageUrl = "https://raw.githubusercontent.com/GoCipes/Resources/main/assets/potong-bayam.png",
-                    minutes = 5
+                    minutes = 300
                 ),
                 Cook(
                     id = 3,
                     description = "Cincang halus bawang putih.",
                     imageUrl = "https://raw.githubusercontent.com/GoCipes/Resources/main/assets/cincang-bawah.png",
-                    minutes = 5
+                    minutes = 300
                 ),
                 Cook(
                     id = 4,
                     description = "Panaskan satu sendok makan minyak sayur dalam wajan besar di atas api sedang (2 menit).",
                     imageUrl = "https://raw.githubusercontent.com/GoCipes/Resources/main/assets/panaskan-minyak.png",
-                    minutes = 2
+                    minutes = 120
                 ),
                 Cook(
                     id = 5,
                     description = "Tambahkan bawang putih cincang halus ke dalam minyak panas.",
                     imageUrl = "https://raw.githubusercontent.com/GoCipes/Resources/main/assets/tiris.png",
-                    minutes = 10
+                    minutes = 600
                 ),
                 Cook(
                     id = 6,
                     description = "Setelah bawang putih telah berubah warna, tambahkan potongan bayam ke dalam wajan.... (6-8 menit).",
                     imageUrl = "https://raw.githubusercontent.com/GoCipes/Resources/main/assets/rebus-bayam.png",
-                    minutes = 7
+                    minutes = 420
                 ),
                 Cook(
                     id = 7,
                     description = "Taburkan garam sesuai selera dan merica di atas bayam. Aduk rata (1-2 menit).",
                     imageUrl = "https://raw.githubusercontent.com/GoCipes/Resources/main/assets/tabur-bawang.png",
-                    minutes = 2
+                    minutes = 120
                 ),
                 Cook(
                     id = 8,
                     description = "Tuangkan sedikit air ke dalam wajan (sekitar 2-3 sendok makan) untuk membantu proses masak dan menciptakan...(3-4 menit).",
                     imageUrl = "https://raw.githubusercontent.com/GoCipes/Resources/main/assets/tuang-air.png",
-                    minutes = 3
+                    minutes = 180
                 )
             )
         ),
@@ -235,31 +235,31 @@ object DummyFood {
                     id = 1,
                     description = "Iris tipis bawang merah,bawang putih,cabai rawit dan cabai keriting",
                     imageUrl = "https://raw.githubusercontent.com/GoCipes/Resources/main/assets/kk%201.jpeg",
-                    minutes = 2
+                    minutes = 120
                 ),
                 Cook(
                     id = 2,
                     description = "Tumis hingga harum",
                     imageUrl = "https://raw.githubusercontent.com/GoCipes/Resources/main/assets/kk%202.jpeg",
-                    minutes = 3
+                    minutes = 180
                 ),
                 Cook(
                     id = 3,
                     description = "Masukkan saus tiram 1sendok makan.",
                     imageUrl = "https://raw.githubusercontent.com/GoCipes/Resources/main/assets/kk%203.jpeg",
-                    minutes = 1
+                    minutes = 60
                 ),
                 Cook(
                     id = 4,
                     description = "Masukkan kangkung yang telah dicuci bersih dan dipotong memanjang (tunggu hingga layu dan lunak)",
                     imageUrl = "https://raw.githubusercontent.com/GoCipes/Resources/main/assets/kk%204.jpeg",
-                    minutes = 5
+                    minutes = 300
                 ),
                 Cook(
                     id = 5,
                     description = "Cah kangkung siap disajikan",
                     imageUrl = "https://raw.githubusercontent.com/GoCipes/Resources/main/assets/kk%205.jpeg",
-                    minutes = 1
+                    minutes = 15
                 )
             )
         )
@@ -319,43 +319,43 @@ object DummyFood {
                     id = 1,
                     description = "Panaskan pan / teflon yang telah dilumuri margarin",
                     imageUrl = "https://raw.githubusercontent.com/GoCipes/Resources/main/assets/sd%201.jpeg",
-                    minutes = 1
+                    minutes = 60
                 ),
                 Cook(
                     id = 2,
                     description = "Panggang roti dengan api kecil ",
                     imageUrl = "https://raw.githubusercontent.com/GoCipes/Resources/main/assets/sd%202.jpeg",
-                    minutes = 2
+                    minutes = 120
                 ),
                 Cook(
                     id = 3,
                     description = "Tambahkan selada,tomat dan keju",
                     imageUrl = "https://raw.githubusercontent.com/GoCipes/Resources/main/assets/sd%204.jpeg",
-                    minutes = 1
+                    minutes = 60
                 ),
                 Cook(
                     id = 4,
                     description = "Tambahkan beef ",
                     imageUrl = "https://raw.githubusercontent.com/GoCipes/Resources/main/assets/sd%205.jpeg",
-                    minutes = 1
+                    minutes = 60
                 ),
                 Cook(
                     id = 5,
                     description = "Tambahkan saus dan mayonaise sesuai selera",
                     imageUrl = "https://raw.githubusercontent.com/GoCipes/Resources/main/assets/sd%206.jpeg",
-                    minutes = 1
+                    minutes = 60
                 ),
                 Cook(
                     id = 6,
                     description = "Tutup dan panggang kembali sebentar hingga keju meleleh",
                     imageUrl = "https://raw.githubusercontent.com/GoCipes/Resources/main/assets/sd%207.jpeg",
-                    minutes = 8
+                    minutes = 480
                 ),
                 Cook(
                     id = 7,
                     description = "Sandwich siap disajikan",
                     imageUrl = "https://raw.githubusercontent.com/GoCipes/Resources/main/assets/sd%209.jpeg",
-                    minutes = 1
+                    minutes = 15
                 )
             )
         ),
@@ -387,15 +387,29 @@ object DummyFood {
         ),
         Food(
             id = 4,
-            name = "Oatmeal",
-            imageUrl = "https://i.ndtvimg.com/i/2016-10/oats-620_620x350_81477570522.jpg",
-            description = "",
-            minutes = "",
-            category = "",
-            fat = 8,
-            carbohydrates = 75,
-            protein = 17,
-            ingredients = listOf(),
+            name = "Oatmeal Banana",
+            description = "Selain praktis dan mengenyangkan, sarapan juga harus harus memperhatikan nutrisi yang masuk ke tubuh. Dengan begitu, perutmu nggak asal kenyang, tapi juga cukup mendukung pertambahan energi dalam tubuh. Jika perutmu belum bisa menerima asupan nasi pada pagi hari, mungkin kamu bisa menggantinya dengan gandum. Oatmeal adalah pilihan yang tepat dalam hal ini.",
+            minutes = "3 menit",
+            imageUrl = "https://pinchofyum.com/wp-content/uploads/banana-oatmeal-recipe.jpg",
+            category = "Buah",
+            fat = 26,
+            carbohydrates = 45,
+            protein = 29,
+            ingredients = listOf(
+                Ingredient(
+                    id = 1,
+                    "4 sdm oatmeal"
+                ),
+                Ingredient(
+                    2,
+                    "1 buah pisang"
+                ),
+                Ingredient(3, "2 buah kurma"),
+                Ingredient(4, "4 biji kacang almond"),
+                Ingredient(5, "180 ml susu almond"),
+                Ingredient(6, "1 sdt kayu manis bubuk"),
+                Ingredient(7, "1 sdt madu")
+            ),
             step = listOf()
         ),
         Food(

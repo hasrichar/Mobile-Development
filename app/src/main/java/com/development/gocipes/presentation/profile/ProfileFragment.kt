@@ -4,15 +4,22 @@ import android.os.Bundle
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import android.widget.Toast
 import androidx.fragment.app.Fragment
+import androidx.fragment.app.viewModels
 import androidx.navigation.fragment.findNavController
+import com.development.gocipes.core.data.remote.response.auth.UserResult
 import com.development.gocipes.core.utils.Extensions.showImage
+import com.development.gocipes.core.utils.Result
 import com.development.gocipes.databinding.FragmentProfileBinding
+import dagger.hilt.android.AndroidEntryPoint
 
+@AndroidEntryPoint
 class ProfileFragment : Fragment() {
 
     private var _binding: FragmentProfileBinding? = null
     private val binding get() = _binding
+    private val viewModel by viewModels<ProfileViewModel>()
 
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
@@ -26,7 +33,8 @@ class ProfileFragment : Fragment() {
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
 
-        setupView()
+        getUserObserver()
+
         binding?.btnProfileEdit?.setOnClickListener {
             onClickEdit()
         }
@@ -38,12 +46,32 @@ class ProfileFragment : Fragment() {
         }
     }
 
-    private fun setupView() {
+    private fun getUserObserver() {
+        viewModel.getCurrentUser().observe(viewLifecycleOwner) { result ->
+            when (result) {
+                is Result.Error -> {
+                    Toast.makeText(requireActivity(), result.message, Toast.LENGTH_SHORT).show()
+                }
+                is Result.Loading -> {}
+                is Result.Success -> {
+                    setupView(result.data)
+                }
+            }
+        }
+    }
+
+    private fun setupView(user: UserResult) {
+        val urlPhoto =
+            "https://t4.ftcdn.net/jpg/00/64/67/63/360_F_64676383_LdbmhiNM6Ypzb3FM4PPuFP9rHe7ri8Ju.jpg"
+        val userName = "${user.firstName} ${user.lastName}"
+
         binding?.apply {
             ivProfileFotoProfil.showImage(
-                requireActivity(),
-                "https://www.betterup.com/hubfs/Blog%20Images/authentic-self-person-smiling-at-camera.jpg"
+                requireActivity(), user.photo ?: urlPhoto
             )
+            edtProfileEmailUser.setText(user.email)
+            edtProfileUsernameUser.setText(userName)
+            edtProfilePasswordUser.setText(userName)
         }
     }
 

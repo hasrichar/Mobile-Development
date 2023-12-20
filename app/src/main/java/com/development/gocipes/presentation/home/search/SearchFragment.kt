@@ -1,6 +1,8 @@
 package com.development.gocipes.presentation.home.search
 
 import android.os.Bundle
+import android.os.Handler
+import android.os.Looper
 import android.view.LayoutInflater
 import android.view.Menu
 import android.view.MenuInflater
@@ -39,6 +41,26 @@ class SearchFragment : Fragment() {
 
         setupToolbar()
         setupRecyclerView()
+        setupShimmer()
+    }
+
+    private fun setupShimmer() {
+        binding?.apply {
+            rvSearch.visibility = View.INVISIBLE
+            toolbar.visibility = View.INVISIBLE
+            searchView.visibility = View.INVISIBLE
+
+            Handler(Looper.getMainLooper()).postDelayed({
+                rvSearch.visibility = View.VISIBLE
+                toolbar.visibility = View.VISIBLE
+                searchView.visibility = View.VISIBLE
+
+                shimmer.apply {
+                    stopShimmer()
+                    visibility = View.INVISIBLE
+                }
+            }, 1500)
+        }
     }
 
     private fun setupToolbar() {

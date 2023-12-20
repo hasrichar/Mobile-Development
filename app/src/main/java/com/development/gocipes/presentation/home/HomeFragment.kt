@@ -1,6 +1,8 @@
 package com.development.gocipes.presentation.home
 
 import android.os.Bundle
+import android.os.Handler
+import android.os.Looper
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
@@ -13,16 +15,12 @@ import com.development.gocipes.core.data.local.dummy.DummyCategory
 import com.development.gocipes.core.data.local.dummy.DummyFood
 import com.development.gocipes.core.data.local.dummy.DummyInformation
 import com.development.gocipes.core.data.remote.response.auth.UserResult
-import com.development.gocipes.core.domain.model.article.Article
 import com.development.gocipes.core.domain.model.food.Category
 import com.development.gocipes.core.domain.model.food.Food
 import com.development.gocipes.core.domain.model.information.Information
-import com.development.gocipes.core.domain.model.technique.Technique
-import com.development.gocipes.core.presentation.adapter.ArticleAdapter
 import com.development.gocipes.core.presentation.adapter.CategoryAdapter
 import com.development.gocipes.core.presentation.adapter.FoodAdapter
 import com.development.gocipes.core.presentation.adapter.InformationAdapter
-import com.development.gocipes.core.presentation.adapter.TechniqueAdapter
 import com.development.gocipes.core.utils.Extensions.showImage
 import com.development.gocipes.core.utils.Result
 import com.development.gocipes.databinding.FragmentHomeBinding
@@ -63,6 +61,22 @@ class HomeFragment : Fragment() {
         setupRecyclerViewFood(listFood)
         setupRecyclerViewTechnique(listTechnique)
         setupRecyclerViewGuide(listArticle)
+
+        setupShimmer()
+    }
+
+    private fun setupShimmer() {
+        binding?.apply {
+            contentHome.root.visibility = View.INVISIBLE
+
+            Handler(Looper.getMainLooper()).postDelayed({
+                contentHome.root.visibility = View.VISIBLE
+                shimmer.apply {
+                    stopShimmer()
+                    visibility = View.INVISIBLE
+                }
+            }, 1500)
+        }
     }
 
     private fun articleObserver() {

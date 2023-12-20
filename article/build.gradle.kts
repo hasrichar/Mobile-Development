@@ -62,4 +62,6 @@ dependencies {
     //navigation
     implementation(Dependencies.navigationKtx)
     implementation(Dependencies.navigationUiKtx)
+
+    implementation(Dependencies.shimmer)
 }

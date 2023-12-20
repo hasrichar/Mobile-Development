@@ -66,4 +66,7 @@ dependencies {
 
     //youtube-api
     implementation(Dependencies.youtubePlayer)
+
+    //shimmer
+    implementation(Dependencies.shimmer)
 }

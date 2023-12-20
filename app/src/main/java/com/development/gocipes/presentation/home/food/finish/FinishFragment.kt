@@ -39,7 +39,7 @@ class FinishFragment : Fragment() {
             btnTimer.text = foodArgs.minutes
             btnHome.setOnClickListener {
                 val option = NavOptions.Builder()
-                    .setPopUpTo(R.id.timerFragment, inclusive = true)
+                    .setPopUpTo(R.id.finishFragment, inclusive = true)
                     .build()
                 findNavController().navigate(R.id.action_finishFragment_to_homeFragment2, null, option)
             }

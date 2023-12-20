@@ -1,6 +1,8 @@
 package com.development.gocipes.presentation.analysis
 
 import android.os.Bundle
+import android.os.Handler
+import android.os.Looper
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
@@ -30,6 +32,26 @@ class AnalysisFragment : Fragment() {
         super.onViewCreated(view, savedInstanceState)
 
         setupRecycler()
+        setupShimmer()
+    }
+
+    private fun setupShimmer() {
+        binding?.apply {
+            searchBar.visibility = View.INVISIBLE
+            tvAnalysisHead.visibility = View.INVISIBLE
+            rvAnalysis.visibility = View.INVISIBLE
+
+            Handler(Looper.getMainLooper()).postDelayed({
+                searchBar.visibility = View.VISIBLE
+                tvAnalysisHead.visibility = View.VISIBLE
+                rvAnalysis.visibility = View.VISIBLE
+
+                shimmer.apply {
+                    stopShimmer()
+                    visibility = View.INVISIBLE
+                }
+            }, 1500)
+        }
     }
 
     private fun setupRecycler() {

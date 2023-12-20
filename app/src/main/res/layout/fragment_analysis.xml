@@ -24,7 +24,7 @@
         android:layout_marginTop="16dp"
         android:fontFamily="@font/poppins_semi_bold"
         android:text="@string/head_analysis"
-        android:textSize="24sp"
+        android:textSize="20sp"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/search_bar" />
 
@@ -43,4 +43,12 @@
         app:layout_constraintBottom_toBottomOf="parent"
         tools:listitem="@layout/item_analysis" />
 
+    <com.facebook.shimmer.ShimmerFrameLayout
+        android:id="@+id/shimmer"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        app:shimmer_auto_start="true">
+
+        <include layout="@layout/shimmer_analysis" />
+    </com.facebook.shimmer.ShimmerFrameLayout>
 </androidx.constraintlayout.widget.ConstraintLayout>

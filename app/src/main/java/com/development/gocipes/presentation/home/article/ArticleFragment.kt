@@ -2,6 +2,8 @@ package com.development.gocipes.presentation.home.article
 
 import android.content.res.Configuration
 import android.os.Bundle
+import android.os.Handler
+import android.os.Looper
 import android.view.LayoutInflater
 import android.view.Menu
 import android.view.MenuInflater
@@ -18,9 +20,7 @@ import androidx.lifecycle.Lifecycle
 import androidx.navigation.fragment.findNavController
 import androidx.recyclerview.widget.GridLayoutManager
 import com.development.gocipes.core.data.local.dummy.DummyInformation
-import com.development.gocipes.core.domain.model.article.Article
 import com.development.gocipes.core.domain.model.information.Information
-import com.development.gocipes.core.presentation.adapter.ArticleGridAdapter
 import com.development.gocipes.core.presentation.adapter.InformationGridAdapter
 import com.development.gocipes.core.utils.Result
 import com.development.gocipes.databinding.FragmentArticleBinding
@@ -31,13 +31,12 @@ class ArticleFragment : Fragment() {
 
     private var _binding: FragmentArticleBinding? = null
     private val binding get() = _binding
-    private lateinit var articleGridAdapter: ArticleGridAdapter
     private lateinit var informationGridAdapter: InformationGridAdapter
     private val viewModel by viewModels<ArticleViewModel>()
 
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
-        savedInstanceState: Bundle?
+        savedInstanceState: Bundle?,
     ): View? {
         _binding = FragmentArticleBinding.inflate(layoutInflater, container, false)
         return binding?.root
@@ -48,6 +47,24 @@ class ArticleFragment : Fragment() {
 
         setupToolbar()
         setupView()
+        setupShimmer()
+    }
+
+    private fun setupShimmer() {
+        binding?.apply {
+            rvArticle.visibility = View.INVISIBLE
+            toolbar.visibility = View.INVISIBLE
+
+            Handler(Looper.getMainLooper()).postDelayed({
+                rvArticle.visibility = View.VISIBLE
+                toolbar.visibility = View.VISIBLE
+
+                shimmer.apply {
+                    stopShimmer()
+                    visibility = View.INVISIBLE
+                }
+            }, 1500)
+        }
     }
 
     private fun setupToolbar() {

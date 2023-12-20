@@ -1,6 +1,8 @@
 package com.development.gocipes.technique.presentation
 
 import android.os.Bundle
+import android.os.Handler
+import android.os.Looper
 import android.view.LayoutInflater
 import android.view.Menu
 import android.view.MenuInflater
@@ -49,6 +51,24 @@ class DetailTechniqueFragment : Fragment() {
 
         setupToolbar()
         setUpYoutubeApi(techniqueArgs)
+        setupShimmer()
+    }
+
+    private fun setupShimmer() {
+        binding?.apply {
+            contentDetailTechnique.root.visibility = View.INVISIBLE
+            toolbar.visibility = View.INVISIBLE
+
+            Handler(Looper.getMainLooper()).postDelayed({
+                contentDetailTechnique.root.visibility = View.VISIBLE
+                toolbar.visibility = View.VISIBLE
+
+                shimmer.apply {
+                    stopShimmer()
+                    visibility = View.INVISIBLE
+                }
+            }, 2000)
+        }
     }
 
     private fun setupToolbar() {

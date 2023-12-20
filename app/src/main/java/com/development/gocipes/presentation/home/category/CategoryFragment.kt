@@ -2,6 +2,8 @@ package com.development.gocipes.presentation.home.category
 
 import android.content.res.Configuration
 import android.os.Bundle
+import android.os.Handler
+import android.os.Looper
 import android.view.LayoutInflater
 import android.view.Menu
 import android.view.MenuInflater
@@ -40,6 +42,24 @@ class CategoryFragment : Fragment() {
 
         setupToolbar()
         setupView()
+        setupShimmer()
+    }
+
+    private fun setupShimmer() {
+        binding?.apply {
+            rvFood.visibility = View.INVISIBLE
+            toolbar.visibility = View.INVISIBLE
+
+            Handler(Looper.getMainLooper()).postDelayed({
+                rvFood.visibility = View.VISIBLE
+                toolbar.visibility = View.VISIBLE
+
+                shimmer.apply {
+                    stopShimmer()
+                    visibility = View.INVISIBLE
+                }
+            }, 1500)
+        }
     }
 
     private fun setupToolbar() {

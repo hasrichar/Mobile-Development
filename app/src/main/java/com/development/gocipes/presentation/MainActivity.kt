@@ -26,7 +26,7 @@ class MainActivity : AppCompatActivity() {
         navController.addOnDestinationChangedListener {_, navDestination, _ ->
             Handler(Looper.getMainLooper()).post {
                 when (navDestination.id) {
-                    R.id.homeFragment, R.id.analysisFragment, R.id.favoriteFragment, R.id.profileFragment -> {
+                    R.id.homeFragment, R.id.analysisFragment, R.id.chatBotFragment, R.id.profileFragment -> {
                         binding.bottomNav.visibility = View.VISIBLE
                     } else -> {
                         binding.bottomNav.visibility = View.GONE

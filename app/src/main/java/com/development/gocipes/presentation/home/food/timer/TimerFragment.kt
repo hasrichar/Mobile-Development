@@ -2,6 +2,8 @@ package com.development.gocipes.presentation.home.food.timer
 
 import android.annotation.SuppressLint
 import android.os.Bundle
+import android.os.Handler
+import android.os.Looper
 import android.view.LayoutInflater
 import android.view.Menu
 import android.view.MenuInflater
@@ -47,6 +49,34 @@ class TimerFragment : Fragment() {
         super.onViewCreated(view, savedInstanceState)
 
         setupView()
+        setupShimmer()
+    }
+
+    private fun setupShimmer() {
+        binding?.apply {
+            viewPager.visibility = View.INVISIBLE
+            toolbar.visibility = View.INVISIBLE
+            progressCircular.visibility = View.INVISIBLE
+            btnPrevious.visibility = View.INVISIBLE
+            btnPause.visibility = View.INVISIBLE
+            btnNext.visibility = View.INVISIBLE
+            tvTimer.visibility = View.INVISIBLE
+
+            Handler(Looper.getMainLooper()).postDelayed({
+                viewPager.visibility = View.VISIBLE
+                toolbar.visibility = View.VISIBLE
+                progressCircular.visibility = View.VISIBLE
+                btnPrevious.visibility = View.VISIBLE
+                btnPause.visibility = View.VISIBLE
+                btnNext.visibility = View.VISIBLE
+                tvTimer.visibility = View.VISIBLE
+
+                shimmer.apply {
+                    stopShimmer()
+                    visibility = View.INVISIBLE
+                }
+            }, 1000)
+        }
     }
 
     private fun setupView() {

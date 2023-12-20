@@ -2,6 +2,7 @@
     <string name="app_name">BeCipes</string>
     <string name="analysis_gizi">Analisis Gizi</string>
     <string name="favorite">Favorite</string>
+    <string name="chatbot">Chat Bot</string>
     <string name="home">Home</string>
     <string name="profile">Profile</string>
     <string name="category">Kategori</string>
