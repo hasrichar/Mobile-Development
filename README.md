@@ -9,4 +9,35 @@
 
 <hr>
 
-# Mobile-Development
+# Becipes - Mobile Development
+
+## Architecture
+The project follows the MVVM (Model-View-ViewModel) design pattern with a Clean Architecture approach. This architecture promotes separation of concerns and provides a scalable and maintainable codebase. Here's an overview of the project's architecture:
+
+- **Presentation Layer**: Contains the UI components, including activities, fragments, and Jetpack Compose screens. It interacts with the ViewModel layer to retrieve and display data to the user.
+
+- **Domain Layer**: Contains the business logic of the application. It defines the various use cases and orchestrates the interactions between the data layer and the presentation layer.
+
+- **Data Layer**: Contains the repositories and data sources responsible for retrieving and persisting data. It abstracts the underlying data storage implementation and provides a clean interface for the Use Case layer.
+
+## Requirements
+To build and run the Hidup Sehat Android application, ensure you have the following software installed:
+
+- Android Studio: 2022.2.1 (Flamingo)
+- Minimum SDK: 24
+- Target SDK: 33
+- JDK: 17
+- Kotlin: 1.8.0
+- Android Gradle Plugin: 8.1.0
+- Gradle: 8.0
+
+## Getting Started
+To build and run the project locally, follow these steps:
+
+1. Clone the repository: `git clone https://github.com/BeCipes/Mobile-Development.git`
+2. Open the project in Android Studio.
+3. Ensure that the required SDK versions and dependencies are installed.
+5. Add `BASE_URL=YOUR BASE URL FROM RUN BeCipes-Rest API` to `local.properties` file.
+6. Build and run the app on an emulator or physical device.
+
+Feel free to explore the codebase and make any contributions or improvements as needed. We appreciate your contributions to BeCipes!
