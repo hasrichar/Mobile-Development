@@ -24,7 +24,7 @@ The project follows the MVVM (Model-View-ViewModel) design pattern with a Clean 
 ## Requirements
 To build and run the Hidup Sehat Android application, ensure you have the following software installed:
 
-- Android Studio: 2022.2.1 (Flamingo)
+- Android Studio: 2022.3.1 (Giraffe)
 - Minimum SDK: 24
 - Target SDK: 33
 - JDK: 17
