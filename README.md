@@ -10,6 +10,7 @@
 <hr>
 
 # BeCipes - Mobile Development
+A platform that makes it easy for you to get healthy food. Use this platform to help you easily serve healthy food, get information about nutritional health, and cooking techniques.
 
 ## Architecture
 The project follows the MVVM (Model-View-ViewModel) design pattern with a Clean Architecture approach. This architecture promotes separation of concerns and provides a scalable and maintainable codebase. Here's an overview of the project's architecture:
