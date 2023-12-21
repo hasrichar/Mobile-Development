@@ -1,6 +1,9 @@
 plugins {
     id("com.android.application")
     id("org.jetbrains.kotlin.android")
+    id("kotlin-kapt")
+    id("dagger.hilt.android.plugin")
+    id("androidx.navigation.safeargs")
 }
 
 android {
@@ -27,11 +30,11 @@ android {
         }
     }
     compileOptions {
-        sourceCompatibility = JavaVersion.VERSION_1_8
-        targetCompatibility = JavaVersion.VERSION_1_8
+        sourceCompatibility = JavaVersion.VERSION_17
+        targetCompatibility = JavaVersion.VERSION_17
     }
     kotlinOptions {
-        jvmTarget = "1.8"
+        jvmTarget = "17"
     }
 
     buildFeatures {
@@ -41,11 +44,46 @@ android {
 
 dependencies {
 
-    implementation("androidx.core:core-ktx:1.9.0")
-    implementation("androidx.appcompat:appcompat:1.6.1")
-    implementation("com.google.android.material:material:1.9.0")
-    implementation("androidx.constraintlayout:constraintlayout:2.1.4")
-    testImplementation("junit:junit:4.13.2")
-    androidTestImplementation("androidx.test.ext:junit:1.1.5")
-    androidTestImplementation("androidx.test.espresso:espresso-core:3.5.1")
+    implementation(project(Modules.core))
+    implementation(project(Modules.auth))
+    implementation(project(Modules.food))
+    implementation(project(Modules.article))
+    implementation(project(Modules.technique))
+
+    implementation(Dependencies.coreKtx)
+    implementation(Dependencies.appCompat)
+
+    //ui
+    implementation(Dependencies.material)
+    implementation(Dependencies.constraintLayout)
+
+    //testing
+    testImplementation(Dependencies.junit)
+    androidTestImplementation(Dependencies.extJunit)
+    androidTestImplementation(Dependencies.esspresso)
+
+    //dagger-hilt
+    implementation(Dependencies.daggerHilt)
+    kapt(Dependencies.hiltCompiler)
+    kapt(Dependencies.daggerHiltCompiler)
+
+    //navigation
+    implementation(Dependencies.navigationKtx)
+    implementation(Dependencies.navigationUiKtx)
+
+    //circle-image
+    implementation(Dependencies.hdodenhof)
+
+    //prefs
+    implementation(Dependencies.prefs)
+
+    //lifecycle
+    implementation(Dependencies.viewModel)
+    implementation(Dependencies.liveData)
+
+    //sonic-countdown
+    implementation(Dependencies.sonicCountDown)
+
+    //shimmer
+    implementation(Dependencies.shimmer)
 }

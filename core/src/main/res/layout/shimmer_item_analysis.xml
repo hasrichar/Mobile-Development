@@ -1,0 +1,78 @@
+<?xml version="1.0" encoding="utf-8"?>
+<com.google.android.material.card.MaterialCardView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    style="@style/Widget.Material3.CardView.Elevated"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:layout_marginStart="8dp"
+    android:layout_marginTop="8dp"
+    android:layout_marginEnd="8dp"
+    android:layout_marginBottom="8dp"
+    app:shapeAppearance="@style/ShapeAppearance.Material3.Corner.Medium">
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+
+        <com.google.android.material.imageview.ShapeableImageView
+            android:id="@+id/iv_analysis"
+            android:layout_width="65dp"
+            android:layout_height="68dp"
+            android:layout_marginStart="8dp"
+            android:layout_marginTop="8dp"
+            android:layout_marginBottom="8dp"
+            android:background="@color/shimmer"
+            android:scaleType="centerCrop"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            app:shapeAppearance="@style/ShapeAppearance.Material3.Corner.Medium" />
+
+        <TextView
+            android:id="@+id/tv_head_ingridient"
+            android:layout_width="120dp"
+            android:layout_height="20dp"
+            android:layout_marginStart="16dp"
+            android:background="@color/shimmer"
+            android:fontFamily="@font/poppins_semi_bold"
+            android:textSize="18sp"
+            app:layout_constraintStart_toEndOf="@+id/iv_analysis"
+            app:layout_constraintTop_toTopOf="@+id/iv_analysis" />
+
+        <TextView
+            android:id="@+id/tv_desc_ingridient"
+            android:layout_width="145dp"
+            android:layout_height="16dp"
+            android:layout_marginTop="8dp"
+            android:background="@color/shimmer"
+            android:ellipsize="end"
+            android:maxLines="2"
+            app:layout_constraintStart_toStartOf="@+id/tv_head_ingridient"
+            app:layout_constraintTop_toBottomOf="@+id/tv_head_ingridient" />
+
+        <TextView
+            android:id="@+id/tv_desc_ingridient2"
+            android:layout_width="145dp"
+            android:layout_height="16dp"
+            android:layout_marginTop="2dp"
+            android:background="@color/shimmer"
+            android:ellipsize="end"
+            android:maxLines="2"
+            app:layout_constraintBottom_toBottomOf="@+id/iv_analysis"
+            app:layout_constraintStart_toStartOf="@+id/tv_desc_ingridient"
+            app:layout_constraintTop_toBottomOf="@+id/tv_desc_ingridient" />
+
+        <com.google.android.material.imageview.ShapeableImageView
+            android:id="@+id/imageView"
+            android:layout_width="32dp"
+            android:layout_height="32dp"
+            android:layout_marginEnd="16dp"
+            android:background="@color/shimmer"
+            android:contentDescription="@string/next"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            app:shapeAppearance="@style/ShapeAppearance.Material3.Corner.Full" />
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+</com.google.android.material.card.MaterialCardView>

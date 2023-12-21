@@ -1,0 +1,85 @@
+<?xml version="1.0" encoding="utf-8"?>
+<com.google.android.material.card.MaterialCardView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    style="@style/Widget.Material3.CardView.Elevated"
+    android:layout_width="wrap_content"
+    android:layout_height="wrap_content"
+    android:paddingEnd="8dp"
+    app:shapeAppearance="@style/ShapeAppearance.Material3.Corner.Medium">
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content">
+
+        <com.google.android.material.imageview.ShapeableImageView
+            android:id="@+id/siv_food"
+            android:layout_width="160dp"
+            android:layout_height="160dp"
+            android:background="@color/shimmer"
+            android:scaleType="centerCrop"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <com.google.android.material.imageview.ShapeableImageView
+            android:id="@+id/view"
+            android:layout_width="72dp"
+            android:layout_height="24dp"
+            android:layout_marginStart="8dp"
+            android:layout_marginTop="8dp"
+            android:background="#7F000000"
+            app:layout_constraintStart_toStartOf="@id/siv_food"
+            app:layout_constraintTop_toTopOf="@id/siv_food"
+            app:shapeAppearance="@style/ShapeAppearance.Material3.Corner.Medium" />
+
+        <TextView
+            android:id="@+id/tv_minutes"
+            android:layout_width="46dp"
+            android:layout_height="10dp"
+            android:background="@color/shimmer"
+            android:fontFamily="@font/poppins_regular"
+            android:textSize="11sp"
+            app:layout_constraintBottom_toBottomOf="@id/view"
+            app:layout_constraintEnd_toEndOf="@id/view"
+            app:layout_constraintStart_toStartOf="@id/view"
+            app:layout_constraintTop_toTopOf="@id/view" />
+
+        <View
+            android:layout_width="0dp"
+            android:layout_height="0dp"
+            android:background="#7F000000"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/siv_food" />
+
+        <TextView
+            android:id="@+id/tv_name"
+            android:layout_width="0dp"
+            android:layout_height="16dp"
+            android:layout_marginHorizontal="8dp"
+            android:layout_marginTop="8dp"
+            android:background="@color/shimmer"
+            android:fontFamily="@font/poppins_semi_bold"
+            android:textAlignment="center"
+            android:textSize="14sp"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/siv_food" />
+
+        <TextView
+            android:id="@+id/tv_category"
+            android:layout_width="120dp"
+            android:layout_height="10dp"
+            android:layout_marginTop="8dp"
+            android:layout_marginBottom="8dp"
+            android:background="@color/shimmer"
+            android:fontFamily="@font/poppins_regular"
+            android:textAlignment="center"
+            android:textSize="12sp"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="@id/siv_food"
+            app:layout_constraintStart_toStartOf="@id/siv_food"
+            app:layout_constraintTop_toBottomOf="@id/tv_name" />
+    </androidx.constraintlayout.widget.ConstraintLayout>
+</com.google.android.material.card.MaterialCardView>

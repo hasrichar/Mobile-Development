@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="email">Email</string>
+    <string name="password">Password</string>
+    <string name="register">Daftar</string>
+    <string name="login">Masuk</string>
+    <string name="reset_password">Reset Password</string>
+    <string name="first_name">First Name</string>
+    <string name="lastName">Last Name</string>
+</resources>

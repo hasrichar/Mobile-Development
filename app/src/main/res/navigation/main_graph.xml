@@ -1,0 +1,192 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/main_graph"
+    app:startDestination="@id/homeFragment">
+
+    <fragment
+        android:id="@+id/homeFragment"
+        android:name="com.development.gocipes.presentation.home.HomeFragment"
+        android:label="fragment_home"
+        tools:layout="@layout/fragment_home">
+        <action
+            android:id="@+id/action_homeFragment_to_foodFragment"
+            app:destination="@id/foodFragment" />
+        <action
+            android:id="@+id/action_homeFragment_to_articleFragment"
+            app:destination="@id/articleFragment" />
+        <action
+            android:id="@+id/action_homeFragment_to_techniqueFragment"
+            app:destination="@id/techniqueFragment" />
+        <action
+            android:id="@+id/action_homeFragment_to_searchFragment"
+            app:destination="@id/searchFragment" />
+        <action
+            android:id="@+id/action_homeFragment_to_categoryFragment"
+            app:destination="@id/categoryFragment" />
+        <action
+            android:id="@+id/action_homeFragment_to_article_graph"
+            app:destination="@id/article_graph">
+            <argument
+                android:name="information"
+                app:argType="com.development.gocipes.core.domain.model.information.Information" />
+        </action>
+        <action
+            android:id="@+id/action_homeFragment_to_technique_graph"
+            app:destination="@id/technique_graph">
+            <argument
+                android:name="information"
+                app:argType="com.development.gocipes.core.domain.model.information.Information" />
+        </action>
+        <action
+            android:id="@+id/action_homeFragment_to_detailFoodFragment"
+            app:destination="@id/detailFoodFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/analysisFragment"
+        android:name="com.development.gocipes.presentation.analysis.AnalysisFragment"
+        android:label="fragment_analysis"
+        tools:layout="@layout/fragment_analysis" >
+        <action
+            android:id="@+id/action_analysisFragment_to_detailAnalysisFragment"
+            app:destination="@id/detailAnalysisFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/profileFragment"
+        android:name="com.development.gocipes.presentation.profile.ProfileFragment"
+        android:label="fragment_profile"
+        tools:layout="@layout/fragment_profile" >
+        <action
+            android:id="@+id/action_profileFragment_to_auth_graph"
+            app:destination="@id/auth_graph" />
+        <action
+            android:id="@+id/action_profileFragment_to_favoriteFragment"
+            app:destination="@id/favoriteFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/favoriteFragment"
+        android:name="com.development.gocipes.presentation.profile.favorite.FavoriteFragment"
+        android:label="fragment_favorite"
+        tools:layout="@layout/fragment_favorite" />
+    <fragment
+        android:id="@+id/foodFragment"
+        android:name="com.development.gocipes.presentation.home.food.FoodFragment"
+        android:label="fragment_food"
+        tools:layout="@layout/fragment_food">
+        <action
+            android:id="@+id/action_foodFragment_to_detailFoodFragment"
+            app:destination="@id/detailFoodFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/articleFragment"
+        android:name="com.development.gocipes.presentation.home.article.ArticleFragment"
+        android:label="fragment_article"
+        tools:layout="@layout/fragment_article">
+        <action
+            android:id="@+id/action_articleFragment_to_article_graph"
+            app:destination="@id/article_graph">
+            <argument
+                android:name="information"
+                app:argType="com.development.gocipes.core.domain.model.information.Information" />
+        </action>
+    </fragment>
+    <fragment
+        android:id="@+id/techniqueFragment"
+        android:name="com.development.gocipes.presentation.home.technique.TechniqueFragment"
+        android:label="fragment_technique"
+        tools:layout="@layout/fragment_technique">
+        <action
+            android:id="@+id/action_techniqueFragment_to_technique_graph"
+            app:destination="@id/technique_graph">
+            <argument
+                android:name="information"
+                app:argType="com.development.gocipes.core.domain.model.information.Information" />
+        </action>
+    </fragment>
+    <fragment
+        android:id="@+id/searchFragment"
+        android:name="com.development.gocipes.presentation.home.search.SearchFragment"
+        android:label="fragment_search"
+        tools:layout="@layout/fragment_search" >
+        <action
+            android:id="@+id/action_searchFragment_to_detailFoodFragment"
+            app:destination="@id/detailFoodFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/categoryFragment"
+        android:name="com.development.gocipes.presentation.home.category.CategoryFragment"
+        android:label="fragment_category"
+        tools:layout="@layout/fragment_category">
+        <argument
+            android:name="category"
+            app:argType="com.development.gocipes.core.domain.model.food.Category" />
+        <action
+            android:id="@+id/action_categoryFragment_to_detailFoodFragment"
+            app:destination="@id/detailFoodFragment" />
+    </fragment>
+    <include app:graph="@navigation/article_graph" />
+    <include app:graph="@navigation/technique_graph" />
+    <fragment
+        android:id="@+id/detailAnalysisFragment"
+        android:name="com.development.gocipes.presentation.analysis.DetailAnalysisFragment"
+        android:label="fragment_detail_analysis"
+        tools:layout="@layout/fragment_detail_analysis" >
+        <argument android:name="analysis"
+            app:argType="com.development.gocipes.core.domain.model.food.Analysis" />
+    </fragment>
+    <include app:graph="@navigation/auth_graph" />
+    <fragment
+        android:id="@+id/detailFoodFragment"
+        android:name="com.development.gocipes.presentation.home.food.detail.DetailFoodFragment"
+        android:label="fragment_detail_food"
+        tools:layout="@layout/fragment_detail_food" >
+        <argument
+            android:name="food"
+            app:argType="com.development.gocipes.core.domain.model.food.Food" />
+        <action
+            android:id="@+id/action_detailFoodFragment_to_cookFragment"
+            app:destination="@id/cookFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/cookFragment"
+        android:name="com.development.gocipes.presentation.home.food.cook.CookFragment"
+        android:label="fragment_cook"
+        tools:layout="@layout/fragment_cook" >
+        <argument
+            android:name="food"
+            app:argType="com.development.gocipes.core.domain.model.food.Food" />
+        <action
+            android:id="@+id/action_cookFragment_to_timerFragment"
+            app:destination="@id/timerFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/timerFragment"
+        android:name="com.development.gocipes.presentation.home.food.timer.TimerFragment"
+        android:label="fragment_timer"
+        tools:layout="@layout/fragment_timer" >
+        <argument
+            android:name="food"
+            app:argType="com.development.gocipes.core.domain.model.food.Food" />
+        <action
+            android:id="@+id/action_timerFragment_to_finishFragment"
+            app:destination="@id/finishFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/finishFragment"
+        android:name="com.development.gocipes.presentation.home.food.finish.FinishFragment"
+        android:label="fragment_finish"
+        tools:layout="@layout/fragment_finish" >
+        <argument
+            android:name="food"
+            app:argType="com.development.gocipes.core.domain.model.food.Food" />
+        <action
+            android:id="@+id/action_finishFragment_to_homeFragment2"
+            app:destination="@id/homeFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/chatBotFragment"
+        android:name="com.development.gocipes.presentation.chatbot.ChatBotFragment"
+        android:label="fragment_chat_bot"
+        tools:layout="@layout/fragment_chat_bot" />
+</navigation>

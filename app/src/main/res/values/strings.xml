@@ -1,3 +1,4 @@
 <resources>
-    <string name="app_name">GoCipes</string>
+
+    <string name="weight_ingridient">100 Gram</string>
 </resources>
