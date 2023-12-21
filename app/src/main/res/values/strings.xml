@@ -1,4 +1,5 @@
 <resources>
 
     <string name="weight_ingridient">100 Gram</string>
+    <string name="desc_app">BeCipes yang merupakan singkatan dari Best Recipes sebuah aplikasi yang dapat membantu user untuk mulai memasak dengan fitur penunjang yang menyajikan beragam menu makanan sehat, langkah-langkah memasak, dan juga timer yang sangat membantu user serta analisis gizi dari bahan masakan yang akan di olah.\n\n BeCipes juga menyediakan informasi terkait kesehatan yang di upload dari sumber terpercaya dan juga di dukung dengan tutorial teknik memasak yang sangat di butuh kan oleh pemula</string>
 </resources>

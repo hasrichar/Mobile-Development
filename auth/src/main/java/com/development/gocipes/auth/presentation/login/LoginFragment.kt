@@ -7,6 +7,7 @@ import android.view.ViewGroup
 import android.widget.Toast
 import androidx.fragment.app.Fragment
 import androidx.fragment.app.viewModels
+import androidx.navigation.NavOptions
 import androidx.navigation.fragment.findNavController
 import com.development.gocipes.auth.R
 import com.development.gocipes.auth.databinding.FragmentLoginBinding
@@ -22,7 +23,7 @@ class LoginFragment : Fragment() {
 
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
-        savedInstanceState: Bundle?
+        savedInstanceState: Bundle?,
     ): View? {
         _binding = FragmentLoginBinding.inflate(layoutInflater, container, false)
         return binding?.root
@@ -58,12 +59,14 @@ class LoginFragment : Fragment() {
                     }
                     Toast.makeText(requireActivity(), result.message, Toast.LENGTH_SHORT).show()
                 }
+
                 is Result.Loading -> {
                     binding?.contentLogin?.apply {
                         btnLogin.text = ""
                         progressCircular.visibility = View.VISIBLE
                     }
                 }
+
                 is Result.Success -> {
                     val token = result.data.token?.accessToken
                     viewModel.saveCredentials(isLogin = true, token = token ?: "")
@@ -80,9 +83,13 @@ class LoginFragment : Fragment() {
     }
 
     private fun navigateToMain() {
-        val action =
-            LoginFragmentDirections.actionLoginFragmentToMainActivity()
-        findNavController().navigate(action)
+        val option = NavOptions.Builder()
+            .setPopUpTo(R.id.auth_graph, inclusive = true)
+            .build()
+        findNavController().navigate(
+            LoginFragmentDirections.actionLoginFragmentToMainActivity(),
+            option
+        )
     }
 
     private fun navigateToForgot() {
