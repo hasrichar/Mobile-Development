@@ -1,4 +1,4 @@
-<p align="center"><img align="center" src="https://raw.githubusercontent.com/BeCipes/Resources/main/assets/banner-becipes.png" alt="Becipes Logo"/></p>
+<p align="center"><img align="center" src="https://drive.google.com/file/d/1_5W3Xs0qgWYlZPY1H7mL2lvLrWql3YYu/view?usp=drive_link" alt="Becipes Logo"/></p>
 
 ![Github Actions](https://circleci.com/gh/BeCipes/Mobile-Development.svg?style=shield)
 [![Issues](https://img.shields.io/github/issues/BeCipes/Mobile-Development)](https://github.com/BeCipes/Mobile-Development/issues)
