@@ -65,11 +65,11 @@ class ProfileFragment : Fragment() {
     private fun setupView(userResult: UserResult) {
         val urlPhoto =
             "https://t4.ftcdn.net/jpg/00/64/67/63/360_F_64676383_LdbmhiNM6Ypzb3FM4PPuFP9rHe7ri8Ju.jpg"
-        val userName = userResult.firstName + userResult.lastName
+        val userName = "${userResult.firstName} ${userResult.lastName}"
 
         binding?.apply {
             ivProfileFotoProfil.showImage(
-                requireActivity(), urlPhoto
+                requireActivity(), userResult.photo ?: urlPhoto
             )
             edtProfileEmailUser.setText(userResult.email)
             edtProfileUsernameUser.setText(userName)
