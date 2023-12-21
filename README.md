@@ -22,7 +22,7 @@ The project follows the MVVM (Model-View-ViewModel) design pattern with a Clean 
 - **Data Layer**: Contains the repositories and data sources responsible for retrieving and persisting data. It abstracts the underlying data storage implementation and provides a clean interface for the Use Case layer.
 
 ## Requirements
-To build and run the Hidup Sehat Android application, ensure you have the following software installed:
+To build and run the BeCipes Android application, ensure you have the following software installed:
 
 - Android Studio: 2022.3.1 (Giraffe)
 - Minimum SDK: 24
