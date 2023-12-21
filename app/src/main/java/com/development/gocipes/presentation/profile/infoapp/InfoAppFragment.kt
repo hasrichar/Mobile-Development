@@ -1,4 +1,4 @@
-package com.development.gocipes.presentation.profile.favorite
+package com.development.gocipes.presentation.profile.infoapp
 
 import android.os.Bundle
 import android.view.LayoutInflater
@@ -13,43 +13,25 @@ import androidx.core.view.MenuProvider
 import androidx.fragment.app.Fragment
 import androidx.lifecycle.Lifecycle
 import androidx.navigation.fragment.findNavController
-import androidx.recyclerview.widget.LinearLayoutManager
-import com.development.gocipes.core.data.local.dummy.DummyFavorite
-import com.development.gocipes.core.domain.model.favorite.Favorite
-import com.development.gocipes.databinding.FragmentFavoriteBinding
-import com.development.gocipes.core.presentation.adapter.FavoriteAdapter
+import com.development.gocipes.databinding.FragmentInfoAppBinding
 
-class FavoriteFragment : Fragment() {
+class InfoAppFragment : Fragment() {
 
-    private var _binding: FragmentFavoriteBinding? = null
+    private var _binding: FragmentInfoAppBinding? = null
     private val binding get() = _binding
-    private lateinit var favoriteAdapter: FavoriteAdapter
 
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
-        savedInstanceState: Bundle?
+        savedInstanceState: Bundle?,
     ): View? {
-        _binding = FragmentFavoriteBinding.inflate(layoutInflater, container, false)
+        _binding = FragmentInfoAppBinding.inflate(layoutInflater, container, false)
         return binding?.root
     }
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
 
-        val listFavorite = DummyFavorite.dummyFavorite
-        setupRecyclerFavorite(listFavorite)
         setupToolbar()
-    }
-
-    private fun setupRecyclerFavorite(favorite: List<Favorite>) {
-        favoriteAdapter = FavoriteAdapter()
-
-        binding?.rvFavorite?.apply {
-            adapter = favoriteAdapter
-            layoutManager = LinearLayoutManager(requireActivity(), LinearLayoutManager.VERTICAL, false)
-        }
-
-        favoriteAdapter.submitList(favorite)
     }
 
     private fun setupToolbar() {
@@ -57,7 +39,7 @@ class FavoriteFragment : Fragment() {
             setSupportActionBar(binding?.toolbar)
             supportActionBar?.apply {
                 setDisplayHomeAsUpEnabled(true)
-                title = "Favorite"
+                title = "Info Aplikasi"
             }
         }
 

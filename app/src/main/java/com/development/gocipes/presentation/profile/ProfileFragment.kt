@@ -7,7 +7,9 @@ import android.view.ViewGroup
 import android.widget.Toast
 import androidx.fragment.app.Fragment
 import androidx.fragment.app.viewModels
+import androidx.navigation.NavOptions
 import androidx.navigation.fragment.findNavController
+import com.development.gocipes.R
 import com.development.gocipes.core.data.remote.response.auth.UserResult
 import com.development.gocipes.core.utils.Extensions.showImage
 import com.development.gocipes.core.utils.Result
@@ -60,19 +62,37 @@ class ProfileFragment : Fragment() {
         }
     }
 
-    private fun setupView(user: UserResult) {
+    private fun setupView(userResult: UserResult) {
         val urlPhoto =
             "https://t4.ftcdn.net/jpg/00/64/67/63/360_F_64676383_LdbmhiNM6Ypzb3FM4PPuFP9rHe7ri8Ju.jpg"
-        val userName = "${user.firstName} ${user.lastName}"
+        val userName = "${userResult.firstName} ${userResult.lastName}"
 
         binding?.apply {
             ivProfileFotoProfil.showImage(
-                requireActivity(), user.photo ?: urlPhoto
+                requireActivity(), userResult.photo ?: urlPhoto
             )
-            edtProfileEmailUser.setText(user.email)
+            edtProfileEmailUser.setText(userResult.email)
             edtProfileUsernameUser.setText(userName)
             edtProfilePasswordUser.setText(userName)
+
+            btnProfileFav.setOnClickListener {
+                navigateToFavorite()
+            }
+
+            btnProfileInfoAplikasi.setOnClickListener {
+                navigateToInfoApp()
+            }
         }
+    }
+
+    private fun navigateToInfoApp() {
+        val action = ProfileFragmentDirections.actionProfileFragmentToInfoAppFragment()
+        findNavController().navigate(action)
+    }
+
+    private fun navigateToFavorite() {
+        val action = ProfileFragmentDirections.actionProfileFragmentToFavoriteFragment()
+        findNavController().navigate(action)
     }
 
     override fun onDestroy() {
@@ -103,24 +123,9 @@ class ProfileFragment : Fragment() {
     }
 
     private fun logout() {
-//        val logoutDialog = AlertDialog.Builder(this)
-//        with(logoutDialog) {
-//            setTitle(resources.getString(R.string.keluar))
-//            setMessage(resources.getString(R.string.log_desc))
-//            setPositiveButton(resources.getString(R.string.yes)) { _, _ ->
-//                viewModel.logout()
-//                viewModel.rmvSession()
-//                intent = Intent(this@ProfileFragment, LoginActivity::class.java)
-//                intent.flags = Intent.FLAG_ACTIVITY_NEW_TASK or Intent.FLAG_ACTIVITY_CLEAR_TASK
-//                startActivity(intent)
-//                finish()
-//            }
-//            setNegativeButton(resources.getString(R.string.no)) { dialog, _ -> dialog.cancel() }
-//        }
-//        val alertDialog = logoutDialog.create()
-//        alertDialog.show()
-
-        val action = ProfileFragmentDirections.actionProfileFragmentToAuthGraph()
-        findNavController().navigate(action)
+        val option = NavOptions.Builder()
+            .setPopUpTo(R.id.main_graph, inclusive = true)
+            .build()
+        findNavController().navigate(ProfileFragmentDirections.actionProfileFragmentToAuthGraph(), option)
     }
 }

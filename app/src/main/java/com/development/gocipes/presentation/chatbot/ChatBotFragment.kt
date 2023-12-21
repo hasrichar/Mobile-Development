@@ -42,7 +42,7 @@ class ChatBotFragment : Fragment() {
                     stopShimmer()
                     visibility = View.INVISIBLE
                 }
-            }, 3000)
+            }, 3500)
         }
     }
 
