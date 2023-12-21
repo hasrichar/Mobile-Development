@@ -15,7 +15,6 @@ import androidx.lifecycle.Lifecycle
 import androidx.navigation.fragment.findNavController
 import com.development.gocipes.databinding.FragmentInfoAppBinding
 
-
 class InfoAppFragment : Fragment() {
 
     private var _binding: FragmentInfoAppBinding? = null
