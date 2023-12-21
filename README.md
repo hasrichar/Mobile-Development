@@ -15,7 +15,7 @@ A platform that makes it easy for you to get healthy food. Use this platform to 
 ## Architecture
 The project follows the MVVM (Model-View-ViewModel) design pattern with a Clean Architecture approach. This architecture promotes separation of concerns and provides a scalable and maintainable codebase. Here's an overview of the project's architecture:
 
-- **Presentation Layer**: Contains the UI components, including activities, fragments, and Jetpack Compose screens. It interacts with the ViewModel layer to retrieve and display data to the user.
+- **Presentation Layer**: Contains the UI components, including activities and fragments. It interacts with the ViewModel layer to retrieve and display data to the user.
 
 - **Domain Layer**: Contains the business logic of the application. It defines the various use cases and orchestrates the interactions between the data layer and the presentation layer.
 
