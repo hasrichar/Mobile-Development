@@ -9,7 +9,7 @@
 
 <hr>
 
-# Becipes - Mobile Development
+# BeCipes - Mobile Development
 
 ## Architecture
 The project follows the MVVM (Model-View-ViewModel) design pattern with a Clean Architecture approach. This architecture promotes separation of concerns and provides a scalable and maintainable codebase. Here's an overview of the project's architecture:
