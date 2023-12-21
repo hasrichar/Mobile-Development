@@ -5,7 +5,7 @@
 [![Kotlin](https://img.shields.io/badge/kotlin-1.8.0-blue.svg?logo=kotlin)](http://kotlinlang.org)
 [![Gradle](https://img.shields.io/badge/Gradle-8-green?style=flat)](https://gradle.org)
 [![GitHub License](https://img.shields.io/badge/license-Apache%20License%202.0-blue.svg?style=flat)](http://www.apache.org/licenses/LICENSE-2.0)
-[![GitHub Account](https://img.shields.io/static/v1?label=GitHub&message=Becipes&color=C51162)](https://github.com/Becipes)
+[![GitHub Account](https://img.shields.io/static/v1?label=GitHub&message=Becipes&color=C5116)](https://github.com/Becipes)
 
 <hr>
 
